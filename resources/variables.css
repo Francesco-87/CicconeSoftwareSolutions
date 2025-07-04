@@ -1,0 +1,13 @@
+:root{
+    /* Color Variables */
+    --color-primary: #003366; /* Dark blue */
+    --color-secondary: #FF8C00; /* Dark orange */
+    --color-accent: #00BFFF; /* Deep sky blue */
+
+   /*logo farge #f47209
+    /*--color-accent: #66CCFF; /* Light blue */
+
+    /* Font Variables */
+    --primary-font: 'Roboto','Montserrat', sans-serif;
+    --secondary-font: 'Lato','Open Sans', sans-serif;
+}
