@@ -18,63 +18,74 @@ header {
     background-color: white;
     width: 100%;
     height: auto;
-    padding: 1rem;
+    padding-top: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
+
 .header-container{
-    display: flex;
-  align-items: center;
-  /* space-between keeps logo (if any) on the left and icons on the right */
-  justify-content: space-between;
-  width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 3rem;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Adjust as needed */
+    
+    
 }
 .logo-container {
-   width: 40px; /* Adjust as needed */
+   width: 12rem; /* Adjust as needed */
    height: auto; /* Maintain aspect ratio */
    overflow: hidden;  
 }
 .ciccone-logo {
     width: 100%;
     height: auto; /* Maintain aspect ratio */
-    display: block;
+    display: block;   
+     transition: transform .4s ease; 
     
 }
-.header-container nav {
-   display: flex;
-  gap: 1rem;               /* your spacing variable */
-  margin: 0 auto; 
+.ciccone-logo:hover {
 
+  cursor: pointer;  
+  transform: scale(1.05); /* Slightly enlarge the logo on hover */
+  
 }
+.header-container nav {
+   justify-self: start;   /* center the <nav> in the middle column */
+   display: flex;
+   gap: 1rem;    
+}
+
+
+.header-container nav a {
+    font-size: 1.2rem;
+    text-decoration: none;    
+    color: var(--color-secondary);
+}   
+
+/* Hover: just change color */
+.header-container nav a:hover {
+  color: black;
+}
+
+/* Keyboard focus only: show outline */
 .header-container nav a:focus-visible {
   outline: 2px dashed var(--color-accent);
   outline-offset: 2px;
 }
-.header-container nav ul {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    list-style: none;   
-}
-.header-container nav ul li {
-    font-size: 1.2rem;
-    color: var(--color-secondary);
-}
-.header-container nav ul li a {
-    text-decoration: none;    
-    color: var(--color-secondary);
-}   
-.header-container nav ul li a:hover {
-    color: black
-}
 
 .language-selector {
+  justify-self: end;
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
+/*TODO: FISX TRANSLATE ICON*/
 .icon-translate {
-  width: 2rem;
-  height: 2rem;
+  width: 5rem;
+  height: 5rem;
   
 }
 
@@ -82,7 +93,7 @@ header {
   appearance: none;
   font-family: var(--primary-font);
   font-size: var(--font-size-base);
-  color: var(--primary-color); /* Navy */
+  color: var(--color-primary); /* Navy */
   background-color: white;
   border: 1px solid var(--accent-color);
   border-radius: 4px;
