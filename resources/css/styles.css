@@ -66,6 +66,39 @@ header {
     color: black
 }
 
+.language-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon-translate {
+  width: 2rem;
+  height: 2rem;
+  
+}
+
+.language-select {
+  appearance: none;
+  font-family: var(--primary-font);
+  font-size: var(--font-size-base);
+  color: var(--primary-color); /* Navy */
+  background-color: white;
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+  padding: 0.4rem 1.8rem 0.4rem 0.8rem;
+  background-image: url("https://fonts.gstatic.com/s/i/materialicons/arrow_drop_down/v14/24px.svg");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+}
+
+.language-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 191, 255, 0.5);
+}
+
+
+
 
 main{
     display: flex;
