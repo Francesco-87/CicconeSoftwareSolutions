@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }); // ← closes the click handler
 
   function loadPage(page) {
-    fetch(`./resources/pages/${page}.html`)
+    fetch(`/src/pages/${page}.html`)
       .then(response => {
         if (!response.ok) throw new Error("Page not found");
         return response.text();

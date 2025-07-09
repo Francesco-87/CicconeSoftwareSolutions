@@ -164,29 +164,45 @@
   text-align: center;
   text-shadow: 1px 2px 5px rgba(255, 255, 255, 0.7);
 }
-.tech-items{
-  
-
+.tech-items{  
+display: flex;
 
 }
 .tech-item{
-  display: inline-block;
+    
   background: linear-gradient(135deg,
     white 0%,var(--color-secondary) 80%);  
   width: 100px;
-  height: 100px;
+  height: 120px;
   padding: 0.5rem 1rem;
   border-radius: 4px;
   margin: 0.5rem;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+
+.tech-item .icon-big{ 
+  width: 70px;
+  height: 70px;
+}
 .tech-icon{
   width: 100%;
   height: auto;
-  display: block;
-  margin: 0 auto;
+  display: block;  
   border-radius: 4px;
 }
+.tech-label {  
+  
+  display: block;
+  text-align: center;  
+  font-size: 0.9rem;
+  line-height: 1;
+  margin-top: 0.5rem;
+  
+}
+
+
+
+
 /* .tech-stack p {
   /* 2) Centered text with larger font 
   font-size: 1.25rem;
