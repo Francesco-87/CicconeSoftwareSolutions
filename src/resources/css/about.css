@@ -152,53 +152,7 @@
 }
 
 
-/*TECH STACK SECTION*/
-.tech-stack {
-  /* 1) Full-width section with light-blue background */
-  width: 100%;
-  color: var(--color-primary);
-  text-align: center;
-}
-.tech-stack h2{
-  font-size: 2rem;
-  text-align: center;
-  text-shadow: 1px 2px 5px rgba(255, 255, 255, 0.7);
-}
-.tech-items{  
-display: flex;
 
-}
-.tech-item{
-    
-  background: linear-gradient(135deg,
-    white 0%,var(--color-secondary) 80%);  
-  width: 100px;
-  height: 120px;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  margin: 0.5rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.tech-item .icon-big{ 
-  width: 70px;
-  height: 70px;
-}
-.tech-icon{
-  width: 100%;
-  height: auto;
-  display: block;  
-  border-radius: 4px;
-}
-.tech-label {  
-  
-  display: block;
-  text-align: center;  
-  font-size: 0.9rem;
-  line-height: 1;
-  margin-top: 0.5rem;
-  
-}
 
 
 
