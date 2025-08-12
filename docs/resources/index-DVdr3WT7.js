@@ -1,4 +1,4 @@
-(function(){const s=document.createElement("link").relList;if(s&&s.supports&&s.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))a(e);new MutationObserver(e=>{for(const n of e)if(n.type==="childList")for(const o of n.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&a(o)}).observe(document,{childList:!0,subtree:!0});function i(e){const n={};return e.integrity&&(n.integrity=e.integrity),e.referrerPolicy&&(n.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?n.credentials="include":e.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function a(e){if(e.ep)return;e.ep=!0;const n=i(e);fetch(e.href,n)}})();const l=`<div class="home-page">
+(function(){const s=document.createElement("link").relList;if(s&&s.supports&&s.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))o(e);new MutationObserver(e=>{for(const n of e)if(n.type==="childList")for(const c of n.addedNodes)c.tagName==="LINK"&&c.rel==="modulepreload"&&o(c)}).observe(document,{childList:!0,subtree:!0});function i(e){const n={};return e.integrity&&(n.integrity=e.integrity),e.referrerPolicy&&(n.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?n.credentials="include":e.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function o(e){if(e.ep)return;e.ep=!0;const n=i(e);fetch(e.href,n)}})();const l=`<div class="home-page">
     <!-- 1. Hero -->
     <section class="hero" id="hero">
         <div class="hero-content">
@@ -12,18 +12,10 @@
     <section class="services" id="services">
         <h2 class="services-title">What I Do</h2>
         <ul class="services-list">
-            <li class="services-card">
-            <a class="services-link" href="#" data-page="about">Domain &amp; Email Setup</a>
-            </li>
-            <li class="services-card">
-            <a class="services-link" href="#" data-page="about">Secure Static Hosting &amp; SSL</a>
-            </li>
-            <li class="services-card">
-            <a class="services-link" href="#" data-page="about">Brand &amp; Logo Design</a>
-            </li>
-            <li class="services-card">
-            <a class="services-link" href="#" data-page="about">Responsive Multi-Language Builds</a>
-            </li>
+            <li class="services-card">Domain &amp; Email Setup</li>
+            <li class="services-card">Secure Static Hosting &amp; SSL</li>
+            <li class="services-card">Brand &amp; Logo Design</li>
+            <li class="services-card">Responsive Multi-Language Builds</li>
         </ul>
     </section>
 
@@ -102,7 +94,7 @@
 </div>`,d=`<div class="about-page">
     <section class="about-header" id="about-header">
         <div class="container">
-            <h2>Democratizing the Future of Technology for Every Business</h2>
+            <h1>Democratizing the Future of Technology for Every Business</h1>
             <p>At Ciccone Software Solutions, we believe technology is the future— <br>
                and every organization, from solo entrepreneurs <br>
                to global enterprises, deserves access to powerful, intuitive software. <br>
@@ -163,6 +155,6 @@ When I’m not coding, you’ll find me [your hobby/personal detail], which keep
 </div>`,p=`<div>
     This is the Contact page for Ciccone Software Solutions.
     <p>We are currently under construction, but we will be back soon with more information
-</div>`,g={home:l,about:d,services:h,projects:u,contact:p},c=document.getElementById("main-content");function r(t){c.innerHTML=g[t]||`<p style="padding:2rem;color:red">
+</div>`,g={home:l,about:d,services:h,projects:u,contact:p},a=document.getElementById("main-content");function r(t){a.innerHTML=g[t]||`<p style="padding:2rem;color:red">
     Site not available.
-  </p>`;const s=c.querySelectorAll(".testimonial-item");if(s.length){let i=0;const a=e=>s.forEach((n,o)=>n.classList.toggle("active",e===o));a(i),setInterval(()=>a(i=(i+1)%s.length),5e3)}}document.addEventListener("DOMContentLoaded",()=>{r("home"),document.addEventListener("click",t=>{const s=t.target.closest("a[data-page]");s&&(t.preventDefault(),r(s.dataset.page),document.querySelector("nav")?.classList.remove("open"))}),document.getElementById("hamburger")?.addEventListener("click",()=>{document.querySelector("nav")?.classList.toggle("open")})});
+  </p>`;const s=a.querySelectorAll(".testimonial-item");if(s.length){let i=0;const o=e=>s.forEach((n,c)=>n.classList.toggle("active",e===c));o(i),setInterval(()=>o(i=(i+1)%s.length),5e3)}}document.addEventListener("DOMContentLoaded",()=>{r("home"),document.addEventListener("click",t=>{const s=t.target.closest("a[data-page]");s&&(t.preventDefault(),r(s.dataset.page),document.querySelector("nav")?.classList.remove("open"))}),document.getElementById("hamburger")?.addEventListener("click",()=>{document.querySelector("nav")?.classList.toggle("open")})});
