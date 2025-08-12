@@ -1,3 +1,129 @@
+/* HERO (home) */
+
+/* wrapper */
+.hero {
+  position: relative;
+  min-height: 60vh;
+  padding: 3rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(135deg, #0B4F8A 0%, #002F66 100%);
+  width: 100%;
+  overflow: hidden;
+}
+
+
+
+
+/* content container */
+.hero .hero-content {
+  position: relative;
+  max-width: 900px;
+}
+
+/* headline */
+.hero h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2.25rem, 6vw, 4rem);
+  line-height: 1.1;
+}
+
+/* subtext */
+.hero p {
+  margin: 0 0 1.75rem;
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  color: rgba(255,255,255,0.85);
+}
+
+/* CTA */
+.hero a {
+  display: inline-block;
+  background: var(--color-secondary, #FF8C00);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.8rem 1.4rem;
+  border-radius: 999px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* hover/focus */
+.hero a:hover,
+.hero a:focus {
+  
+  background: var(--color-accent, #00BFFF);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 22px rgba(0,0,0,0.2);
+  outline: none;
+  cursor: pointer;
+}
+.hero a:focus-visible {
+  box-shadow: 0 0 0 3px rgba(0,191,255,0.4), 0 12px 22px rgba(0,0,0,0.2);
+}
+
+
+
+/* WHAT I DO (services teaser) — class-based */
+
+/* SERVICES — visible on light background, brand-only palette */
+.services {
+  padding: 2rem 1rem;
+  background:
+    linear-gradient(180deg, rgba(0,191,255,0.06) 0%, rgba(0,191,255,0) 140px),
+    #fff; /* subtle accent tint at top */
+  color: var(--color-primary, #003366);
+  border-top: 3px solid var(--color-accent, #00BFFF); /* clear section break */
+}
+
+.services-title {
+  margin: 0 0 1rem;
+  color: var(--color-primary, #003366);
+}
+/* grid */
+.services-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+/* cards */
+.services-card {
+  background: rgba(255,140,0,0.08);           /* secondary 8% */
+  border: 1px solid rgba(0,51,102,0.18);      /* primary 18% */
+  border-radius: 1rem;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease, background-color .15s ease;
+}
+
+.services-link {
+  display: block;
+  padding: 1rem 1.25rem;
+  color: var(--color-primary, #003366);
+
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: inherit;
+}
+
+/* interaction */
+.services-card:hover {
+  transform: translateY(-2px);
+  background: rgba(255,140,0,0.12);           /* secondary 12% */
+  border-color: var(--color-accent, #00BFFF); /* accent edge */
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+}
+
+.services-link:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0,191,255,0.4);  /* accent ring */
+}
+
+
 /*TECH STACK SECTION*/
 .tech-stack {
   /* 1) Full-width section with light-blue background */

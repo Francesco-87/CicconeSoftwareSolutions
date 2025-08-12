@@ -1,23 +1,32 @@
-(function(){const s=document.createElement("link").relList;if(s&&s.supports&&s.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))o(e);new MutationObserver(e=>{for(const n of e)if(n.type==="childList")for(const c of n.addedNodes)c.tagName==="LINK"&&c.rel==="modulepreload"&&o(c)}).observe(document,{childList:!0,subtree:!0});function i(e){const n={};return e.integrity&&(n.integrity=e.integrity),e.referrerPolicy&&(n.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?n.credentials="include":e.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function o(e){if(e.ep)return;e.ep=!0;const n=i(e);fetch(e.href,n)}})();const l=`<div class="home-page">
+(function(){const s=document.createElement("link").relList;if(s&&s.supports&&s.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))a(e);new MutationObserver(e=>{for(const n of e)if(n.type==="childList")for(const o of n.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&a(o)}).observe(document,{childList:!0,subtree:!0});function i(e){const n={};return e.integrity&&(n.integrity=e.integrity),e.referrerPolicy&&(n.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?n.credentials="include":e.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function a(e){if(e.ep)return;e.ep=!0;const n=i(e);fetch(e.href,n)}})();const l=`<div class="home-page">
     <!-- 1. Hero -->
     <section class="hero" id="hero">
         <div class="hero-content">
             <h1>Build Your Digital Presence in Days, Not Weeks</h1>
             <p>I handle domains, hosting, design and deployment—so you focus on running your business.</p>
-            <a href="#portfolio">View Portfolio</a>
+            <a ref="#" data-page="projects">View Portfolio</a>
         </div>
     </section>
 
     <!-- 2. What I Do -->
     <section class="services" id="services">
-        <h2>What I Do</h2>
-        <ul>
-            <li>Domain & Email Setup</li>
-            <li>Secure Static Hosting & SSL</li>
-            <li>Brand & Logo Design</li>
-            <li>Responsive Multi-Language Builds</li>
+        <h2 class="services-title">What I Do</h2>
+        <ul class="services-list">
+            <li class="services-card">
+            <a class="services-link" href="#" data-page="about">Domain &amp; Email Setup</a>
+            </li>
+            <li class="services-card">
+            <a class="services-link" href="#" data-page="about">Secure Static Hosting &amp; SSL</a>
+            </li>
+            <li class="services-card">
+            <a class="services-link" href="#" data-page="about">Brand &amp; Logo Design</a>
+            </li>
+            <li class="services-card">
+            <a class="services-link" href="#" data-page="about">Responsive Multi-Language Builds</a>
+            </li>
         </ul>
     </section>
+
 
     <section class="tech-stack">
         <div class="container">
@@ -151,9 +160,9 @@ When I’m not coding, you’ll find me [your hobby/personal detail], which keep
 </div>`,u=`<div>
     This is the Projects page for Ciccone Software Solutions.
     <p>We are currently under construction, but we will be back soon with more information
-</div>`,g=`<div>
+</div>`,p=`<div>
     This is the Contact page for Ciccone Software Solutions.
     <p>We are currently under construction, but we will be back soon with more information
-</div>`,p={home:l,about:d,services:h,projects:u,contact:g},a=document.getElementById("main-content");function r(t){a.innerHTML=p[t]||`<p style="padding:2rem;color:red">
+</div>`,g={home:l,about:d,services:h,projects:u,contact:p},c=document.getElementById("main-content");function r(t){c.innerHTML=g[t]||`<p style="padding:2rem;color:red">
     Site not available.
-  </p>`;const s=a.querySelectorAll(".testimonial-item");if(s.length){let i=0;const o=e=>s.forEach((n,c)=>n.classList.toggle("active",e===c));o(i),setInterval(()=>o(i=(i+1)%s.length),5e3)}}document.addEventListener("DOMContentLoaded",()=>{r("home"),document.addEventListener("click",t=>{const s=t.target.closest("a[data-page]");s&&(t.preventDefault(),r(s.dataset.page),document.querySelector("nav")?.classList.remove("open"))}),document.getElementById("hamburger")?.addEventListener("click",()=>{document.querySelector("nav")?.classList.toggle("open")})});
+  </p>`;const s=c.querySelectorAll(".testimonial-item");if(s.length){let i=0;const a=e=>s.forEach((n,o)=>n.classList.toggle("active",e===o));a(i),setInterval(()=>a(i=(i+1)%s.length),5e3)}}document.addEventListener("DOMContentLoaded",()=>{r("home"),document.addEventListener("click",t=>{const s=t.target.closest("a[data-page]");s&&(t.preventDefault(),r(s.dataset.page),document.querySelector("nav")?.classList.remove("open"))}),document.getElementById("hamburger")?.addEventListener("click",()=>{document.querySelector("nav")?.classList.toggle("open")})});
