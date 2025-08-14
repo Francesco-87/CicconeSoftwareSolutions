@@ -168,15 +168,20 @@ When I’m not coding, you’ll find me [your hobby/personal detail], which keep
         </div>
     </section>
     
-</div>`,u=`<div>
-    This is the Services page for Ciccone Software Solutions.
-    <p>We are currently under construction, but we will be back soon with more information
 </div>`,p=`<div>
-    This is the Projects page for Ciccone Software Solutions.
-    <p>We are currently under construction, but we will be back soon with more information
-</div>`,v=`<div>
-    This is the Contact page for Ciccone Software Solutions.
-    <p>We are currently under construction, but we will be back soon with more information
-</div>`,h={home:r,about:d,services:u,projects:p,contact:v},o=document.getElementById("main-content");function l(t){o.innerHTML=h[t]||`<p style="padding:2rem;color:red">
+    <p class="services-page">
+This is the Services page for Ciccone Software Solutions.
+    We are currently under construction, but we will be back soon with more information
+    </p>
+</div>`,u=`<div>
+    <p class="projects-page">
+        This is the Projects page for Ciccone Software Solutions.
+    We are currently under construction, but we will be back soon with more information
+    </p>
+</div>`,v=`<div >
+    <p class="contact-page">This is the Contact page for Ciccone Software Solutions.
+    We are currently under construction, but we will be back soon with more information
+    </p> 
+</div>`,g={home:r,about:d,services:p,projects:u,contact:v},o=document.getElementById("main-content");function l(t){o.innerHTML=g[t]||`<p style="padding:2rem;color:red">
     Site not available.
   </p>`;const n=o.querySelectorAll(".testimonial-item");if(n.length){let i=0;const a=e=>n.forEach((s,c)=>s.classList.toggle("active",e===c));a(i),setInterval(()=>a(i=(i+1)%n.length),5e3)}}document.addEventListener("DOMContentLoaded",()=>{l("home"),document.addEventListener("click",t=>{const n=t.target.closest("a[data-page]");n&&(t.preventDefault(),l(n.dataset.page),document.querySelector("nav")?.classList.remove("open"))}),document.getElementById("hamburger")?.addEventListener("click",()=>{document.querySelector("nav")?.classList.toggle("open")})});
