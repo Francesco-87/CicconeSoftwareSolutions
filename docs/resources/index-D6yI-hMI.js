@@ -1,4 +1,4 @@
-(function(){const s=document.createElement("link").relList;if(s&&s.supports&&s.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))o(e);new MutationObserver(e=>{for(const n of e)if(n.type==="childList")for(const c of n.addedNodes)c.tagName==="LINK"&&c.rel==="modulepreload"&&o(c)}).observe(document,{childList:!0,subtree:!0});function i(e){const n={};return e.integrity&&(n.integrity=e.integrity),e.referrerPolicy&&(n.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?n.credentials="include":e.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function o(e){if(e.ep)return;e.ep=!0;const n=i(e);fetch(e.href,n)}})();const l=`<div class="home-page">
+(function(){const n=document.createElement("link").relList;if(n&&n.supports&&n.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))a(e);new MutationObserver(e=>{for(const s of e)if(s.type==="childList")for(const c of s.addedNodes)c.tagName==="LINK"&&c.rel==="modulepreload"&&a(c)}).observe(document,{childList:!0,subtree:!0});function i(e){const s={};return e.integrity&&(s.integrity=e.integrity),e.referrerPolicy&&(s.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?s.credentials="include":e.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function a(e){if(e.ep)return;e.ep=!0;const s=i(e);fetch(e.href,s)}})();const r=`<div class="home-page">
     <!-- 1. Hero -->
     <section class="hero" id="hero">
         <div class="hero-content">
@@ -69,14 +69,36 @@
 
     </section>       
 
-    <section class="statistics" id="statistics">
-        <div >
-            <p>100+ projects delivered</p>
-            <p>10+ years of experience</p>
-            <p>5-star client ratings</p>
-            <p>Global reach: 20+ countries served</p>
-        </div>
+   <section class="statistics" id="statistics">
+        <h2 class="statistics-title">By the Numbers</h2>
+        <ul class="statistics-grid">
+            <li class="stat-card">
+            <div class="stat-figure">
+                <div class="stat-circle"><span class="stat-number">25+</span></div>
+                <p class="stat-label">Projects</p>
+            </div>
+            </li>
+            <li class="stat-card">
+            <div class="stat-figure">
+                <div class="stat-circle"><span class="stat-number">2+</span></div>
+                <p class="stat-label">Years Experience</p>
+            </div>
+            </li>
+            <!-- <li class="stat-card">
+            <div class="stat-figure">
+                <div class="stat-circle"><span class="stat-number">5★</span></div>
+                <p class="stat-label">Client Rating</p>
+            </div>
+            </li> -->
+            <li class="stat-card">
+            <div class="stat-figure">
+                <div class="stat-circle"><span class="stat-number">5+</span></div>
+                <p class="stat-label">Countries</p>
+            </div>
+            </li>
+        </ul>
     </section>
+
     
 
         <!-- 5. Recent Work -->
@@ -146,15 +168,15 @@ When I’m not coding, you’ll find me [your hobby/personal detail], which keep
         </div>
     </section>
     
-</div>`,h=`<div>
+</div>`,u=`<div>
     This is the Services page for Ciccone Software Solutions.
     <p>We are currently under construction, but we will be back soon with more information
-</div>`,u=`<div>
+</div>`,p=`<div>
     This is the Projects page for Ciccone Software Solutions.
     <p>We are currently under construction, but we will be back soon with more information
-</div>`,p=`<div>
+</div>`,v=`<div>
     This is the Contact page for Ciccone Software Solutions.
     <p>We are currently under construction, but we will be back soon with more information
-</div>`,g={home:l,about:d,services:h,projects:u,contact:p},a=document.getElementById("main-content");function r(t){a.innerHTML=g[t]||`<p style="padding:2rem;color:red">
+</div>`,h={home:r,about:d,services:u,projects:p,contact:v},o=document.getElementById("main-content");function l(t){o.innerHTML=h[t]||`<p style="padding:2rem;color:red">
     Site not available.
-  </p>`;const s=a.querySelectorAll(".testimonial-item");if(s.length){let i=0;const o=e=>s.forEach((n,c)=>n.classList.toggle("active",e===c));o(i),setInterval(()=>o(i=(i+1)%s.length),5e3)}}document.addEventListener("DOMContentLoaded",()=>{r("home"),document.addEventListener("click",t=>{const s=t.target.closest("a[data-page]");s&&(t.preventDefault(),r(s.dataset.page),document.querySelector("nav")?.classList.remove("open"))}),document.getElementById("hamburger")?.addEventListener("click",()=>{document.querySelector("nav")?.classList.toggle("open")})});
+  </p>`;const n=o.querySelectorAll(".testimonial-item");if(n.length){let i=0;const a=e=>n.forEach((s,c)=>s.classList.toggle("active",e===c));a(i),setInterval(()=>a(i=(i+1)%n.length),5e3)}}document.addEventListener("DOMContentLoaded",()=>{l("home"),document.addEventListener("click",t=>{const n=t.target.closest("a[data-page]");n&&(t.preventDefault(),l(n.dataset.page),document.querySelector("nav")?.classList.remove("open"))}),document.getElementById("hamburger")?.addEventListener("click",()=>{document.querySelector("nav")?.classList.toggle("open")})});
