@@ -101,17 +101,13 @@
 
     
 
-        <!-- 5. Recent Work -->
+ <!--        5. Recent Work 
     <section class="portfolio" id="portfolio">
     <h2>Recent Work</h2>
-    <!-- TODO: add project thumbnails or links here -->
-    </section>
+    TODO: add project thumbnails or links here 
+    </section> -->
 
-    <!-- 6. Call to Action -->
-    <section class="cta" id="cta">
-    <h2>Ready to get started?</h2>
-    <a href="/contact">Contact Me</a>
-    </section>
+   
 
 </div>`,d=`<div class="about-page">
     <section class="about-header" id="about-header">
