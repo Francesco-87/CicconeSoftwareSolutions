@@ -10,4 +10,13 @@
     /* Font Variables */
     --primary-font: 'Roboto','Montserrat', sans-serif;
     --secondary-font: 'Lato','Open Sans', sans-serif;
+
+    /* Font Variables */
+    --font-size-base: 16px;
+
+    /* Separator Variables */
+    --sep-polygon-bowtie: polygon(0 0, 50% 20%, 100% 0%, 100% 100%, 50% 80%, 0 100%);
+    --sep-polygon-lr:polygon(0 0, 100% 40%, 100% 100%, 0 100%);
+    --sep-polygon-rl: polygon(100% 0, 0 40%, 0 100%, 100% 100%);
+
 }

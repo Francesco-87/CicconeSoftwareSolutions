@@ -1,0 +1,287 @@
+/* HERO (home) */
+
+/* wrapper */
+.hero {
+  position: relative;
+  min-height: 60vh;
+  padding: 3rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(135deg, #0B4F8A 0%, #002F66 100%);
+  width: 100%;
+  overflow: hidden;
+}
+
+ .hero::after {
+  /* 2) Slanted bottom divider into white */
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 50px;
+  background: white;
+   clip-path: var(--sep-polygon-bowtie);
+  
+  
+ 
+} 
+
+
+/* content container */
+.hero .hero-content {
+  position: relative;
+  max-width: 900px;
+}
+
+/* headline */
+.hero h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2.25rem, 6vw, 4rem);
+  line-height: 1.1;
+}
+
+/* subtext */
+.hero p {
+  margin: 0 0 1.75rem;
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  color: rgba(255,255,255,0.85);
+}
+
+/* CTA */
+.hero a {
+  display: inline-block;
+  background: var(--color-secondary, #FF8C00);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.8rem 1.4rem;
+  border-radius: 999px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* hover/focus */
+.hero a:hover,
+.hero a:focus {
+  
+  background: var(--color-accent, #00BFFF);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 22px rgba(0,0,0,0.2);
+  outline: none;
+  cursor: pointer;
+}
+.hero a:focus-visible {
+  box-shadow: 0 0 0 3px rgba(0,191,255,0.4), 0 12px 22px rgba(0,0,0,0.2);
+}
+
+
+
+/* WHAT I DO (services teaser) — class-based */
+
+/* Light band section that contrasts on dark body */
+.services {
+
+  align-items: center;  
+  position: relative; 
+  overflow: hidden;
+  min-height: 30vh;
+  background: linear-gradient(135deg, #002F66 0%, #0B4F8A 100%);
+  color: #003366;
+  padding: 2rem 1rem;
+  text-align: center;
+  width: 100%;
+  
+  
+  
+}
+ .services::after {
+  /* 2) Slanted bottom divider into white */
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 50px;
+  background: white;
+  clip-path: var(--sep-polygon-lr)
+  
+ 
+} 
+
+.services-title { 
+  margin: 0 0 1rem; 
+  color: #fff;}
+
+.services-list {
+  list-style: none; 
+  margin: 0; 
+  padding: 0;
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 1.5rem;
+}
+
+.services-card {
+  background: #fff;
+  color: #003366;
+  border: 1px solid rgba(0,51,102,0.18);
+  border-radius: 1rem;
+  padding: 1rem 1.25rem;
+  font-weight: 600;
+  box-shadow: 0 6px 14px rgba(0,51,102,0.08);
+  transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+}
+
+.services-card:hover {
+  transform: translateY(-2px);
+  border-color: #00BFFF;
+  box-shadow: 0 10px 20px rgba(0,51,102,0.12);
+}
+
+
+
+
+
+
+/*TECH STACK SECTION*/
+.tech-stack {  
+  position: relative;
+  min-height: 25vh;
+  width: 100%;
+  overflow: hidden;
+  
+  
+  text-align: center;
+
+}
+.tech-stack::after {
+  /* 2) Slanted bottom divider into white */
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 50px;
+  background: white;
+  clip-path: var(--sep-polygon-rl)
+ 
+} 
+
+.tech-stack h2{
+  color: #fff;
+  text-align: center;
+  
+}
+.tech-stack .container {
+   background: linear-gradient(135deg, #0B4F8A 20%, #002F66 80%);
+   
+   min-height: 25vh;
+}
+.tech-items{  
+display: flex;
+
+}
+
+
+.tech-item{
+    
+  background: linear-gradient(135deg,
+    white 0%,var(--color-secondary) 80%);  
+  width: 100px;
+  height: 120px;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.tech-item .icon-big{ 
+  width: 70px;
+  height: 70px;
+}
+.tech-icon{
+  width: 100%;
+  height: auto;
+  display: block;  
+  border-radius: 4px;
+}
+.tech-label {  
+  
+  display: block;
+  text-align: center;  
+  font-size: 0.9rem;
+  line-height: 1;
+  margin-top: 0.5rem;
+  
+}
+
+/* Section (light band against dark body) */
+#statistics.statistics {
+  background:
+    linear-gradient(180deg, rgba(0,51,102,0.06) 0%, rgba(0,51,102,0.03) 100%);
+  color: var(--color-primary, #003366);
+  padding: 1rem 1rem;
+  text-align: center;
+  
+}
+.statistics h2 {
+  color: #FFFFFF;
+  margin-bottom: 1rem;
+}
+
+/* Grid */
+.statistics-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Card (rounded square container) */
+.stat-card { display: flex; justify-content: center; }
+
+.stat-figure {
+  background: #FFFFFF;
+  color: var(--color-primary, #003366);
+  border: 1px solid rgba(0,51,102,0.18);
+  border-radius: 1rem;
+  padding: 1rem 1rem 1.1rem;
+  width: 180px;              /* square footprint feel */
+  box-shadow: 0 6px 14px rgba(0,51,102,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Circle with number */
+.stat-circle {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  border: 3px solid var(--color-accent, #00BFFF);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  background: #fff;
+}
+
+.stat-number {
+  font: 700 1.8rem/1 var(--font-body, 'Quicksand', sans-serif);
+  color: var(--color-secondary, #FF8C00);  /* punchy number */
+}
+
+/* Label under the circle */
+.stat-label {
+  margin: 0;
+  font: 600 0.95rem/1.2 var(--font-body, 'Quicksand', sans-serif);
+  color: var(--color-primary, #003366);
+}

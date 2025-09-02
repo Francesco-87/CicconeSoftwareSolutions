@@ -1,0 +1,17 @@
+# dependencies
+node_modules/
+dist/
+
+# Vite dev server cache
+.vite/
+
+# Optional: local logs
+npm-debug.log*
+yarn-debug.log*
+
+# IDE settings
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
