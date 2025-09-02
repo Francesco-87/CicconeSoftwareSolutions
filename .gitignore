@@ -1,8 +1,9 @@
 # dependencies
-/node_modules/
+node_modules/
+dist/
 
 # Vite dev server cache
-/.vite/
+.vite/
 
 # Optional: local logs
 npm-debug.log*

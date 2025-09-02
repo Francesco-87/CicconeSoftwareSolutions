@@ -6,7 +6,7 @@ export default defineConfig({
   base: './',               // leave this in place
   publicDir: '../public',   // point to the public/ folder at repo root
   build: {
-    outDir: '../docs',
+    outDir: '../dist',
     emptyOutDir: true,
     assetsDir: 'resources'
   },
