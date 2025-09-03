@@ -1,12 +1,5 @@
-.container {   
-  background: linear-gradient(135deg,
-    var(--color-accent) 0%,
-    var(--color-primary) 100%);
-    width: 100%;  
-    text-align: center;   
-}  
- 
 
+/* ABOUT PAGE STYLES */ 
 .about-page{
     display: flex;
     flex-direction: column;
@@ -15,9 +8,11 @@
     max-width: 1200px;
 }
 
+
 /*Header Section*/
+
 .about-header{
- /* 1) Gradient from primary → accent */
+ 
   background: var(--color-accent);
   width: 100%;
   position: relative;
@@ -26,24 +21,10 @@
   padding: 4rem 2rem 1.5rem;   
   overflow: hidden;
   
-  
-  
 }
- .about-header::after {
-  /* 2) Slanted bottom divider into white */
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  background: white;
-  clip-path: var(--sep-polygon-bowtie);
-  
- 
-} 
+
 .about-header .container {
-  /* 3) Constrain text and sit above the divider */
+  
   position: relative;
   margin: 0 auto;
 }
@@ -75,7 +56,7 @@
   padding-bottom: 4rem;
 }
 
-/*About Story*/
+/*ABOUT — STORY - SECTION*/
 
 .about-story {
   display: flex;
@@ -91,22 +72,11 @@
   height: auto;
   
 }
-.about-story::after {
-  /* 2) Slanted bottom divider into light-blue */
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  background: white;
-  clip-path: var(--sep-polygon-lr);
-  
-}
+
  .about-story .container {
   /* 3) Constrain text and sit above the divider */
   height: auto;
-  min-height: 30vh;
+  min-height: 32vh;
   margin-bottom: 2rem;
   
  }
@@ -161,7 +131,111 @@
   margin-top: 0.5rem;
   line-height: 1.7;
 }
-/*About ME*/
+
+
+
+
+/* About — Mission & Vision — SECTION*/
+
+.mission-vision {
+  width: 100%;
+  background: var(--color-accent);
+  padding: 2rem;
+  color: var(--color-primary);
+  text-align: center;
+  position: relative; /* for the slanted divider */
+  height: auto;
+  
+}
+
+.mission-vision .container {
+  /* 3) Constrain text and sit above the divider */
+  height: auto;
+  min-height: 30vh;
+  margin-bottom: 2rem;
+  padding-inline: 1.5rem;
+  
+ }
+
+.mission-vision h2 {
+   display: inline-block;
+  color: var(--color-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 2px 5px rgba(255, 255, 255, 0.7);
+}
+
+.mission-vision-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  align-items: stretch;
+}
+.mv-card {
+  background: #fff;
+  color: var(--color-primary, #003366);
+  text-align: center;
+  border: 1px solid rgba(0, 51, 102, 0.16);
+  border-radius: 1rem;
+  padding: 1rem 1.25rem 1.25rem;
+  box-shadow: 0 8px 18px rgba(0, 51, 102, 0.08);
+}
+
+.mv-icon {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--color-accent, #00BFFF);
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+
+.mv-title {
+  margin: 0 0 0.35rem;
+  font-weight: 700;
+  color: var(--color-primary, #003366);
+  position: relative;
+}
+.mv-title::after {
+  content: "";
+  display: block;
+  width: 36px;
+  height: 3px;
+  background: var(--color-accent, #00BFFF);
+  border-radius: 3px;
+  margin: 0.35rem auto 0; 
+}
+/* Outcome chips */
+.mv-chips {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem;
+  justify-content: center;
+    
+}
+.mv-chip {
+  width: 100%;
+  text-align: center;
+  border-radius: 999px;
+  background: linear-gradient(135deg,
+    white 0%,var(--color-secondary) 80%);
+  color: var(--color-primary, #003366);
+  font-size: 1.05rem;              
+  font-weight: 700;                
+  padding: 0.6rem 1rem;         
+  box-shadow: 0 4px 10px rgba(0,51,102,0.10);      
+  letter-spacing: 0.2px;           
+}
+
+
+/*About — ME — SECTION*/
 
 .about-me {
   width: 100%;
@@ -170,19 +244,6 @@
   color: var(--color-primary);
   text-align: center;
   position: relative; /* for the slanted divider */
-  
-}
-
-.about-me::after {
-  /* 2) Slanted bottom divider into light-blue */
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  background: white;
-  clip-path: var(--sep-polygon-lr);
   
 }
 
@@ -211,22 +272,6 @@
   position: relative; /* for the slanted divider */
 }
 
-.service-cards::after {
-  /* 2) Slanted bottom divider into white */
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  background: white;
-  clip-path: var(--sep--polygon-rl)
-  
-} 
-
-
-
-/* HEADING – white badge to pop on light-blue background */
 .service-cards h2 {
   display: inline-block;
   color: var(--color-primary);
@@ -245,7 +290,7 @@
   grid-template-columns: 1fr 1fr;      /* exactly two columns */
   column-gap: 2rem;
   row-gap: 2rem;
-  position: relative;                  /* for the slanted divider */
+  position: relative;                  
   width: 100%;
   padding-bottom: 2rem;
   
@@ -276,3 +321,4 @@
 }
 
 
+/* TODO: Clean up code, refactor, best practice... chat gpt on vscode */
