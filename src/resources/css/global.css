@@ -1,10 +1,20 @@
+/* Font base class */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--primary-font);}
+
+p, ul, ol, li, blockquote {
+  font-family: var(--secondary-font);
+}
+
 /* Container base class */
 .container {   
   background: linear-gradient(135deg,
     var(--color-accent) 0%,
     var(--color-primary) 100%);
     width: 100%;  
-    text-align: center;   
+    text-align: center;  
+    padding-inline: 1.5rem; 
 }  
 
 /* Divider base class */
@@ -28,3 +38,4 @@
 .section-divider--rl::after {
   clip-path: var(--sep-polygon-rl);
 }
+

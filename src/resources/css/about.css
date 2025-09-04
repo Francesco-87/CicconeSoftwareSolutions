@@ -1,3 +1,29 @@
+/* ABOUT - CLASS STYLES */ 
+
+.section-base {
+  width: 100%;
+  background: var(--color-accent);
+  padding: 2rem;
+  color: var(--color-primary);
+  text-align: center;
+  position: relative;
+  height: auto;
+}
+
+.section-title {
+  display: inline-block;
+  color: var(--color-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 2px 5px rgba(255, 255, 255, 0.7);
+}
+
+
+
 
 /* ABOUT PAGE STYLES */ 
 .about-page{
@@ -16,15 +42,14 @@
   background: var(--color-accent);
   width: 100%;
   position: relative;
-  color: white;
+  color: var(--color-font);
   text-align: center;
   padding: 4rem 2rem 1.5rem;   
   overflow: hidden;
   
 }
 
-.about-header .container {
-  
+.about-header .container {  
   position: relative;
   margin: 0 auto;
 }
@@ -35,7 +60,7 @@
   letter-spacing: 0.05em;
   position: relative;
 }
-.about-header h2::after {
+.about-header h1::after {
   /* 4) Accent underline in secondary color */
   content: "";
   position: absolute;
@@ -45,7 +70,7 @@
   width: 4rem;
   height: 4px;
   background: var(--color-secondary);
-  border-radius: 2px;
+  border-radius: 0.25rem;
 }
 .about-header p{
   font-size: 1.25rem;    
@@ -62,15 +87,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: 100%;
-  background: var(--color-accent);
-  padding: 2rem;
-  color: var(--color-primary);
-  text-align: center;
-  position: relative; /* for the slanted divider */
-  height: auto;
-  
+  justify-content: center;  
 }
 
  .about-story .container {
@@ -81,30 +98,18 @@
   
  }
 
-.about-story h2 {
- display: inline-block;
-  color: var(--color-primary);
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  font-size: 2rem;
-  text-align: center;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  text-shadow: 1px 2px 5px rgba(255, 255, 255, 0.7);
-}
 
 /* Story card */
 .story-card {
   position: relative;
   max-width: 720px;
   margin: 0 auto;
-  background: #fff;
+  background: var(--color-card-bg);
   color: var(--color-primary);
   border: 1px solid rgba(0,51,102,0.16);
   border-left: 6px solid var(--color-accent);
   border-radius: 1rem;
   padding: 1.25rem 1.25rem 2rem;
-
   box-shadow: 0 8px 18px rgba(0,51,102,0.08);
 }
 
@@ -114,15 +119,15 @@
   top: -12px;
   left: 16px;
   background: var(--color-accent);
-  color: #fff;
-  font: 600 0.75rem/1 var(--font-body, 'Quicksand', sans-serif);
+  color: var(--color-font);
+  font: 600 0.75rem/1;
   padding: 0.35rem 0.55rem;
-  border-radius: 999px;
+  border-radius: 62.5rem;
 }
 
 /* Lead paragraph */
 .story-lead {
-  font: 400 1.15rem/1.7 var(--font-body, 'Quicksand', sans-serif);
+  font: 400 1.15rem/1.7;
   margin: 0 0 0.75rem;
 }
 
@@ -137,37 +142,12 @@
 
 /* About — Mission & Vision — SECTION*/
 
-.mission-vision {
-  width: 100%;
-  background: var(--color-accent);
-  padding: 2rem;
-  color: var(--color-primary);
-  text-align: center;
-  position: relative; /* for the slanted divider */
-  height: auto;
-  
-}
-
 .mission-vision .container {
   /* 3) Constrain text and sit above the divider */
-  height: auto;
   min-height: 30vh;
-  margin-bottom: 2rem;
-  padding-inline: 1.5rem;
-  
+  margin-bottom: 2rem;  
  }
 
-.mission-vision h2 {
-   display: inline-block;
-  color: var(--color-primary);
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  font-size: 2rem;
-  text-align: center;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  text-shadow: 1px 2px 5px rgba(255, 255, 255, 0.7);
-}
 
 .mission-vision-grid {
   display: grid;
@@ -176,8 +156,8 @@
   align-items: stretch;
 }
 .mv-card {
-  background: #fff;
-  color: var(--color-primary, #003366);
+  background: var(--color-card-bg);
+  color: var(--color-primary);
   text-align: center;
   border: 1px solid rgba(0, 51, 102, 0.16);
   border-radius: 1rem;
@@ -189,7 +169,7 @@
   display: inline-block;
   width: 28px;
   height: 28px;
-  border: 2px solid var(--color-accent, #00BFFF);
+  border: 2px solid var(--color-accent);
   border-radius: 50%;
   margin-bottom: 0.5rem;
 }
@@ -197,7 +177,7 @@
 .mv-title {
   margin: 0 0 0.35rem;
   font-weight: 700;
-  color: var(--color-primary, #003366);
+  color: var(--color-primary);
   position: relative;
 }
 .mv-title::after {
@@ -205,8 +185,8 @@
   display: block;
   width: 36px;
   height: 3px;
-  background: var(--color-accent, #00BFFF);
-  border-radius: 3px;
+  background: var(--color-accent);
+  border-radius: 0.25rem;
   margin: 0.35rem auto 0; 
 }
 /* Outcome chips */
@@ -223,10 +203,10 @@
 .mv-chip {
   width: 100%;
   text-align: center;
-  border-radius: 999px;
+  border-radius: 62.5rem;
   background: linear-gradient(135deg,
     white 0%,var(--color-secondary) 80%);
-  color: var(--color-primary, #003366);
+  color: var(--color-primary);
   font-size: 1.05rem;              
   font-weight: 700;                
   padding: 0.6rem 1rem;         
@@ -237,54 +217,11 @@
 
 /*About — ME — SECTION*/
 
-.about-me {
-  width: 100%;
-  background: var(--color-accent);
-  padding: 2rem;
-  color: var(--color-primary);
-  text-align: center;
-  position: relative; /* for the slanted divider */
-  
-}
 
-.about-me h2 {
-  display: inline-block;
-  color: var(--color-primary);
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  font-size: 2rem;
-  text-align: center;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  text-shadow: 1px 2px 5px rgba(255, 255, 255, 0.7);
-}
+/*About What I Offer - SECTION*/
 
+/* Service Cards – 2-column staggered layout */
 
-/*About What I Offer*/
-
-.service-cards {
-  /* 1) Full-width section with light-blue background */
-  width: 100%;
-  background: var(--color-accent);
-  padding: 2rem;
-  color: var(--color-primary);
-  text-align: center;
-  position: relative; /* for the slanted divider */
-}
-
-.service-cards h2 {
-  display: inline-block;
-  color: var(--color-primary);
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  font-size: 2rem;
-  text-align: center;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  text-shadow: 1px 2px 5px rgba(255, 255, 255, 0.7);
-}
-
-/* SERVICE CARDS SECTION – 2-column staggered layout */
 .cards-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;      /* exactly two columns */
@@ -303,9 +240,9 @@
 
 /* Keep your hover lift */
 .card {
-  background: white;        /* 5% orange tint */
+  background: var(--color-card-bg);
   border-left: 6px solid var(--color-secondary);
-  border-radius: 8px;
+  border-radius:0.5rem;
   box-shadow: 0 4px 8px rgba(0,0,0,0.05);
   --y-offset: 0px;
   transform: translateY(var(--y-offset));

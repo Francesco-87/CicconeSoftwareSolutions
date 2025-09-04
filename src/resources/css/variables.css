@@ -3,6 +3,8 @@
      --color-primary: #003366; /* Dark blue */   
     --color-secondary: #FF8C00; /* Dark orange */
     --color-accent: #00BFFF; /* Deep sky blue */
+    --color-card-bg: #f9f9f9; /* Light gray for cards and sections */
+    --color-font: #fff; /* White for text */
 
    /*logo farge #f47209
     /*--color-accent: #66CCFF; /* Light blue */
