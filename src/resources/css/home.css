@@ -8,8 +8,8 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #fff;
-  background: linear-gradient(135deg, #0B4F8A 0%, #002F66 100%);
+  color: var(--color-font);
+  background: linear-gradient(135deg, var(--color-home-bg-one) 0%, var(--color-home-bg-two) 100%);
   width: 100%;
   overflow: hidden;
 }
@@ -35,11 +35,11 @@
 /* CTA */
 .hero a {
   display: inline-block;
-  background: var(--color-secondary, #FF8C00);
-  color: #fff;
+  background: var(--color-secondary);
+  color: var(--color-font);
   font-weight: 600;
   padding: 0.8rem 1.4rem;
-  border-radius: 999px;
+  border-radius: var(--radius-max);
   box-shadow: 0 8px 18px rgba(0,0,0,0.15);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
@@ -48,7 +48,7 @@
 .hero a:hover,
 .hero a:focus {
   
-  background: var(--color-accent, #00BFFF);
+  background: var(--color-accent);
   transform: translateY(-2px);
   box-shadow: 0 12px 22px rgba(0,0,0,0.2);
   outline: none;
@@ -69,8 +69,8 @@
   position: relative; 
   overflow: hidden;
   min-height: 30vh;
-  background: linear-gradient(135deg, #002F66 0%, #0B4F8A 100%);
-  color: #003366;
+  background: linear-gradient(135deg, var(--color-home-bg-two) 0%, var(--color-home-bg-one) 100%);
+  color: var(--color-primary);
   padding: 2rem 1rem;
   text-align: center;
   width: 100%;
@@ -79,7 +79,7 @@
 
 .services-title { 
   margin: 0 0 1rem; 
-  color: #fff;}
+  color: var(--color-font);}
 
 .services-list {
   list-style: none; 
@@ -91,10 +91,10 @@
 }
 
 .services-card {
-  background: #fff;
-  color: #003366;
+  background: var(--color-card-bg);
+  color: var( --color-primary);
   border: 1px solid rgba(0,51,102,0.18);
-  border-radius: 1rem;
+  border-radius: var(--radius-lg);
   padding: 1rem 1.25rem;
   font-weight: 600;
   box-shadow: 0 6px 14px rgba(0,51,102,0.08);
@@ -103,7 +103,7 @@
 
 .services-card:hover {
   transform: translateY(-2px);
-  border-color: #00BFFF;
+  border-color: var(--color-accent);
   box-shadow: 0 10px 20px rgba(0,51,102,0.12);
 }
 
@@ -121,12 +121,12 @@
 }
 
 .tech-stack h2{
-  color: #fff;
+  color: var(--color-font);
   text-align: center;
   
 }
 .tech-stack .container {
-   background: linear-gradient(135deg, #0B4F8A 20%, #002F66 80%);   
+   background: linear-gradient(135deg, var(--color-home-bg-one) 20%, var(--color-home-bg-two) 80%);   
    min-height: 25vh;
 }
 .tech-items{  
@@ -141,7 +141,7 @@ display: flex;
   width: 100px;
   height: 120px;
   padding: 0.5rem 1rem;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   margin: 0.5rem;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
@@ -154,7 +154,7 @@ display: flex;
   width: 100%;
   height: auto;
   display: block;  
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
 }
 .tech-label {  
   
@@ -170,13 +170,13 @@ display: flex;
 #statistics.statistics {
   background:
     linear-gradient(180deg, rgba(0,51,102,0.06) 0%, rgba(0,51,102,0.03) 100%);
-  color: var(--color-primary, #003366);
+  color: var(--color-primary);
   padding: 1rem 1rem;
   text-align: center;
   
 }
 .statistics h2 {
-  color: #FFFFFF;
+  color: var(--color-font);
   margin-bottom: 1rem;
 }
 
@@ -194,10 +194,10 @@ display: flex;
 .stat-card { display: flex; justify-content: center; }
 
 .stat-figure {
-  background: #FFFFFF;
-  color: var(--color-primary, #003366);
+  background: var(--color-card-bg);
+  color: var(--color-primary);
   border: 1px solid rgba(0,51,102,0.18);
-  border-radius: 1rem;
+  border-radius: var(--radius-lg);
   padding: 1rem 1rem 1.1rem;
   width: 180px;              /* square footprint feel */
   box-shadow: 0 6px 14px rgba(0,51,102,0.08);
@@ -211,22 +211,22 @@ display: flex;
   width: 88px;
   height: 88px;
   border-radius: 50%;
-  border: 3px solid var(--color-accent, #00BFFF);
+  border: 3px solid var(--color-accent);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 0.75rem;
-  background: #fff;
+  background: var(--color-card-bg);
 }
 
 .stat-number {
-  font: 700 1.8rem/1 var(--font-body, 'Quicksand', sans-serif);
-  color: var(--color-secondary, #FF8C00);  /* punchy number */
+  font: 700 1.8rem/1;
+  color: var(--color-secondary);  /* punchy number */
 }
 
 /* Label under the circle */
 .stat-label {
   margin: 0;
-  font: 600 0.95rem/1.2 var(--font-body, 'Quicksand', sans-serif);
-  color: var(--color-primary, #003366);
+  font: 600 0.95rem/1.2;
+  color: var(--color-primary);
 }
