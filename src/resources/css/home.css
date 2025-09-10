@@ -90,14 +90,9 @@
   gap: 1.5rem;
 }
 
-.services-card {
-  background: var(--color-card-bg);
-  color: var( --color-primary);
-  border: 1px solid rgba(0,51,102,0.18);
-  border-radius: var(--radius-lg);
+.services-card {      
   padding: 1rem 1.25rem;
   font-weight: 600;
-  box-shadow: 0 6px 14px rgba(0,51,102,0.08);
   transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
 }
 
@@ -113,9 +108,7 @@
   position: relative;
   min-height: 25vh;
   width: 100%;
-  overflow: hidden;
-  
-  
+  overflow: hidden;   
   text-align: center;
 
 }
@@ -131,7 +124,6 @@
 }
 .tech-items{  
 display: flex;
-
 }
 
 .tech-item{
@@ -156,11 +148,12 @@ display: flex;
   display: block;  
   border-radius: var(--radius-sm);
 }
-.tech-label {  
-  
+.tech-label {    
   display: block;
   text-align: center;  
   font-size: 0.9rem;
+  color: var(--color-primary);
+  font-weight: 600;
   line-height: 1;
   margin-top: 0.5rem;
   

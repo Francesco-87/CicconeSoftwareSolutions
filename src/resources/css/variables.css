@@ -5,6 +5,8 @@
     --color-accent: #00BFFF; /* Deep sky blue */
     --color-card-bg: #f9f9f9; /* Light gray for cards and sections */
     --color-font: #fff; /* White for text */
+
+    /* Optional home gradient */
     --color-home-bg-one: #0B4F8A; /* Darker blue for home gradient */
     --color-home-bg-two: #002F66; /* Lighter blue for home gradient */
 
@@ -22,7 +24,7 @@
     --sep-polygon-rl: polygon(100% 0, 0 40%, 0 100%, 100% 100%);
 
 
-    /* Special Variables */
+    /*  Radii Variables */
     --radius-max: 63rem;
     --radius-lg: 1rem;
     --radius-md: 0.5rem;   
