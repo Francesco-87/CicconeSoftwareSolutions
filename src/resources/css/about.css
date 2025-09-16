@@ -154,6 +154,7 @@
   text-align: center;
   border: 1px solid rgba(0, 51, 102, 0.16);
   padding: 1rem 1.25rem 1.25rem;
+  --hover-shift: -10px; /* lift on hover */
 }
 
 .mv-icon {
@@ -208,6 +209,48 @@
 
 /*About — ME — SECTION*/
 
+/*TODO*/ 
+
+.about-me .container {
+  /* 3) Constrain text and sit above the divider */
+  min-height: 40vh;
+  margin-bottom: 2rem;
+}
+
+ .about-me .card { 
+  padding: 1.25rem;   
+}
+
+.about-me .lead {
+  font-size: clamp(1.05rem, 1.2vw + 0.9rem, 1.25rem);
+  margin-block: var(--space-3, 0.75rem) var(--space-5, 1.5rem);
+}
+.about-me_content {
+  margin-block: 0.75rem 1.15rem;
+  padding-bottom: 4rem;
+}
+/* Keep the first paragraph under each h3 tight */
+.about-me__content h3 + p {
+  margin-top: 0.4rem;
+}
+.about-me_content h3 {
+  position: relative;
+  margin-block: 1.8rem 0.5rem; /* more space before, tight after */
+  font-size: clamp(1.05rem, 0.5vw + 1rem, 1.2rem);
+  letter-spacing: 0.2px;
+}
+.about-me_content h3::after {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 0.25rem;
+  background: var(--color-accent);
+  border-radius: var(--radius-sm);
+  margin: 0.35rem auto 0; 
+}
+
+
+
 
 /*About What I Offer - SECTION*/
 
@@ -223,30 +266,21 @@
   padding-bottom: 2rem;
   
 }
-.cards-grid .card {
+.card.service-card {
   display: flex;
   flex-direction: column;     /* if you want to stretch inner content */
 }
 
+/* ==== Service cards opt-in to movement ==== */
+ .card.service-card {
+  --hover-shift: -10px; /* lift on hover */
+}
 
-/* Keep your hover lift */
-.card {
-  background: var(--color-card-bg);
-  border-left: 6px solid var(--color-secondary);
-  border-radius:var(--radius-md);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-  --y-offset: 0px;
-  transform: translateY(var(--y-offset));
-  transition: transform .3s ease, box-shadow .3s ease;
+/* Zig-zag only for service cards inside the grid */
+.cards-grid > .card:nth-child(even) {
+  --base-offset: 2rem;  /* push evens down initially */
 }
-/* Zig-zag: push every even card down */
-.cards-grid .card:nth-child(even) {
-  --y-offset: 2rem;
-}
-.card:hover {
- transform: translateY(calc(var(--y-offset) - 10px));
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-}
+
 
 
 /* TODO: Clean up code, refactor, best practice... chat gpt on vscode */

@@ -84,5 +84,18 @@ p, ul, ol, li, blockquote {
   color: var( --color-primary);
   border-radius: var(--radius-lg);
   box-shadow: 0 6px 18px rgba(0, 34, 68, 0.15);
-  border: 1px solid color-mix(in srgb, var(--color-primary) 20%, transparent);
+  border-left: 6px solid var(--color-secondary);
+
+   /* motion vars (default: no movement) */
+  --base-offset: 0px;   /* static position */
+  --hover-shift: 0px;   /* no lift by default */
+
+  transform: translateY(var(--base-offset));
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.card:hover {
+  /* global hover: uses vars (no movement unless overridden) */
+  transform: translateY(calc(var(--base-offset) + var(--hover-shift)));
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
 }
