@@ -1,4 +1,8 @@
 {
+  "name": "CicconeSoftwareSolutions",
+  "version": "1.0.0",
+  "type": "module",
+  
   "devDependencies": {
     "vite": "^7.1.4"
   },

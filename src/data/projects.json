@@ -1,0 +1,20 @@
+[
+  {
+    "slug": "patient-portal-redesign",
+    "title": "Patient Portal Redesign",
+    "summary": "Reduced support tickets by 52% with an accessible UI overhaul.",
+    "industry": ["Healthcare"],
+    "tech": ["React", "Node"],
+    "outcome": "Tickets ↓ 52%",
+    "thumb": "/img/projects/patient-portal/hero.webp"
+  },
+  {
+    "slug": "saas-onboarding-optimisation",
+    "title": "SaaS Onboarding Optimisation",
+    "summary": "Cut time-to-value from 7 days to 36 hours with guided setup.",
+    "industry": ["SaaS"],
+    "tech": ["Node", "Analytics"],
+    "outcome": "TTV ↓ 85%",
+    "thumb": "/img/projects/saas-onboarding/hero.webp"
+  }
+]

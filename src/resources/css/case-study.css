@@ -1,0 +1,47 @@
+.case-header .lede { 
+    font-size: 1.125rem; 
+    opacity: .9; 
+    color:black
+}
+.case-meta { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 1rem 2rem; padding: 0; margin: .5rem 0 1rem; 
+    list-style: none; 
+}
+.case-hero { 
+    margin: 1rem 0 1.5rem; 
+}
+.metrics { 
+    grid-template-columns: repeat(3, minmax(0,1fr)); 
+}
+.metric { 
+    display: grid; 
+    place-items: center; 
+    padding: 1rem; 
+    text-align: center; 
+}
+.metric strong { 
+    font-size: 1.5rem; 
+    line-height: 1; 
+}
+.case-block { 
+    margin: 2rem 0; 
+}
+.case-footer { 
+    display: flex; 
+    gap: .75rem; 
+    margin-top: 2rem; 
+}
+.button { 
+    display:inline-block; 
+    padding:.6rem 1rem; 
+    border-radius:var(--radius-md); 
+    background:var(--color-secondary); 
+    color:var(--color-font); 
+    text-decoration:none; 
+}
+.button--ghost { 
+    background: transparent; 
+    border:1px solid currentColor; 
+}
