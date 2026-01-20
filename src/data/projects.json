@@ -6,7 +6,7 @@
     "industry": ["Healthcare"],
     "tech": ["React", "Node"],
     "outcome": "Tickets ↓ 52%",
-    "thumb": "/img/projects/patient-portal/hero.webp"
+    "thumb": "/img/minilogo.webp"
   },
   {
     "slug": "saas-onboarding-optimisation",
@@ -15,6 +15,15 @@
     "industry": ["SaaS"],
     "tech": ["Node", "Analytics"],
     "outcome": "TTV ↓ 85%",
-    "thumb": "/img/projects/saas-onboarding/hero.webp"
+    "thumb": "/img/minilogo.webp"
+  },
+  {
+    "slug": "saas-onboarding-optimisation",
+    "title": "SaaS Onboarding Optimisation",
+    "summary": "Cut time-to-value from 7 days to 36 hours with guided setup.",
+    "industry": ["SaaS"],
+    "tech": ["Node", "Analytics"],
+    "outcome": "TTV ↓ 85%",
+    "thumb": "/img/minilogo.webp"
   }
 ]
