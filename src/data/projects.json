@@ -12,22 +12,22 @@
 }
 ,
   {
-    "slug": "saas-onboarding-optimisation",
-    "title": "SaaS Onboarding Optimisation",
-    "summary": "Cut time-to-value from 7 days to 36 hours with guided setup.",
-    "industry": ["SaaS"],
-    "tech": ["Node", "Analytics"],
-    "outcome": "TTV ↓ 85%",
+    "slug": "mobile-goal-tracker",
+    "title": "Mobile Goal Tracker",
+    "summary": "Built a mobile app for tracking personal goals and progress.",
+    "industry": ["Productivity", "Health"],
+    "tech": ["React Native", "Firebase"],
+    "outcome": "Improved goal tracking efficiency by 40%",
     "thumb": "/img/minilogo.webp",
     "caseStudy": true
   },
   {
-    "slug": "saas-onboarding-optimisation",
-    "title": "SaaS Onboarding Optimisation",
-    "summary": "Cut time-to-value from 7 days to 36 hours with guided setup.",
-    "industry": ["SaaS"],
-    "tech": ["Node", "Analytics"],
-    "outcome": "TTV ↓ 85%",
+    "slug": "booking-and-registry-system",
+    "title": "Booking & Registry System",
+    "summary": "Built a booking and registry system for a wedding planning company.",
+    "industry": ["Events", "Wedding Planning"],
+    "tech": ["React", "Node", "MongoDB"],
+    "outcome": "Improved booking efficiency by 60%",
     "thumb": "/img/minilogo.webp",
     "caseStudy": true
   }
