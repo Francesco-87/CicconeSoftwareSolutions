@@ -36,12 +36,19 @@ function loadPage(page) {
 
 
 document.addEventListener("DOMContentLoaded", () => { 
+  const hash = window.location.hash.replace('#', '');
+
+if (hash && templates[hash]) {
+  loadPage(hash);
+} else {
   loadPage("home");
+}
 
   document.addEventListener("click", (e) => {
     const link = e.target.closest('a[data-page]');
     if (!link) return;
       e.preventDefault();
+      history.pushState(null, "", `#${link.dataset.page}`);
       loadPage(link.dataset.page);
 
     // close mobile nav if open
@@ -53,4 +60,11 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector('nav')?.classList.toggle('open');
   });
 });
+window.addEventListener('hashchange', () => {
+  const hash = window.location.hash.replace('#', '');
+  if (templates[hash]) {
+    loadPage(hash);
+  }
+});
+
 
