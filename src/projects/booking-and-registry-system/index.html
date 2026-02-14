@@ -13,11 +13,17 @@
   <!-- Favicon -->
   <link rel="icon" href="%BASE_URL%img/favicon.png" type="image/png">
 
-  <!-- CSS (absolute vites base url) -->
-  <link rel="stylesheet" href="/resources/css/variables.css">
-  <link rel="stylesheet" href="/resources/css/global.css">
-  <link rel="stylesheet" href="/resources/css/styles.css">
-  <link rel="stylesheet" href="/resources/css/case-study.css">
+  <!-- CSS (absolute path) -->
+
+    <link rel="stylesheet" href="/resources/css/variables.css">
+    <link rel="stylesheet" href="/resources/css/global.css">
+    <link rel="stylesheet" href="/resources/css/styles.css">
+    <link rel="stylesheet" href="/resources/css/about.css">
+    <link rel="stylesheet" href="/resources/css/contact.css">
+    <link rel="stylesheet" href="/resources/css/projects.css">
+    <link rel="stylesheet" href="/resources/css/services.css">
+    <link rel="stylesheet" href="/resources/css/home.css">
+    <link rel="stylesheet" href="/resources/css/case-study.css">
 </head>
 
 <body>
@@ -34,7 +40,6 @@
       </div>
 
       <nav>
-        <a href="/">Home</a>
         <a href="/#about">About</a>
         <a href="/#services">Services</a>
         <a href="/#projects">Projects</a>
@@ -46,38 +51,229 @@
   <!-- MAIN -->
   <main id="main-content">
 
-    <article class="case-study section section-divider">
+    <section class="case-study section-base section-divider section-divider--bowtie">
+  <div class="container">
+    <a href="/#projects" class="back-link">← All projects</a>
+
+    <h1>Booking & Registration System</h1>
+    <p class="lede">Full-Stack Web Application</p>
+
+    <ul class="case-meta">
+      <li><strong>Industry:</strong> Services</li>
+      <li><strong>Type:</strong> Booking system</li>
+      <li><strong>Tech:</strong> HTML, CSS, JavaScript</li>
+    </ul>
+
+    <div class="case-actions">
+     <a class="btn btn-primary" href="https://github.com/Francesco-87/booking_reg_system_client" target="_blank" rel="noopener">
+    View Client Repo
+    </a>
+     <a class="btn btn-secondary" href="https://github.com/Francesco-87/booking_reg_system_server" target="_blank" rel="noopener">
+    View Server Repo
+      </a>
+    </div>
+
+
+
+    <figure class="case-hero">
+      <img
+        src="/img/projects/booking-and-registry-system/hero.webp"
+        alt="Booking system interface"
+        loading="eager"
+      >
+    </figure>
+  </div>
+</section>
+    <section class="case-overview section-base section-divider section-divider--lr">
       <div class="container">
+        <h2>Overview</h2>
+        <p>
+        I designed and implemented a full-stack booking and registration system that enables customers to manage meal bookings and dietary preferences, while providing operational staff with structured and aggregated data for planning and preparation.
+        </p>
+       <p>
+        The system replaces manual scheduling processes with a centralized, data-driven solution.
+        </p>
+      </div>      
+    </section>
 
-        <header class="case-header">
-          <a href="/#projects" class="back-link">← All projects</a>
+<section class="case-challenge section-base section-divider section-divider--rl">
+  <div class="container">
+    <h2>Challenge</h2>
 
-          <h1>Booking & Registry System</h1>
-          <p class="lede">
-            Modular booking and registration system designed to replace manual scheduling.
-          </p>
+    <p>
+      Companies in the food and service industry often handle meal registrations and dietary requirements manually. This leads to:
+    </p>
 
-          <ul class="case-meta">
-            <li><strong>Industry:</strong> Services</li>
-            <li><strong>Type:</strong> Booking system</li>
-            <li><strong>Tech:</strong> HTML, CSS, JavaScript</li>
-          </ul>
+    <ul>
+      <li>Incomplete allergy tracking</li>
+      <li>Scheduling conflicts</li>
+      <li>Inefficient communication between customers and kitchen staff</li>
+      <li>Food overproduction and waste</li>
+    </ul>
 
-          <figure class="case-hero">
-            <img src="/img/projects/booking-and-registry-system/hero.webp"
-                 alt="Booking system interface"
-                 loading="eager">
-          </figure>
-        </header>
+    <p>
+      The challenge was to build a system that:
+    </p>
 
-        <section class="case-block">
-          <h2>Problem</h2>
-          <p>
-            Bookings were handled manually, leading to scheduling errors and unnecessary back-and-forth.
-          </p>
-        </section>
+    <ul>
+      <li>Stores structured customer data</li>
+      <li>Tracks dietary restrictions and preferences</li>
+      <li>Allows booking and cancellation of meals</li>
+      <li>Provides summarized operational data for daily preparation</li>
+    </ul>
 
-        <section class="case-block">
-          <h2>Solution</h2>
-          <p>
-            I built a lightweight booking system that allows users to select services, dat
+    <p>
+      The solution needed to be responsive, scalable, and maintain clear separation between frontend and backend logic.
+    </p>
+  </div>
+</section>
+
+<section class="case-solution section-base section-divider section-divider--lr">
+  <div class="container">
+    <h2>Solution</h2>
+
+    <h3>Architecture</h3>
+
+    <p>
+      The application follows a classic full-stack architecture:
+    </p>
+
+    <h4>Frontend</h4>
+    <ul>
+      <li>HTML / CSS</li>
+      <li>Responsive UI</li>
+      <li>Dynamic client-side behavior</li>
+    </ul>
+
+    <h4>Backend</h4>
+    <ul>
+      <li>Node.js server</li>
+      <li>REST-based communication</li>
+      <li>Structured MySQL database</li>
+    </ul>
+
+    <h4>Deployment</h4>
+    <ul>
+      <li>Docker-based containerization</li>
+    </ul>
+
+    <p>
+      This separation ensures maintainability and clear responsibility between presentation, business logic, and persistence layers.
+    </p>
+
+    <h3>Database Design</h3>
+
+    <p>
+      The relational database was structured around core entities:
+    </p>
+
+    <ul>
+      <li>Customers</li>
+      <li>Organizers / Staff</li>
+      <li>Bookings</li>
+      <li>Allergens</li>
+      <li>Menus</li>
+    </ul>
+
+    <p>
+      The system supports:
+    </p>
+
+    <ul>
+      <li>Role-based access (customer vs. organizer)</li>
+      <li>CRUD operations across all main entities</li>
+      <li>Query-based aggregation for daily summaries</li>
+    </ul>
+
+    <p>
+      The data model allows both individual-level insight (single customer preferences) and aggregated operational insight (daily allergen totals).
+    </p>
+
+    <h3>Key Features</h3>
+
+    <h4>Customer</h4>
+    <ul>
+      <li>Account creation and management</li>
+      <li>Allergen and dietary preference selection</li>
+      <li>Meal booking and cancellation</li>
+      <li>Personal data updates</li>
+    </ul>
+
+    <h4>Organizer / Staff</h4>
+    <ul>
+      <li>View filtered booking lists</li>
+      <li>Access summarized allergen data</li>
+      <li>Manage menus</li>
+      <li>Retrieve structured operational overviews</li>
+    </ul>
+  </div>
+</section>
+
+<section class="case-outcome section-base">
+  <div class="container">
+    <h2>Outcome</h2>
+
+    <p>
+      The result is a fully functioning full-stack application that:
+    </p>
+
+    <ul>
+      <li>Centralizes booking and dietary data</li>
+      <li>Reduces communication overhead</li>
+      <li>Improves preparation accuracy</li>
+      <li>Supports operational planning through aggregated insights</li>
+    </ul>
+
+    <p>
+      The system demonstrates:
+    </p>
+
+    <ul>
+      <li>End-to-end CRUD functionality</li>
+      <li>Structured relational database modeling</li>
+      <li>Backend–frontend integration</li>
+      <li>Clean separation of concerns</li>
+      <li>Deployment-ready architecture</li>
+    </ul>
+
+    <h3>Technical Highlights</h3>
+    <ul>
+      <li>REST API design</li>
+      <li>Role-based views</li>
+      <li>Relational schema modeling</li>
+      <li>Dynamic UI interactions</li>
+      <li>Docker container deployment</li>
+      <li>Version-controlled development workflow</li>
+    </ul>
+  </div>
+</section>
+
+    
+  </main>
+
+  <footer>
+        
+        <div class="footer-links">
+            <!-- <a href="#privacy-policy">Privacy Policy</a>
+            <a href="#terms-of-service">Terms of Service</a>
+            <a href="#sitemap">Sitemap</a> -->
+            <a href="/#contact" data-page="contact">Contact</a>
+        </div> 
+
+        <div class="social-icons">
+                <a href="https://www.facebook.com/CicconeSoftwareSolutions" target="_blank">
+                    <img src="/img/Facebook_Logo_Primary.png" alt="Facebook Icon">
+                </a>
+                <a href="https://www.twitter.com/CicconeSoftwareSolutions" target="_blank">
+                    <img src="/img/x-logo-black.png" alt="X Icon">
+                </a>
+                <a href="https://www.linkedIN.com/CicconeSoftwareSolutions" target="_blank">
+                    <img src="/img/LI-In-Bug.png" alt="linkedIn Icon">
+                </a>
+        </div>  
+        <p>&copy; 2025 Ciccone Software Solutions. All rights reserved.</p>
+
+    </footer>
+</body>
+
+ 
