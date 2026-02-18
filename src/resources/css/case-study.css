@@ -14,19 +14,50 @@
   min-height: 32vh;
 }
 
-.case-study .back-link { }
+.case-study .back-link { 
+  display: inline-block;
+  margin-bottom: 1rem;
+  text-decoration: underline;
+}
 
-.case-study h1 { }
+.case-study h1 { 
+
+}
 
 .case-study .lede { }
 
-.case-meta { }
+.case-meta { 
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0;
+  margin: 1rem 0;
+}
 
-.case-meta li { }
+.case-meta li { 
+   list-style: none;
+}
 
-.case-hero { }
+.case-actions { 
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
 
-.case-hero img { }
+.case-hero {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.case-hero img {
+  width: 100%;
+  max-width: 48%;
+  height: auto;
+  border-radius: 8px;
+}
 
 
 /* Challenge */
