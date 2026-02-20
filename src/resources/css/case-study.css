@@ -1,18 +1,9 @@
 /*    Case Study – Base */
 
-.case-study {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;  
-  color: white;
+.case-study {  
+  color: var(--color-font);
  }
 
-
-.case-study .container {  
-  margin: 0 auto;
-  min-height: 32vh;
-}
 
 .case-study .back-link { 
   display: inline-block;
@@ -21,23 +12,27 @@
 }
 
 .case-study h1 { 
-
+  font-size: 2rem;
+  margin-top: 0.5rem;
 }
 
-.case-study .lede { }
+.case-study .lede { 
+  font-size: 1.25rem;
+}
 
 .case-meta { 
   list-style: none;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  gap: 2rem;
+  gap: 0.5rem;
   padding: 0;
   margin: 1rem 0;
 }
-
+/* Add icons to meta items if needed
 .case-meta li { 
-   list-style: none;
-}
+  
+}*/
 
 .case-actions { 
   display: flex;
@@ -46,57 +41,121 @@
   margin-top: 1.5rem;
 }
 
+
+
+
+/* Overview */
+/*
+.case-overview { }
+
+.case-overview .container {  
+  
+}
+.case-overview h2 { }
+*/
+.case-overview p {
+  color: var(--color-font);
+ }
+
+
+/* Hero */
+
 .case-hero {
   display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
-  margin-top: 2rem;
+  justify-content: center;
+  
+}
+
+.case-hero figure {
+  width: 48%;
+  margin: 0;
 }
 
 .case-hero img {
   width: 100%;
-  max-width: 48%;
   height: auto;
-  border-radius: 8px;
 }
 
+.case-hero figcaption {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  color: var(--color-font);
+}
 
 /* Challenge */
 
 .case-challenge { }
 
-.case-challenge .container {  
-  margin: 0 auto;
-  min-height: 32vh;
-}
+
 
 .case-challenge h2 { }
 
-.case-challenge p { }
+.case-challenge p { 
+  color: var(--color-font);
+  font-weight: 600;
+  text-decoration: underline;
+}
+.case-challenge ul { 
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 1rem 0;
+  font-style: italic;
+  
+}
 
 
 /*Solution */
 
 .case-solution { }
 
-.case-solution .container {  
-  margin: 0 auto;
-  min-height: 32vh;
-}
 
-.case-solution h2 { }
+
+.case-solution h3 {
+  color: var(--color-font);
+  font-size: 1.75rem;
+ }
+.case-solution h4 { }
 
 .case-solution p { }
+
+.case-solution ul { 
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 1rem 0;
+  font-style: italic;
+}
 
 
 /* Outcome*/
 
 .case-outcome { }
 
-.case-outcome .container {  
-  margin: 0 auto;
-  min-height: 32vh;
-}
 
-.case-outcome h2 { }
+.case-outcome h3 {
+  color: var(--color-font);
+ }
 
 .case-outcome p { }
+
+.case-outcome ul { 
+ list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 1rem 0;
+  font-style: italic;
+}
