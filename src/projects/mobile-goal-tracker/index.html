@@ -50,42 +50,36 @@
 
   <!-- MAIN -->
   <main id="main-content">
-
-   <section class="case-study section-base section-divider section-divider--bowtie">
-  <div class="container">
+<!-- Case study Hero -->
+<div class="case-study-wrapper">
+  <section class="case-study section-base section-divider section-divider--bowtie">
     <a href="/#projects" class="back-link">← All projects</a>
 
-    <h1>Mobile Goal Tracker</h1>
-    <p class="lede">Android Progression Tracker App</p>
+    <div class="container">
+      <h1>Mobile Goal Tracker</h1>
+      <p class="lede">Android Progression Tracker App</p>
 
-    <ul class="case-meta">
-      <li><strong>Industry:</strong> Fitness / Self-improvement</li>
-      <li><strong>Type:</strong> Mobile application</li>
-      <li><strong>Tech:</strong> Java, Android Studio, XML, Material Design, JSON, JUnit 5, Mockito</li>
-    </ul>
-    <div class="case-actions">
-      <a class="btn btn-primary"
-     href="https://github.com/Francesco-87/MobileGoalTracker"
-     target="_blank"
-     rel="noopener">
-    View Repository
-      </a>
+      <ul class="case-meta">
+        <li><strong>Industry:</strong> Fitness / Self-improvement</li>
+        <li><strong>Type:</strong> Mobile application</li>
+        <li><strong>Tech:</strong> Java, Android Studio, XML, Material Design, JSON, JUnit 5, Mockito</li>
+      </ul>
+
+      <div class="case-actions">
+        <a class="btn btn-primary"
+           href="https://github.com/Francesco-87/MobileGoalTracker"
+           target="_blank"
+           rel="noopener">
+          View Repository
+        </a>
+      </div>
     </div>
+  </section>
 
-
-    <figure class="case-hero">
-      <img
-        src="/img/projects/mobile-goal-tracker/hero.webp"
-        alt="Mobile Goal Tracker app screens"
-        loading="eager"
-      >
-    </figure>    
-  </div>
-</section>
-
-    <section class="case-overview section-base section-divider section-divider--lr">
-      <div class="container">
-        <h2>Overview</h2>
+  <!-- Overview -->
+  <section class="case-overview section-base section-divider section-divider--lr">
+    <div class="container">
+      <h2 class="section-title">Overview</h2>
       <p>
         I developed an Android application that lets users set personal goals and track workout progress by recording planned and completed workouts.
         The data is processed and saved so the user can review performance over time.
@@ -93,140 +87,176 @@
       <p>
         The UI follows Material Design and Android app quality guidelines, with multiple screens for planning, managing workouts, and viewing performance.
       </p>
-    </section>
+    </div>
+  </section>
 
-<section class="case-challenge section-base section-divider section-divider--lr">
-  <div class="container">
-    <h2>Challenge</h2>
+  <!-- Hero -->
+  <section class="case-hero-section section-base section-divider section-divider--rl">
+    <div class="container">
+      <h2 class="section-title">Images</h2>
 
-    <p>
-      Build a simple, easy-to-use tracking app that helps users define a goal, enter performance data, preserve it reliably, and display progress clearly across multiple screens.
-    </p>
+      <div class="case-hero">
+        <figure>
+          <img src="/img/projects/mobile-goal-tracker/hero.webp"
+               alt="Mobile Goal Tracker app screens"
+               loading="eager">
+          <figcaption>Mobile Goal Tracker app screens</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
 
-    <ul>
-      <li>Support goal definition and workout planning/execution tracking</li>
-      <li>Provide clear navigation across several Android activities</li>
-      <li>Persist data locally and restore it for display and calculations</li>
-      <li>Evaluate progress (e.g., current period vs previous periods) and visualize results</li>
-      <li>Include unit testing for core logic</li>
-    </ul>
-  </div>
-</section>
+  <!-- Challenge -->
+  <section class="case-challenge section-base section-divider section-divider--lr">
+    <div class="container">
+      <h2 class="section-title">Challenge</h2>
 
-<section class="case-solution section-base section-divider section-divider--rl">
-  <div class="container">
-    <h2>Solution</h2>
+      <p>
+        Build a simple, easy-to-use tracking app that helps users define a goal, enter performance data, preserve it reliably,
+        and display progress clearly across multiple screens.
+      </p>
 
-    <h3>Architecture</h3>
+      <ul>
+        <li>Support goal definition and workout planning/execution tracking</li>
+        <li>Provide clear navigation across several Android activities</li>
+        <li>Persist data locally and restore it for display and calculations</li>
+        <li>Evaluate progress (e.g., current period vs previous periods) and visualize results</li>
+        <li>Include unit testing for core logic</li>
+      </ul>
+    </div>
+  </section>
 
-    <p>
-      The app is structured around dedicated Android activities, with models for core data objects and utility classes for reusable logic.
-      Navigation is handled via button click listeners and intents.
-    </p>
+  <!-- Solution -->
+  <section class="case-solution section-base section-divider section-divider--rl">
+    <div class="container">
+      <h2 class="section-title">Solution</h2>
 
-    <h4>Frontend</h4>
-    <ul>
-      <li>Android UI built with XML layouts and Material Design components</li>
-      <li>Dashboard with navigation to Planning, Performance, and Manage Workouts screens</li>
-      <li>Planning view uses a calendar/date picker to show planned, missed, and fulfilled workouts</li>
-      <li>Performance view visualizes progress with progress bars and shows the last three workouts</li>
-      <li>Manage Workouts view supports adding workouts via dialog and deleting via long-press</li>
-    </ul>
+      <h3>Architecture</h3>
+      <p>
+        The app is structured around dedicated Android activities, with models for core data objects and utility classes for reusable logic.
+        Navigation is handled via button click listeners and intents.
+      </p>
 
-    <h4>Backend</h4>
-    <ul>
-      <li>On-device processing in Java (no external backend)</li>
-      <li>Progress calculations implemented via reusable utilities (sorting, filtering, date-based counting)</li>
-    </ul>
+      <div class="grid-cards">
+        <div class="card">
+          <h4>Frontend</h4>
+          <ul>
+            <li>Android UI built with XML layouts and Material Design components</li>
+            <li>Dashboard navigation to Planning, Performance, and Manage Workouts</li>
+            <li>Planning view uses calendar/date picker for planned, missed, fulfilled workouts</li>
+            <li>Performance view shows progress bars and last three workouts</li>
+            <li>Manage Workouts supports add via dialog + delete via long-press</li>
+          </ul>
+        </div>
 
-    <h4>Deployment</h4>
-    <ul>
-      <li>Android app build and run workflow through Android Studio</li>
-      <li>Version-controlled with GitHub</li>
-    </ul>
+        <div class="card">
+          <h4>Backend</h4>
+          <ul>
+            <li>On-device processing in Java (no external backend)</li>
+            <li>Reusable utilities for sorting, filtering, and date-based counting</li>
+            <li>Progress calculations based on stored workout and goal data</li>
+          </ul>
+        </div>
 
-    <p>
-      This separation keeps UI code focused on views and events, while shared logic (dates, arrays, persistence) remains testable and maintainable.
-    </p>
+        <div class="card">
+          <h4>Deployment</h4>
+          <ul>
+            <li>Android Studio build/run workflow</li>
+            <li>Version-controlled with GitHub</li>
+          </ul>
+        </div>
+      </div>
 
-    <h3>Database Design</h3>
+      <p>
+        This separation keeps UI code focused on views and events, while shared logic (dates, arrays, persistence) remains testable and maintainable.
+      </p>
 
-    <p>
-      Instead of a remote database, the app preserves data in internal storage using JSON as a unified format.
-      Data is written and read as strings and then converted back into object lists for rendering and calculations.
-    </p>
+      <h3>Database Design</h3>
+      <div class="grid-cards">
+        <div class="card">
+          <h4>Data storage approach</h4>
+          <ul>
+            <li>Local persistence (no remote database)</li>
+            <li>Internal storage using JSON as a unified format</li>
+            <li>Read/write strings converted back into object lists for rendering and calculations</li>
+          </ul>
+        </div>
 
-    <ul>
-      <li>Models: WorkoutData (date, name) and GoalObject (start date, end date, target)</li>
-      <li>JSONConversion utility converts between JSON and object lists</li>
-      <li>FileManager utility stores, retrieves, checks, and deletes internal files</li>
-    </ul>
+        <div class="card">
+          <h4>Models & utilities</h4>
+          <ul>
+            <li>Models: WorkoutData (date, name) and GoalObject (start date, end date, target)</li>
+            <li>JSONConversion: converts between JSON and object lists</li>
+            <li>FileManager: stores, retrieves, checks, and deletes internal files</li>
+          </ul>
+        </div>
+      </div>
 
-    <p>
-      The stored data is reused for calendar display, progress visualizations, and “last workouts” summaries.
-    </p>
+      <p>
+        The stored data is reused for calendar display, progress visualizations, and “last workouts” summaries.
+      </p>
 
-    <h3>Key Features</h3>
+      <h3>Key Features</h3>
+      <div class="grid-cards">
+        <div class="card">
+          <h4>User</h4>
+          <ul>
+            <li>Create and manage workout plans</li>
+            <li>Set a goal for a chosen timeframe</li>
+            <li>Track workouts on a calendar view</li>
+            <li>View performance summaries (Current, Last Week, Last Month)</li>
+            <li>See a list of recent workouts</li>
+          </ul>
+        </div>
 
-    <h4>User</h4>
-    <ul>
-      <li>Create and manage workout plans</li>
-      <li>Set a goal for a chosen timeframe</li>
-      <li>Track workouts on a calendar view</li>
-      <li>View performance summaries (Current, Last Week, Last Month)</li>
-      <li>See a list of recent workouts</li>
-    </ul>
+        <div class="card">
+          <h4>App Logic</h4>
+          <ul>
+            <li>User input via dialogs/popups (workout name, goal values and dates)</li>
+            <li>Local persistence using JSON + internal storage</li>
+            <li>Progress evaluation via date-based list processing and counting</li>
+            <li>Unit tests for models and selected logic using JUnit 5 (Mockito where needed)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <h4>App Logic</h4>
-    <ul>
-      <li>User input via dialogs/popups (workout name, goal values and dates)</li>
-      <li>Local persistence using JSON + internal storage</li>
-      <li>Progress processing via date-based list evaluation and counting</li>
-      <li>Unit testing for models and selected logic using JUnit 5 (with Mockito where needed)</li>
-    </ul>
-  </div>
-</section>
+  <!-- Outcome -->
+  <section class="case-outcome section-base">
+    <div class="container">
+      <h2 class="section-title">Outcome</h2>
 
-<section class="case-outcome section-base">
-  <div class="container">
-    <h2>Outcome</h2>
+      <h3>The result is a functional Android progression tracker that:</h3>
+      <ul>
+        <li>Lets users define goals and record workout data</li>
+        <li>Preserves data locally using JSON in internal storage</li>
+        <li>Visualizes progress through clear UI panels</li>
+        <li>Supports multiple activities for planning and performance review</li>
+        <li>Includes unit tests validating key logic</li>
+      </ul>
 
-    <p>
-      The result is a functional Android progression tracker that lets users define goals, record workout data, preserve it locally, and visualize progress through clear UI panels.
-    </p>
+      <h3>The system demonstrates:</h3>
+      <ul>
+        <li>Multi-activity Android app design</li>
+        <li>Separation of concerns (Activities, Models, Utilities)</li>
+        <li>Local persistence strategy with JSON conversion</li>
+        <li>Date-driven evaluation and progress calculation</li>
+        <li>Testing with JUnit 5 and Mockito</li>
+      </ul>
 
-    <ul>
-      <li>Goal setting and workout tracking across multiple activities</li>
-      <li>Calendar-based planning and status overview</li>
-      <li>Performance visualization with progress bars and recent activity summaries</li>
-      <li>Reliable persistence using JSON in internal storage</li>
-      <li>Unit tests validating key parts of the implementation</li>
-    </ul>
-
-    <p>
-      The system demonstrates:
-    </p>
-
-    <ul>
-      <li>Multi-activity Android app design</li>
-      <li>Separation of concerns (Activities, Models, Utilities)</li>
-      <li>Local persistence strategy with JSON conversion</li>
-      <li>Date-driven evaluation and progress calculation</li>
-      <li>Testing with JUnit 5 and Mockito</li>
-    </ul>
-
-    <h3>Technical Highlights</h3>
-    <ul>
-      <li>Material Design-based UI and navigation</li>
-      <li>Calendar/date picker planning flow</li>
-      <li>JSON serialization/deserialization for stored lists</li>
-      <li>Internal storage read/write utilities</li>
-      <li>Array utilities for sorting/filtering recent workouts</li>
-      <li>Unit testing strategy for Android-adjacent logic</li>
-    </ul>
-  </div>
-</section>
-
+      <h3>Technical Highlights</h3>
+      <ul>
+        <li>Material Design-based UI and navigation</li>
+        <li>Calendar/date picker planning flow</li>
+        <li>JSON serialization/deserialization for stored lists</li>
+        <li>Internal storage read/write utilities</li>
+        <li>Array utilities for sorting/filtering recent workouts</li>
+        <li>Unit testing strategy for Android-adjacent logic</li>
+      </ul>
+    </div>
+  </section>
+</div>
     
   </main>
 

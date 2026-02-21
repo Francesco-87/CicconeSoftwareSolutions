@@ -1,3 +1,10 @@
+
+.case-study-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
 /*    Case Study – Base */
 
 .case-study {  
@@ -125,6 +132,22 @@
 .case-solution h4 { }
 
 .case-solution p { }
+
+.case-solution .grid-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin: 1rem auto;
+}
+
+.case-solution .card{
+ flex: 1 1 calc(50% - 1rem);
+}
+/* Third card full width */
+.case-solution .card:nth-child(3) {
+  flex: 1 1 100%;
+}
 
 .case-solution ul { 
   list-style: none;
