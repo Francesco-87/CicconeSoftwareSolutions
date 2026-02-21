@@ -1,5 +1,7 @@
 /* Typography  */
-html { font-size: var(--font-size-base); }
+html { font-size: var(--font-size-base);
+overflow-x: hidden;
+}
 
 body {
   margin: 0;
@@ -7,6 +9,7 @@ body {
   color: var(--color-font);
   font-family: var(--secondary-font); /* body = secondary */
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 /* Font base class */

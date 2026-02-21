@@ -12,23 +12,23 @@
 }
 ,
   {
-    "slug": "mobile-goal-tracker",
-    "title": "Mobile Goal Tracker",
-    "summary": "Built a mobile app for tracking personal goals and progress.",
-    "industry": ["Productivity", "Health"],
-    "tech": ["React Native", "Firebase"],
-    "outcome": "Improved goal tracking efficiency by 40%",
-    "thumb": "/img/minilogo.webp",
-    "caseStudy": true
-  },
-  {
-    "slug": "booking-and-registry-system",
-    "title": "Booking & Registry System",
-    "summary": "Built a booking and registry system for a wedding planning company.",
-    "industry": ["Events", "Wedding Planning"],
-    "tech": ["React", "Node", "MongoDB"],
-    "outcome": "Improved booking efficiency by 60%",
-    "thumb": "/img/minilogo.webp",
-    "caseStudy": true
-  }
+  "slug": "mobile-goal-tracker",
+  "title": "Mobile Goal Tracker",
+  "summary": "Developed an Android application for setting personal goals and tracking workout progress through structured local data persistence.",
+  "industry": ["Fitness", "Self-improvement"],
+  "tech": ["Java", "Android Studio", "XML", "JSON", "JUnit 5"],
+  "outcome": "Delivered a functional multi-activity Android app with local persistence, progress visualization, and tested core logic.",
+  "thumb": "/img/Logo_CicconeSoftware.webp",
+  "caseStudy": true
+},
+{
+  "slug": "booking-and-registry-system",
+  "title": "Booking & Registry System",
+  "summary": "Designed and implemented a full-stack booking and dietary registration system to replace manual scheduling processes.",
+  "industry": ["Food Services", "Operations"],
+  "tech": ["HTML", "CSS", "JavaScript", "Node.js", "MySQL", "Docker"],
+  "outcome": "Built a deployment-ready system centralizing booking data, improving operational planning accuracy and data management.",
+  "thumb": "/img/Logo_CicconeSoftware.webp",
+  "caseStudy": true
+}
 ]
