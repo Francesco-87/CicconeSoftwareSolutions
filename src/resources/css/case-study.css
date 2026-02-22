@@ -1,0 +1,431 @@
+
+.case-study-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/*    Case Study – Base */
+
+.case-study {  
+  color: var(--color-font);
+ }
+
+
+.case-study .back-link { 
+  display: inline-block;
+  margin-bottom: 1rem;
+  text-decoration: underline;
+}
+
+.case-study h1 { 
+  font-size: 2rem;
+  margin-top: 0.5rem;
+}
+
+.case-study .lede { 
+  font-size: 1.25rem;
+}
+
+.case-meta { 
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 1rem 0;
+}
+/* Add icons to meta items if needed
+.case-meta li { 
+  
+}*/
+
+.case-actions { 
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+
+
+
+/* Overview */
+/*
+.case-overview { }
+
+.case-overview .container {  
+  
+}
+.case-overview h2 { }
+*/
+.case-overview p {
+  color: var(--color-font);
+ }
+
+
+/* Hero */
+
+.case-hero {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  
+}
+
+.case-hero figure {
+  width: 48%;
+  margin: 0;
+}
+
+.case-hero img {
+  width: 100%;
+  height: auto;
+}
+
+.case-hero figcaption {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  color: var(--color-font);
+}
+
+/* Challenge */
+
+.case-challenge { }
+
+
+
+.case-challenge h2 { }
+
+.case-challenge p { 
+  color: var(--color-font);
+  font-weight: 600;
+  text-decoration: underline;
+}
+.case-challenge ul { 
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 1rem 0;
+  font-style: italic;
+  
+}
+
+
+/*Solution */
+
+.case-solution { }
+
+
+
+.case-solution h3 {
+  color: var(--color-font);
+  font-size: 1.75rem;
+ }
+.case-solution h4 { }
+
+.case-solution p { }
+
+.case-solution .grid-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin: 1rem auto;
+}
+
+.case-solution .card{
+ flex: 1 1 calc(50% - 1rem);
+}
+/* Third card full width */
+.case-solution .card:nth-child(3) {
+  flex: 1 1 100%;
+}
+
+.case-solution ul { 
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 1rem 0;
+  font-style: italic;
+}
+
+
+/* Outcome*/
+
+.case-outcome { }
+
+
+.case-outcome h3 {
+  color: var(--color-font);
+ }
+
+.case-outcome p { }
+
+.case-outcome ul { 
+ list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 1rem 0;
+  font-style: italic;
+}
+
+/* ===== 360px (small phones) ===== */
+@media (max-width: 360px) {
+
+  .case-study-wrapper{
+    padding: 1rem;
+  }
+
+  .case-study h1{
+    font-size: 1.6rem;
+    line-height: 1.2;
+  }
+
+  .case-study .lede{
+    font-size: 1.05rem;
+  }
+
+  .case-actions{
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: stretch;
+  }
+
+  .case-actions .btn{
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Images: stack full width */
+  .case-hero{
+    gap: 1rem;
+  }
+
+  .case-hero figure{
+    width: 100%;
+  }
+
+  /* Solution cards: stack */
+  .case-solution .grid-cards{
+    gap: 1rem;
+  }
+
+  .case-solution .card{
+    flex: 1 1 100%;
+  }
+
+  /* Keep text blocks comfortable */
+  .case-challenge p{
+    font-weight: 600;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+}
+
+/* =====  768px (tablet portrait) ===== */
+@media (min-width: 481px) and (max-width: 768px) {
+
+  .case-study-wrapper{
+    padding: 1.5rem;
+  }
+
+  .case-study h1{
+    font-size: 1.9rem;
+  }
+
+  .case-study .lede{
+    font-size: 1.15rem;
+  }
+
+  /* Actions: keep side-by-side but allow wrap */
+  .case-actions{
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .case-actions .btn{
+    flex: 1 1 220px;   /* two buttons usually fit, but wrap if needed */
+    text-align: center;
+  }
+
+  /* Images: 2-up grid */
+  .case-hero{
+    gap: 1.25rem;
+  }
+
+  .case-hero figure{
+    width: calc(50% - 0.75rem);
+  }
+
+  /* Solution cards: 2-up */
+  .case-solution .grid-cards{
+    gap: 1.25rem;
+  }
+
+  .case-solution .card{
+    flex: 1 1 calc(50% - 0.75rem);
+  }
+
+  /* Third card full width (keep your intent) */
+  .case-solution .card:nth-child(3){
+    flex: 1 1 100%;
+  }
+}
+
+/* ===== 1024px (small desktop) ===== */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .case-study-wrapper{
+    padding: 2rem 2rem;
+  }
+
+  .case-study h1{
+    font-size: 2.2rem;
+  }
+
+  .case-study .lede{
+    font-size: 1.2rem;
+  }
+
+  /* Actions: centered, slightly wider */
+  .case-actions{
+    gap: 1rem;
+  }
+
+  .case-actions .btn{
+    min-width: 220px;
+  }
+
+  /* Images: clean 2x2 layout */
+  .case-hero{
+    gap: 1.5rem;
+  }
+
+  .case-hero figure{
+    width: calc(50% - 0.75rem);
+  }
+
+  /* Solution cards: balanced 2-column */
+  .case-solution .grid-cards{
+    gap: 1.5rem;
+  }
+
+  .case-solution .card{
+    flex: 1 1 calc(50% - 0.75rem);
+  }
+
+  /* Keep third full width for visual rhythm */
+  .case-solution .card:nth-child(3){
+    flex: 1 1 100%;
+  }
+
+  /* Slightly reduce overly italic lists feeling dense */
+  .case-challenge ul,
+  .case-solution ul,
+  .case-outcome ul{
+    gap: 0.6rem;
+  }
+}
+
+/* ===== 360px (small phones) ===== */
+@media (max-width: 360px) {
+
+  .projects-page{
+    padding-inline: 1rem;
+  }
+
+  .projects-section{
+    padding: 2.5rem 1rem 1rem;
+  }
+
+  .projects-section h1{
+    font-size: 2rem;
+    line-height: 1.15;
+    letter-spacing: 0.02em;
+  }
+
+  .projects-section .lead{
+    font-size: 1.05rem;
+    margin-block: 0.6rem 1rem;
+  }
+
+  /* Grid: 1 column */
+  .projects-grid{
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* Card spacing */
+  .project-card{
+    padding: 0.9rem;
+  }
+
+  /* Thumbnail: allow a bit more height on narrow screens */
+  .project-thumb{
+    max-height: 10rem;
+  }
+
+  .project-title{
+    font-size: 1.25rem;
+  }
+
+  /* Badges: tighter */
+  .badge{
+    font-size: 0.75rem;
+    padding: 0.2rem 0.45rem;
+  }
+}
+
+/* ===== 768px (tablet portrait) ===== */
+@media (min-width: 481px) and (max-width: 768px) {
+
+  .projects-section{
+    padding: 3rem 1.5rem 1.25rem;
+  }
+
+  .projects-section h1{
+    font-size: 2.4rem;
+  }
+
+  .projects-section .lead{
+    font-size: 1.15rem;
+  }
+
+  /* Grid: 2 columns */
+  .projects-grid{
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+  }
+
+  .projects-grid > .project-card:nth-child(even){
+    position: relative;
+    top: 6rem;  /* visual shift only */
+  }
+
+
+  .project-title{
+    font-size: 1.35rem;
+  }
+
+  .project-thumb{
+    max-height: 9rem;
+  }
+
+  .badge{
+    font-size: 0.78rem;
+  }
+}

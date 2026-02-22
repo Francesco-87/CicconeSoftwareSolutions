@@ -1,5 +1,7 @@
 <div class="about-page">
-    <section class="about-header" id="about-header">
+     <!-- About — HEADER -->
+
+    <section class="about-header section-divider section-divider--bowtie" id="about-header">
         <div class="container">
             <h1>Democratizing the Future of Technology for Every Business</h1>
             <p>At Ciccone Software Solutions, we believe technology is the future— <br>
@@ -10,73 +12,177 @@
         </div>        
     </section>
 
-    <section class="about-story" id="about-story">
+     <!-- About — Story -->
+    <section class="about-story section-base section-divider section-divider--lr" id="about-story">
         <div class="container">
-            <h2 class="about-title">Our Story</h2>
+            <h2 class="section-title">Our Story</h2>
 
-            <div class="story-card">
+            <div class="story-card card">
                 <span class="story-badge" aria-hidden="true">The Backstory</span>
 
                 <p class="story-lead">
-                Founded in 2025 after seeing too many small businesses struggle online, 
-                I set out to make professional sites fast, secure, and easy to maintain.
+                Founded in 2025 after helping family and friends get online, 
+                I saw how confusing domains, email, and hosting can be. 
+                My goal is to remove that friction for small businesses—clear guidance, 
+                lightweight builds, and automated deploys—so your site stays fast, secure, and easy to maintain.
                 </p>
 
                 <p>
-                Ciccone Software Solutions focuses on practical, lightweight stacks—clean HTML/CSS/JS, 
-                Vite builds, and static hosting—so clients get speed, security, and low upkeep without 
-                the agency price tag.
+                I use lightweight, standards-based tech and static hosting so sites stay fast, secure, 
+                and low-maintenance—without the agency price tag.
                 </p>
             </div>
         </div>
         
     </section>
 
-    <section id="about-me" class="about-me">
+    <!-- About — Mission & Vision -->
+    <section class="mission-vision section-base section-divider section-divider--rl" id="mission-vision">
         <div class="container">
-            <h2>About Me</h2>
-             <p>Hi, I’m Francesco, the founder of Ciccone Software Solutions. I’m passionate about leveling the playing field for small businesses through smart, scalable technology.</p>
-                    My Story 
-                    Why I Started Ciccone Software Solutions 
-                    After [brief personal/industry insight], I realized small businesses deserve enterprise-grade technology just as much as large firms.
+            <h2 class="section-title">Mission &amp; Vision</h2>
 
-            My Mission & Values
-            I’m driven by accessibility, quality, and future-focus: making powerful software simple, reliable, and future-proof for everyone.
+            <div class="mission-vision-grid">
+                <article class="mv-card card">
+                <span class="mv-icon" aria-hidden="true"></span>
+                <h3 class="mv-title">Mission</h3>
+                <p class="mv-text">Democratize web &amp; cloud tools with simple, affordable solutions.</p>
+                </article>
 
-            Who I Am
-            I’m Francesco—a full-stack generalist with X years in web and cloud development. I love solving tricky problems, crafting clean code, and seeing small teams punch above their weight.
+                <article class="mv-card card">
+                <span class="mv-icon" aria-hidden="true"></span>
+                <h3 class="mv-title">Vision</h3>
+                <p class="mv-text">Every small team confidently using modern tech—fast, secure, and low-maintenance.</p>
+                </article>
+            </div>
 
-            Fun Fact
-            When I’m not coding, you’ll find me [your hobby/personal detail], which keeps my creative juices flowing.
+            <ul class="mv-chips" aria-label="Key outcomes">
+                <li class="mv-chip">Fast</li>             
+                <li class="mv-chip">Secure</li>
+                <li class="mv-chip">Easy to maintain</li>
+            </ul>
         </div>
-            
-
     </section>
 
-    <section id="service-cards" class="service-cards">
+    <!-- About — Me -->
+    <section id="about-me" class="about-me section-base section-divider section-divider--lr">
         <div class="container">
-            <h2>What I Offer</h2>
+            
+                <h2 class="section-title">About Me</h2>
+            
+                <p class="lead">
+                    Hi, I’m Francesco — founder of <strong>Ciccone Software Solutions</strong>.
+                    I help small businesses punch above their weight with smart, scalable web and cloud software.
+                </p>
+            <article class="about-me_content card">
+                <h3>My Story</h3>
+                <p>
+                    I started out building tools to streamline manual, repetitive workflows. 
+                    After seeing how much time and cost this saved for small teams, 
+                    I focused my work on creating lean systems that feel simple on the surface and solid underneath.
+                </p>
+
+                <h3>Why I Started Ciccone Software Solutions</h3>
+                <p>
+                    Small businesses deserve the same quality and reliability as big enterprises — without the overhead. 
+                    I focus on pragmatic architecture and clean execution so you get software that’s easy to use, easy to maintain, and ready to grow.
+                </p>
+
+                <h3>Who I Am</h3>
+                <p>
+                    I’m a full-stack generalist who likes untangling tricky problems, crafting tidy code, and shipping software that makes everyday work easier.
+                </p>
+
+                <h3>Fun Fact</h3>
+                <p>
+                    When I’m not coding, you’ll find me exploring coffee spots and sketching UI ideas — it keeps the creativity flowing.
+                </p>
+            </article>
+        </div>
+    </section>
+    <!-- About — Values -->
+    <section class="values section-base section-divider section-divider--rl" aria-labelledby="values-title">
+        <div class="container">            
+            <h2 id="values-title" class="section-title">What I Stand For</h2>
+            <p class="values__tagline">Three principles that guide every engagement.</p>        
+            
+
+            <div class="values__grid" role="list" aria-label="Core values">
+                <!-- 1) Integrity & Clarity -->
+                <article class="card value-card" role="listitem">
+                    <div class="value-card__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+                            <path d="M12 3l7 3v6c0 5-3.5 9-7 9s-7-4-7-9V6l7-3z" fill="currentColor" opacity=".15"/>
+                            <path d="M12 3l7 3v6c0 5-3.5 9-7 9s-7-4-7-9V6l7-3zm0 0v18" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".25"/>
+                            <path d="M9.2 12.6l1.8 1.8 3.8-3.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="value-card__title">Integrity &amp; Clarity</h3>
+                    <p class="value-card__body">
+                    Straight talk, no fluff. You’ll always know what’s worth doing, what isn’t,
+                    and why—so decisions are easy and budgets stay focused.
+                    </p>
+                </article>
+
+                <!-- 2) Partnership, not projects -->
+                <article class="card value-card" role="listitem">
+                    <div class="value-card__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+                            <path d="M8.5 12.5l2 2a2 2 0 002.8 0l2.2-2.2a2 2 0 000-2.8l-1.7-1.7a2 2 0 00-2.8 0L9 7.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3 12l4-4M21 12l-4-4" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".4"/>
+                        </svg>
+                    </div>
+                    <h3 class="value-card__title">Partnership, not projects</h3>
+                    <p class="value-card__body">
+                    I collaborate closely, adapt with your business, and stay invested in results
+                    long after launch.
+                    </p>
+                </article>
+
+                <!-- 3) Build once, scale smart -->
+                <article class="card value-card" role="listitem">
+                    <div class="value-card__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+                            <path d="M3 19h18" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                            <path d="M6 15l4-4 3 3 5-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="value-card__title">Build once, scale smart</h3>
+                    <p class="value-card__body">
+                    Solutions are designed for tomorrow from day one—so you don’t outgrow your
+                    systems next year.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About — Services What i offer-->  
+
+    <section class="service-cards section-base" id= "service-cards" >
+        <div class="container">
+            <h2 class="section-title">What I Offer</h2>
             <div class="cards-grid">
-            <div class="card">
-                <h3>Full-Stack Setup</h3>
-                <p>Register domains, configure DNS & professional email.</p>
-            </div>
-            <div class="card">
-                <h3>Secure Hosting</h3>
-                <p>Static sites on GitHub Pages with HTTPS & auto SSL.</p>
-            </div>
-            <div class="card">
-                <h3>Brand & Design</h3>
-                <p>Color palettes, typography, and custom logo creation.</p>
-            </div>
-            <div class="card">
-                <h3>Responsive Dev</h3>
-                <p>Lightweight, multi-language HTML/CSS/JS portfolios.</p>
-            </div>
-            <div class="card">
-                <h3>Ongoing Maintenance</h3>
-                <p>Automated SSL/DNS checks, dependency & spam monitoring.</p>
-            </div>
+                <div class="card service-card">
+                    <h3>Full-Stack Setup</h3>
+                    <p>Register domains, configure DNS & professional email.</p>
+                </div>
+                <div class="card service-card">
+                    <h3>Secure Hosting</h3>
+                    <p>Static sites on GitHub Pages with HTTPS & auto SSL.</p>
+                </div>
+                <div class="card service-card">
+                    <h3>Brand & Design</h3>
+                    <p>Color palettes, typography, and custom logo creation.</p>
+                </div>
+                <div class="card service-card">
+                    <h3>Responsive Dev</h3>
+                    <p>Lightweight, multi-language HTML/CSS/JS portfolios.</p>
+                </div>
+                <div class="card service-card">
+                    <h3>Ongoing Maintenance</h3>
+                    <p>Automated SSL/DNS checks, dependency & spam monitoring.</p>
+                </div>
             </div>
         </div>
     </section>

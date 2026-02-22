@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Mobile Goal Tracker – Ciccone Software Solutions</title>
+  <link rel="canonical" href="https://www.cicconesoftware.com/projects/mobile-goal-tracker/">
+ 
+  <meta property="og:url" content="https://www.cicconesoftware.com/projects/mobile-goal-tracker/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+
+  <!-- Fonts -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet">
+
+ <!-- Favicon -->
+  <link rel="icon" href="%BASE_URL%img/favicon.png" type="image/png">
+
+  <!-- CSS (absolute path) -->
+
+    <link rel="stylesheet" href="/resources/css/variables.css">
+    <link rel="stylesheet" href="/resources/css/global.css">
+    <link rel="stylesheet" href="/resources/css/styles.css">
+    <link rel="stylesheet" href="/resources/css/case-study.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-container">
+      <div class="logo-container">
+        <a href="/" aria-label="Home">
+          <img src="/img/LogoFull.svg"
+               alt="Ciccone Software Solutions Logo"
+               class="ciccone-logo">
+        </a>
+      </div>
+
+      <nav>
+        <a href="/#about">About</a>
+        <a href="/#services">Services</a>
+        <a href="/#projects">Projects</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main id="main-content">
+<!-- Case study Hero -->
+<div class="case-study-wrapper">
+  <section class="case-study section-base section-divider section-divider--bowtie">
+    <a href="/#projects" class="back-link">← All projects</a>
+
+    <div class="container">
+      <h1>Mobile Goal Tracker</h1>
+      <p class="lede">Android Progression Tracker App</p>
+
+      <ul class="case-meta">
+        <li><strong>Industry:</strong> Fitness / Self-improvement</li>
+        <li><strong>Type:</strong> Mobile application</li>
+        <li><strong>Tech:</strong> Java, Android Studio, XML, Material Design, JSON, JUnit 5</li>
+      </ul>
+
+      <div class="case-actions">
+        <a class="btn btn-primary"
+           href="https://github.com/Francesco-87/MobileGoalTracker"
+           target="_blank"
+           rel="noopener">
+          View Repository
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="case-overview section-base section-divider section-divider--lr">
+    <div class="container">
+      <h2 class="section-title">Overview</h2>
+      <p>
+        I developed an Android application that lets users set personal goals and track workout progress by recording planned and completed workouts.
+        The data is processed and saved so the user can review performance over time.
+      </p>
+      <p>
+        The UI follows Material Design and Android app quality guidelines, with multiple screens for planning, managing workouts, and viewing performance.
+      </p>
+    </div>
+  </section>
+
+  <!-- Hero -->
+  <section class="case-hero-section section-base section-divider section-divider--rl">
+    <div class="container">
+      <h2 class="section-title">Images</h2>
+
+      <div class="case-hero">
+        <figure>
+          <img
+            src="/img/mobile-wireframe.webp"
+            srcset="
+              /img/mobile-wireframe_400.webp 400w,
+              /img/mobile-wireframe_800.webp 800w,
+              /img/mobile-wireframe.webp 1600w
+            "
+            sizes="(max-width: 600px) 90vw, (max-width: 1024px) 70vw, 800px"
+            alt="Mobile wireframe"
+            loading="lazy"
+            decoding="async"
+/>
+          <figcaption>Mobile Goal Tracker app screens</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Challenge -->
+  <section class="case-challenge section-base section-divider section-divider--lr">
+    <div class="container">
+      <h2 class="section-title">Challenge</h2>
+
+      <p>
+        Build a simple, easy-to-use tracking app that helps users define a goal, enter performance data, preserve it reliably,
+        and display progress clearly across multiple screens.
+      </p>
+
+      <ul>
+        <li>Support goal definition and workout planning/execution tracking</li>
+        <li>Provide clear navigation across several Android activities</li>
+        <li>Persist data locally and restore it for display and calculations</li>
+        <li>Evaluate progress (e.g., current period vs previous periods) and visualize results</li>
+        <li>Include unit testing for core logic</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Solution -->
+  <section class="case-solution section-base section-divider section-divider--rl">
+    <div class="container">
+      <h2 class="section-title">Solution</h2>
+
+      <h3>Architecture</h3>
+      <p>
+        The app is structured around dedicated Android activities, with models for core data objects and utility classes for reusable logic.
+        Navigation is handled via button click listeners and intents.
+      </p>
+
+      <div class="grid-cards">
+        <div class="card">
+          <h4>Frontend</h4>
+          <ul>
+            <li>Android UI built with XML layouts and Material Design components</li>
+            <li>Dashboard navigation to Planning, Performance, and Manage Workouts</li>
+            <li>Planning view uses calendar/date picker for planned, missed, fulfilled workouts</li>
+            <li>Performance view shows progress bars and last three workouts</li>
+            <li>Manage Workouts supports add via dialog + delete via long-press</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h4>Backend</h4>
+          <ul>
+            <li>On-device processing in Java (no external backend)</li>
+            <li>Reusable utilities for sorting, filtering, and date-based counting</li>
+            <li>Progress calculations based on stored workout and goal data</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h4>Deployment</h4>
+          <ul>
+            <li>Android Studio build/run workflow</li>
+            <li>Version-controlled with GitHub</li>
+          </ul>
+        </div>
+      </div>
+
+      <p>
+        This separation keeps UI code focused on views and events, while shared logic (dates, arrays, persistence) remains testable and maintainable.
+      </p>
+
+      <h3>Database Design</h3>
+      <div class="grid-cards">
+        <div class="card">
+          <h4>Data storage approach</h4>
+          <ul>
+            <li>Local persistence (no remote database)</li>
+            <li>Internal storage using JSON as a unified format</li>
+            <li>Read/write strings converted back into object lists for rendering and calculations</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h4>Models & utilities</h4>
+          <ul>
+            <li>Models: WorkoutData (date, name) and GoalObject (start date, end date, target)</li>
+            <li>JSONConversion: converts between JSON and object lists</li>
+            <li>FileManager: stores, retrieves, checks, and deletes internal files</li>
+          </ul>
+        </div>
+      </div>
+
+      <p>
+        The stored data is reused for calendar display, progress visualizations, and “last workouts” summaries.
+      </p>
+
+      <h3>Key Features</h3>
+      <div class="grid-cards">
+        <div class="card">
+          <h4>User</h4>
+          <ul>
+            <li>Create and manage workout plans</li>
+            <li>Set a goal for a chosen timeframe</li>
+            <li>Track workouts on a calendar view</li>
+            <li>View performance summaries (Current, Last Week, Last Month)</li>
+            <li>See a list of recent workouts</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h4>App Logic</h4>
+          <ul>
+            <li>User input via dialogs/popups (workout name, goal values and dates)</li>
+            <li>Local persistence using JSON + internal storage</li>
+            <li>Progress evaluation via date-based list processing and counting</li>
+            <li>Unit tests for models and selected logic using JUnit 5 (Mockito where needed)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Outcome -->
+  <section class="case-outcome section-base">
+    <div class="container">
+      <h2 class="section-title">Outcome</h2>
+
+      <h3>The result is a functional Android progression tracker that:</h3>
+      <ul>
+        <li>Lets users define goals and record workout data</li>
+        <li>Preserves data locally using JSON in internal storage</li>
+        <li>Visualizes progress through clear UI panels</li>
+        <li>Supports multiple activities for planning and performance review</li>
+        <li>Includes unit tests validating key logic</li>
+      </ul>
+
+      <h3>The system demonstrates:</h3>
+      <ul>
+        <li>Multi-activity Android app design</li>
+        <li>Separation of concerns (Activities, Models, Utilities)</li>
+        <li>Local persistence strategy with JSON conversion</li>
+        <li>Date-driven evaluation and progress calculation</li>
+        <li>Testing with JUnit 5 and Mockito</li>
+      </ul>
+
+      <h3>Technical Highlights</h3>
+      <ul>
+        <li>Material Design-based UI and navigation</li>
+        <li>Calendar/date picker planning flow</li>
+        <li>JSON serialization/deserialization for stored lists</li>
+        <li>Internal storage read/write utilities</li>
+        <li>Array utilities for sorting/filtering recent workouts</li>
+        <li>Unit testing strategy for Android-adjacent logic</li>
+      </ul>
+    </div>
+  </section>
+</div>
+    
+  </main>
+
+  <footer>
+        
+        <div class="footer-links">
+            <!-- <a href="#privacy-policy">Privacy Policy</a>
+            <a href="#terms-of-service">Terms of Service</a>
+            <a href="#sitemap">Sitemap</a> -->
+            <a href="/#contact" data-page="contact">Contact</a>
+        </div> 
+
+        <div class="social-icons">
+               <!--  <a href="https://www.facebook.com/CicconeSoftwareSolutions" target="_blank">
+                    <img src="/img/Facebook_Logo_Primary.png" alt="Facebook Icon">
+                </a>
+                <a href="https://www.twitter.com/CicconeSoftwareSolutions" target="_blank">
+                    <img src="/img/x-logo-black.png" alt="X Icon">
+                </a> -->
+                <a href="https://www.linkedIN.com/CicconeSoftwareSolutions" target="_blank">
+                    <img src="/img/LI-In-Bug.png" alt="linkedIn Icon">
+                </a>
+        </div>  
+        <p>&copy; 2025 Ciccone Software Solutions. All rights reserved.</p>
+
+    </footer>
+</body>
+
+ 

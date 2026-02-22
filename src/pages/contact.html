@@ -1,5 +1,51 @@
 <div >
-    <p class="contact-page">This is the Contact page for Ciccone Software Solutions.
-    We are currently under construction, but we will be back soon with more information
-    </p> 
+  <section class="contact-section section-base">
+    <form
+        action="https://formspree.io/f/meolyver"
+        method="POST"
+        class="card contact-form"
+        
+    >
+        <input type="hidden" name="_subject" value="New message from your website">
+
+        <!-- Honeypot (hidden via CSS helper below) -->
+        <label class="hp" aria-hidden="true">
+        Leave this field empty
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+        </label>
+
+        <div class="field">
+        <label for="email">Your email</label>
+        <input
+            id="email"
+            name="email"
+            type="email"
+            class="input"
+            required
+            autocomplete="email"
+            placeholder="you@example.com"
+        >
+        </div>
+
+        <div class="field">
+        <label for="message">Your message</label>
+        <textarea
+            id="message"
+            name="message"
+            class="textarea"
+            required
+            rows="6"
+            placeholder="How can we help?"
+        ></textarea>
+        </div>
+
+        <label class="consent">
+        <input type="checkbox" name="consent" required>
+        I agree to the processing of my data for the purpose of this inquiry.
+        </label>
+
+        <!-- Uses your global .button styles -->
+        <button type="submit" class="button">Send</button>
+     </form>
+    </section>
 </div>

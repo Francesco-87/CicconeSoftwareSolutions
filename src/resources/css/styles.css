@@ -7,6 +7,7 @@ html, body, h1, h2, h3, p, ul, ol, figure, figcaption {
     font-family: var(--primary-font);
     font-size: var(--font-size-base);
     line-height: 1.6;    
+     overflow-x: hidden;
 }
 h2 {
     font-size: 2rem;
@@ -128,6 +129,7 @@ footer{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: var(--color-card-bg);
 }
 
 .social-icons {
@@ -149,4 +151,160 @@ footer{
 /* Hover: just change color */
 .footer-links a:hover {
   color: var(--color-primary);
+}
+
+/* ===== 360px (small phones) ===== */
+@media (max-width: 360px) {
+
+  /* Header: reduce padding */
+  header{
+    padding: 0.75rem 1rem 0.5rem;
+  }
+
+  /* Stack header content instead of 3-column grid */
+  .header-container{
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    justify-items: center;
+  }
+
+  /* Logo: smaller so it doesn't dominate */
+  .logo-container{
+    width: 9rem;
+  }
+
+  /* Nav: wrap + smaller text */
+  .header-container nav{
+    justify-self: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem 0.9rem;
+  }
+
+  .header-container nav a{
+    font-size: 1.05rem;
+  }
+
+  /* Language selector: keep on its own row */
+  .language-selector{
+    justify-self: center;
+    gap: 0.35rem;
+  }
+
+  .icon-translate{
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .language-select{
+    font-size: 1.05rem;
+  }
+
+  /* Footer: breathing room + wrap links */
+  footer{
+    padding: 1.25rem 1rem;
+    text-align: center;
+  }
+
+  .social-icons{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer-links{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 0.9rem;
+  }
+
+  .footer-links a{
+    font-size: 1.05rem;
+  }
+}
+
+/* ===== 768px (tablet portrait and up) ===== */
+@media (min-width: 481px) and (max-width: 768px) {
+
+ header {
+  padding-left: 1.5rem;
+  padding-right: 2.5rem;
+}
+
+.header-container {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+  .logo-container{
+    width: 10rem;
+  }
+
+  .header-container nav{
+    gap: 0.8rem;
+    flex-wrap: wrap;
+  }
+
+  .header-container nav a{
+    font-size: 1.15rem;
+  }
+
+  .language-select{
+    font-size: 1.1rem;
+  }
+
+  footer{
+    padding: 1.5rem 1.5rem;
+  }
+
+  .footer-links{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem 1.25rem;
+  }
+
+  .footer-links a{
+    font-size: 1.1rem;
+  }
+}
+
+/* ===== 1024px (small desktop and up) ===== */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  header{
+    padding: 1.25rem 2rem 0.75rem;
+  }
+
+  .header-container{
+    gap: 2rem;
+  }
+
+  .logo-container{
+    width: 11rem;
+  }
+
+  .header-container nav{
+    gap: 1.25rem;
+  }
+
+  .header-container nav a{
+    font-size: 1.25rem;
+  }
+
+  .language-select{
+    font-size: 1.2rem;
+  }
+
+  footer{
+    padding: 2rem;
+  }
+
+  .footer-links{
+    gap: 1rem 2rem;
+  }
+
+  .footer-links a{
+    font-size: 1.15rem;
+  }
 }
