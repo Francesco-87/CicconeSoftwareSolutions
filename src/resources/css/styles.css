@@ -153,27 +153,25 @@ footer{
   color: var(--color-primary);
 }
 
-/* ===== 360px (small phones) ===== */
+
+
+/* ===== HEADER/FOOTER: 0–360px ===== */
 @media (max-width: 360px) {
 
-  /* Header: reduce padding */
   header{
     padding: 0.75rem 1rem 0.5rem;
   }
 
-  /* Stack header content instead of 3-column grid */
   .header-container{
     grid-template-columns: 1fr;
     gap: 0.75rem;
     justify-items: center;
   }
 
-  /* Logo: smaller so it doesn't dominate */
   .logo-container{
     width: 9rem;
   }
 
-  /* Nav: wrap + smaller text */
   .header-container nav{
     justify-self: center;
     flex-wrap: wrap;
@@ -185,7 +183,6 @@ footer{
     font-size: 1.05rem;
   }
 
-  /* Language selector: keep on its own row */
   .language-selector{
     justify-self: center;
     gap: 0.35rem;
@@ -200,7 +197,6 @@ footer{
     font-size: 1.05rem;
   }
 
-  /* Footer: breathing room + wrap links */
   footer{
     padding: 1.25rem 1rem;
     text-align: center;
@@ -223,18 +219,61 @@ footer{
   }
 }
 
-/* ===== 768px (tablet portrait and up) ===== */
+/* ===== HEADER/FOOTER: 361–480px ===== */
+@media (min-width: 361px) and (max-width: 480px) {
+
+  header{
+    padding: 0.85rem 1.25rem 0.5rem;
+  }
+
+  .header-container{
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+    justify-items: center;
+  }
+
+  .logo-container{
+    width: 10rem;
+  }
+
+  .header-container nav{
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem 1rem;
+  }
+
+  .header-container nav a{
+    font-size: 1.1rem;
+  }
+
+  .language-select{
+    font-size: 1.1rem;
+  }
+
+  footer{
+    padding: 1.5rem 1.25rem;
+    text-align: center;
+  }
+
+  .footer-links{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem 1rem;
+  }
+}
+
+/* ===== HEADER/FOOTER: 481–768px ===== */
 @media (min-width: 481px) and (max-width: 768px) {
 
- header {
-  padding-left: 1.5rem;
-  padding-right: 2.5rem;
-}
+  header{
+    padding: 1rem 1rem 0.75rem; /* avoids right-edge clipping */
+  }
 
-.header-container {
-  width: 100%;
-  overflow-x: hidden;
-}
+  .header-container{
+    grid-template-columns: auto 1fr auto;
+    gap: 1.5rem;
+  }
 
   .logo-container{
     width: 10rem;
@@ -269,7 +308,7 @@ footer{
   }
 }
 
-/* ===== 1024px (small desktop and up) ===== */
+/* ===== HEADER/FOOTER: 769–1024px ===== */
 @media (min-width: 769px) and (max-width: 1024px) {
 
   header{
@@ -301,6 +340,9 @@ footer{
   }
 
   .footer-links{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem 2rem;
   }
 
