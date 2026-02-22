@@ -15,15 +15,18 @@
 }
 
 /* content container */
-.hero .hero-content {
-  position: relative;
-  max-width: 900px;
+.hero .container {
+  background: none; 
+  max-width: 900px; 
+  
 }
 
 .hero h1 {
   margin: 0 0 1rem;
   font-size: clamp(2.25rem, 6vw, 4rem);
-  line-height: 1.1;
+  line-height: 1.15;
+  padding-bottom: 1rem;
+  
 }
 
 .hero p {
