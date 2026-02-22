@@ -46,17 +46,23 @@ const linkAttrsFor = (p) =>
 
   return `
     <a class="card project-card" href="${esc(href)}"${extraAttrs}>
-      <figure class="project-thumb">
-        <img src="${esc(p.thumb || '')}" alt="${esc(p.title || 'Project')}" loading="lazy" decoding="async">
-      </figure>
-      <div class="project-body">
-        <h2 class="project-title">${esc(p.title || 'Untitled')}</h2>
-        <p class="project-summary">${esc(p.summary || '')}</p>
-        <ul class="project-meta">${tags}</ul>
-        ${outcome}
-        <span class="project-cta">${cta}</span>
-      </div>
-    </a>`;
+  <figure class="project-thumb">
+    <img 
+      src="${esc(p.thumb1x || p.thumb || '')}"
+      srcset="${esc(p.thumb1x || '')} 1x, ${esc(p.thumb2x || '')} 2x"
+      alt="${esc(p.title || 'Project')}"
+      width="200"
+      loading="lazy"
+      decoding="async">
+  </figure>
+  <div class="project-body">
+    <h2 class="project-title">${esc(p.title || 'Untitled')}</h2>
+    <p class="project-summary">${esc(p.summary || '')}</p>
+    <ul class="project-meta">${tags}</ul>
+    ${outcome}
+    <span class="project-cta">${cta}</span>
+  </div>
+</a>`;
 };
 
   grid.innerHTML = projects.map(card).join('');
