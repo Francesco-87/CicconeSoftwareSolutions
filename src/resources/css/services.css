@@ -1,5 +1,7 @@
-.services-page{
-    background-color: var(--color-primary);
-    padding: 20px;
-    border-radius: 5px;
+.service-section {
+    
+}
+
+.service-section p{
+    color: var(--color-font);
 }
