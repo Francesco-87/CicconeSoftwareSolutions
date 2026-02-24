@@ -23,6 +23,15 @@ p, ul, ol, li, blockquote {
   font-family: var(--secondary-font);
 }
 
+/* Page Wrapper */
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    justify-content: center;
+    max-width: 1200px;
+}
+
 /* Container base class */
 .container {   
     background: linear-gradient(135deg,
