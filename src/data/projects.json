@@ -1,4 +1,28 @@
 [
+  {
+  "slug": "tripsentinel",
+  "title": "TripSentinel",
+  "summary": "Developing a personal safety check-in application for planned-return verification, with configurable check-in methods and human responder escalation.",
+  "industry": ["Personal Safety", "Software"],
+  "tech": ["Java", "Spring Boot", "MariaDB", "React", "Docker"],
+  "outcome": "Personal safety check-in system",
+  "thumb": "/img/TripSentinel_Logo.webp",
+  "thumb1x": "/img/TripSentinel_Logo_200.webp",
+  "thumb2x": "/img/TripSentinel_Logo_400.webp",
+  "caseStudy": true
+},
+{
+  "slug": "booking-admin-dashboard",
+  "title": "Booking & Operations Admin Dashboard",
+  "summary": "Built a full-stack booking and operations application for managing services, staff, customers, and bookings through a centralized admin interface.",
+  "industry": ["Business Operations", "Software"],
+  "tech": ["Java", "Spring Boot", "React", "PostgreSQL", "Docker"],
+  "outcome": "Full-stack booking management system",
+  "thumb": "/img/Booking_Admin_Logo.webp",
+  "thumb1x": "/img/Booking_Admin_Logo_200.webp",
+  "thumb2x": "/img/Booking_Admin_Logo_400.webp",
+  "caseStudy": true
+},
 { 
   "title": "Decorline Homepage",
   "summary": "Built a modular single-page website with dynamically loaded sections for an Italian painting and decoration business.",
