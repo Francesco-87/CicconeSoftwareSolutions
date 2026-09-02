@@ -26,10 +26,11 @@
   
 }
 
-.projects-grid { 
-  display: grid; 
-  grid-template-columns: repeat(3, minmax(0,1fr)); 
-  gap: 1.5rem; 
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 1.5rem;
+  row-gap: 3.5rem;
 }
 
 .project-card { 
@@ -227,10 +228,11 @@
   }
 
   /* 3-column grid refinement */
-  .projects-grid{
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.75rem;
-  }
+  .projects-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 1.75rem;
+  row-gap: 3rem;
+}
 
   .project-card{
     padding: 1.1rem;
