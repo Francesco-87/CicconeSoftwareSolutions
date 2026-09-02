@@ -132,6 +132,10 @@ footer{
     background-color: var(--color-card-bg);
 }
 
+footer > p {
+  color: var(--color-primary);
+}
+
 .social-icons {
    display: flex;
   gap: 1rem;
