@@ -6,9 +6,9 @@
   "industry": ["Personal Safety", "Software"],
   "tech": ["Java", "Spring Boot", "MariaDB", "React", "Docker"],
   "outcome": "Personal safety check-in system",
-  "thumb": "/img/TripSentinel_Logo.webp",
-  "thumb1x": "/img/TripSentinel_Logo_200.webp",
-  "thumb2x": "/img/TripSentinel_Logo_400.webp",
+  "thumb": "/img/Logo_CicconeSoftware.webp",
+  "thumb1x": "/img/Logo_CicconeSoftware_200.webp",
+  "thumb2x": "/img/Logo_CicconeSoftware_400.webp",
   "caseStudy": true
 },
 {
@@ -18,9 +18,9 @@
   "industry": ["Business Operations", "Software"],
   "tech": ["Java", "Spring Boot", "React", "PostgreSQL", "Docker"],
   "outcome": "Full-stack booking management system",
-  "thumb": "/img/Booking_Admin_Logo.webp",
-  "thumb1x": "/img/Booking_Admin_Logo_200.webp",
-  "thumb2x": "/img/Booking_Admin_Logo_400.webp",
+  "thumb": "/img/Logo_CicconeSoftware.webp",
+  "thumb1x": "/img/Logo_CicconeSoftware_200.webp",
+  "thumb2x": "/img/Logo_CicconeSoftware_400.webp",
   "caseStudy": true
 },
 { 
