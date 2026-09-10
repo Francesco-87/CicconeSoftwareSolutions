@@ -1,12 +1,13 @@
 // vite.config.js
 import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 import path from 'node:path'
 import fs from 'node:fs'
 import { resolve } from 'node:path'
 
 function projectCaseStudyInputs() {
   const inputs = {}
-  const projectsRoot = resolve(__dirname, 'src/projects')
+  const projectsRoot = resolve(import.meta.dirname, 'src/projects')
 
   if (!fs.existsSync(projectsRoot)) return inputs
 
@@ -22,6 +23,7 @@ function projectCaseStudyInputs() {
 }
 
 export default defineConfig({
+  plugins: [react()],
   root: 'src',
   base: './',                 // for shareable URLs on Azure root
   publicDir: '../public',
@@ -31,10 +33,10 @@ export default defineConfig({
     assetsDir: 'resources',
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'src/index.html'),
+        main: resolve(import.meta.dirname, 'src/index.html'),
         ...projectCaseStudyInputs(),
       },
     },
   },
-  resolve: { alias: { '@': path.resolve(__dirname, 'src') } }
+  resolve: { alias: { '@': path.resolve(import.meta.dirname, 'src') } }
 })
