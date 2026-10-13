@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { Footer, Header } from './components/SiteShell.jsx'
+import { initializeTelemetry, trackPageView } from './telemetry.js'
 
 import BookingAdminDashboardCaseStudy from './projects/booking-admin-dashboard/CaseStudy.jsx'
 import BookingAndRegistryCaseStudy from './projects/booking-and-registry-system/CaseStudy.jsx'
@@ -28,6 +29,8 @@ const slug = window.location.pathname.split('/').filter(Boolean).at(-1)
 const content = caseStudies[slug]
 const container = document.getElementById('root')
 
+initializeTelemetry(import.meta.env.VITE_APPINSIGHTS_CONNECTION_STRING)
+
 if (!content) {
   throw new Error(`No React case study is registered for URL slug "${slug}".`)
 }
@@ -35,6 +38,8 @@ if (!content) {
 if (!container) {
   throw new Error('The React case-study entry point requires an element with id="root".')
 }
+
+trackPageView(`case-study:${slug}`)
 
 createRoot(container).render(
   <StrictMode>

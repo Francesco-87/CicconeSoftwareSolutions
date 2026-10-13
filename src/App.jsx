@@ -5,6 +5,7 @@ import ContactPage from './pages/ContactPage.jsx'
 import HomePage from './pages/HomePage.jsx'
 import ProjectsPage from './pages/ProjectsPage.jsx'
 import ServicesPage from './pages/ServicesPage.jsx'
+import { trackPageView } from './telemetry.js'
 
 export default function App() {
   const getPageFromHash = () => {
@@ -14,7 +15,13 @@ export default function App() {
   const [page, setPage] = useState(getPageFromHash)
 
   useEffect(() => {
-    const syncPageWithHash = () => setPage(getPageFromHash())
+    const syncPageWithHash = () => {
+      const nextPage = getPageFromHash()
+      setPage(nextPage)
+      trackPageView(`main:${nextPage}`)
+    }
+
+    syncPageWithHash()
     window.addEventListener('hashchange', syncPageWithHash)
     return () => window.removeEventListener('hashchange', syncPageWithHash)
   }, [])
