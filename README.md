@@ -4,7 +4,7 @@
 
 Ciccone Software Solutions is a personal software development website built to present services, projects, and case studies in a structured web portfolio.
 
-The site was developed as a custom frontend project using Vite, HTML, CSS, and JavaScript. It functions as both a professional portfolio and a central presentation page for selected software projects.
+The site is built with React and Vite. The main portfolio keeps a shared header and footer while rendering one selected page at a time; project case studies remain separate static pages.
 
 The project focuses on responsive design, structured content organization, project presentation, deployment workflow, and maintainable frontend architecture.
 
@@ -14,7 +14,7 @@ The project focuses on responsive design, structured content organization, proje
 
 * Type: Personal / Business Website
 * Platform: Web
-* Architecture: Multi-page Website
+* Architecture: Static React single-page portfolio plus static case-study pages
 * Build Tool: Vite
 * Purpose: Portfolio, project showcase, and service presentation
 
@@ -69,19 +69,24 @@ These pages provide more detailed project information than a simple project list
 
 ## Technical Architecture
 
-The project uses a Vite-based multi-page frontend architecture.
+The main portfolio is rendered by React without a client-side routing library. Hashes (`/#about`, `/#services`, `/#projects`, and `/#contact`) select which page content React renders between the shared header and footer. Project case studies remain separate HTML entry points, so direct links and refreshes continue to work on static hosting.
 
 ```text
 src/
 │
+├── App.jsx
+├── main.jsx
 ├── index.html
-├── pages/
-├── projects/
 ├── data/
+│   └── projects.json
+├── projects/
+│   └── <case-study>/
+│       └── index.html
 └── resources/
+    └── css/
 ```
 
-Content is separated into page files, project data, project case studies, and shared frontend resources.
+The React app owns the shared header, footer, portfolio sections, contact form, and project cards. Case studies retain their own static HTML entries and share the existing CSS and public assets.
 
 ---
 
@@ -90,40 +95,22 @@ Content is separated into page files, project data, project case studies, and sh
 ```text
 src/
 │
+├── App.jsx
+├── main.jsx
 ├── index.html
-│
 ├── data/
 │   └── projects.json
-│
-├── pages/
-│   ├── about.html
-│   ├── contact.html
-│   ├── home.html
-│   ├── projects.html
-│   └── services.html
-│
 ├── projects/
+│   ├── booking-admin-dashboard/
+│   │   └── index.html
 │   ├── booking-and-registry-system/
 │   │   └── index.html
-│   │
-│   └── mobile-goal-tracker/
+│   ├── mobile-goal-tracker/
+│   │   └── index.html
+│   └── tripsentinel/
 │       └── index.html
-│
 └── resources/
-    ├── css/
-    │   ├── about.css
-    │   ├── case-study.css
-    │   ├── contact.css
-    │   ├── global.css
-    │   ├── home.css
-    │   ├── projects.css
-    │   ├── services.css
-    │   ├── styles.css
-    │   └── variables.css
-    │
-    └── js/
-        ├── main.js
-        └── projects.js
+    └── css/
 ```
 
 ---
@@ -136,7 +123,7 @@ Project overview content is stored in:
 src/data/projects.json
 ```
 
-JavaScript is used to load and render project information dynamically on the projects page.
+React renders project cards from the JSON data on the projects section.
 
 This approach keeps project data separate from page structure and makes the project list easier to update.
 
@@ -144,14 +131,13 @@ This approach keeps project data separate from page structure and makes the proj
 
 ## Multi-Page Build Setup
 
-The Vite configuration supports a multi-page structure.
+Vite builds the React portfolio and the separate static case-study pages.
 
 The application includes:
 
 * Main entry page
-* Static content pages
 * Dedicated project case-study pages
-* Dynamic project entries based on project folders
+* Project case-study entry points discovered from project folders
 
 This allows the site to behave like a traditional multi-page website while still using modern frontend tooling.
 
@@ -242,7 +228,8 @@ npm run preview
 
 This project demonstrates practical experience with:
 
-* Multi-page frontend development
+* React component-based frontend development
+* Hash-based page selection without a routing library
 * Vite configuration
 * JavaScript-based dynamic content loading
 * Structured project data management
