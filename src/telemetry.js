@@ -45,7 +45,6 @@ export function createPrivacyTelemetryInitializer() {
     const baseData = item.baseData
     if (baseData) {
       if (baseData.uri) baseData.uri = sanitizePageUrl(baseData.uri)
-      delete baseData.name
       delete baseData.refUri
       delete baseData.id
       delete baseData.properties
@@ -94,13 +93,13 @@ export function createTelemetryController({
     }
   }
 
-  function trackPageView(routeKey) {
-    if (!client || !routeKey || routeKey === lastPageViewKey) return false
+  function trackPageView(routeKey, name) {
+    if (!client || !routeKey || !name?.trim() || routeKey === lastPageViewKey) return false
 
     try {
       const uri = sanitizePageUrl(getPageUrl())
       if (!uri) return false
-      client.trackPageView({ uri })
+      client.trackPageView({ name, uri })
       lastPageViewKey = routeKey
       return true
     } catch {

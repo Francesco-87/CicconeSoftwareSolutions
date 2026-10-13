@@ -18,7 +18,8 @@ export default function App() {
     const syncPageWithHash = () => {
       const nextPage = getPageFromHash()
       setPage(nextPage)
-      trackPageView(`main:${nextPage}`)
+      const pageName = nextPage[0].toUpperCase() + nextPage.slice(1)
+      trackPageView(`main:${nextPage}`, pageName)
     }
 
     syncPageWithHash()
