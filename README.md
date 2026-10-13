@@ -190,7 +190,38 @@ This allows the site to behave like a traditional multi-page website while still
 ### Deployment
 
 * GitHub Pages
+* Azure Static Web Apps
 * Custom domain
+
+### Azure Application Insights
+
+The Azure Static Web Apps build can send basic page-view telemetry to Application Insights. Set `VITE_APPINSIGHTS_CONNECTION_STRING` in a local `.env.local` file for local builds, or configure a GitHub Actions repository secret with that name for the Azure workflow. The workflow injects the secret only into its build-and-deploy job. If it is absent, the site still builds and runs without telemetry.
+
+The connection string is included in the browser bundle because this is client-side telemetry; it is not an authorization credential. Keep the separate Static Web Apps deployment token in its existing GitHub secret and never put that token in a Vite variable.
+
+The integration tracks page views for the main hash-selected views and project case studies. It omits query strings and fragments, and disables cookies, local/session storage, dependency (XHR/fetch), exception, and automatic performance telemetry. Automatic route tracking is off; main-site hash navigation is tracked manually. The telemetry initializer allows only page-view events, removes referrers and identifying context fields, and strips custom properties and measurements.
+
+To inspect counts and paths, open the Application Insights resource in Azure and use **Logs**:
+
+```kusto
+pageViews
+| summarize PageViews = count() by Day = startofday(timestamp)
+| order by Day desc
+```
+
+```kusto
+pageViews
+| summarize PageViews = count() by Month = startofmonth(timestamp)
+| order by Month desc
+```
+
+```kusto
+pageViews
+| summarize PageViews = count() by Url = tostring(url)
+| order by PageViews desc
+```
+
+Application Insights is not anonymous by default in every respect. The browser SDK avoids persistent client storage and its telemetry initializer removes standard user, session, device, IP, and operation identifiers from the event, but Azure ingestion can still process the network source IP to derive location before storing telemetry. This integration cannot guarantee that no IP-derived data is processed or eliminate all fingerprinting by the browser/network. Before production use, complete the applicable GDPR review: establish and document a lawful basis, update the privacy notice and retention policy, assess consent requirements for the relevant jurisdictions, and verify Azure data residency/access controls and any IP/location processing settings for the resource.
 
 ---
 
