@@ -76,11 +76,18 @@ test('tracks route page views once and excludes query strings and fragments', ()
   })
   telemetry.initialize('InstrumentationKey=test')
 
-  assert.equal(telemetry.trackPageView('main:home'), true)
-  assert.equal(telemetry.trackPageView('main:home'), false)
-  assert.equal(telemetry.trackPageView('main:contact'), true)
+  assert.equal(telemetry.trackPageView('main:home', 'Home'), true)
+  assert.equal(telemetry.trackPageView('main:home', 'Home'), false)
+  assert.equal(telemetry.trackPageView('main:contact', 'Contact'), true)
   assert.equal(client.pageViews.length, 2)
-  assert.deepEqual(client.pageViews[0], { uri: 'https://www.cicconesoftware.com/' })
+  assert.deepEqual(client.pageViews[0], {
+    name: 'Home',
+    uri: 'https://www.cicconesoftware.com/',
+  })
+  assert.deepEqual(client.pageViews[1], {
+    name: 'Contact',
+    uri: 'https://www.cicconesoftware.com/',
+  })
   assert.equal(JSON.stringify(client.pageViews).includes('email=private'), false)
   assert.equal(JSON.stringify(client.pageViews).includes('#contact'), false)
 })
@@ -90,7 +97,7 @@ test('telemetry initializer permits only clean page views and removes identifier
   const pageView = {
     baseType: 'PageviewData',
     baseData: {
-      name: 'https://example.com/contact?email=private#form',
+      name: 'Contact',
       uri: 'https://example.com/contact?email=private#form',
       refUri: 'https://example.com/?token=private',
       id: 'page-view-id',
@@ -115,7 +122,7 @@ test('telemetry initializer permits only clean page views and removes identifier
   }
 
   assert.equal(initializer(pageView), true)
-  assert.equal('name' in pageView.baseData, false)
+  assert.equal(pageView.baseData.name, 'Contact')
   assert.equal(pageView.baseData.uri, 'https://example.com/contact')
   assert.equal('refUri' in pageView.baseData, false)
   assert.equal('id' in pageView.baseData, false)

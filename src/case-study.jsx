@@ -15,6 +15,13 @@ const caseStudies = {
   tripsentinel: TripSentinelCaseStudy,
 }
 
+const caseStudyNames = {
+  'booking-admin-dashboard': 'Booking Admin Dashboard',
+  'booking-and-registry-system': 'Booking and Registry System',
+  'mobile-goal-tracker': 'Mobile Goal Tracker',
+  tripsentinel: 'TripSentinel',
+}
+
 function CaseStudyApp({ CaseStudy }) {
   return (
     <>
@@ -39,7 +46,7 @@ if (!container) {
   throw new Error('The React case-study entry point requires an element with id="root".')
 }
 
-trackPageView(`case-study:${slug}`)
+trackPageView(`case-study:${slug}`, caseStudyNames[slug])
 
 createRoot(container).render(
   <StrictMode>
