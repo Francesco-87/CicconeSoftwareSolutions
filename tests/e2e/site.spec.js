@@ -38,6 +38,18 @@ test('main navigation switches views and supports browser history', async ({ pag
   await expect(page.locator('main form')).toBeVisible()
 })
 
+test('contact form stays centered and readable on wide screens', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 })
+  await page.goto('/#contact')
+
+  const form = page.locator('main form')
+  const bounds = await form.boundingBox()
+
+  expect(bounds).not.toBeNull()
+  expect(bounds.width).toBeLessThanOrEqual(720)
+  expect(Math.abs(bounds.x + bounds.width / 2 - 720)).toBeLessThanOrEqual(1)
+})
+
 for (const [slug, heading] of caseStudies) {
   test(`${slug} loads directly with metadata and working images`, async ({ page }) => {
     await page.goto(`/projects/${slug}/`)
