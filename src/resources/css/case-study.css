@@ -36,11 +36,6 @@
   padding: 0;
   margin: 1rem 0;
 }
-/* Add icons to meta items if needed
-.case-meta li { 
-  
-}*/
-
 .case-actions { 
   display: flex;
   justify-content: center;
@@ -52,14 +47,6 @@
 
 
 /* Overview */
-/*
-.case-overview { }
-
-.case-overview .container {  
-  
-}
-.case-overview h2 { }
-*/
 .case-overview p {
   color: var(--color-font);
  }
@@ -95,12 +82,6 @@
 
 /* Challenge */
 
-.case-challenge { }
-
-
-
-.case-challenge h2 { }
-
 .case-challenge p { 
   color: var(--color-font);
   font-weight: 600;
@@ -121,18 +102,10 @@
 
 /*Solution */
 
-.case-solution { }
-
-
-
 .case-solution h3 {
   color: var(--color-font);
   font-size: 1.75rem;
  }
-.case-solution h4 { }
-
-.case-solution p { }
-
 .case-solution .grid-cards {
   display: flex;
   flex-wrap: wrap;
@@ -163,14 +136,9 @@
 
 /* Outcome*/
 
-.case-outcome { }
-
-
 .case-outcome h3 {
   color: var(--color-font);
  }
-
-.case-outcome p { }
 
 .case-outcome ul { 
  list-style: none;

@@ -4,7 +4,7 @@
 
 Ciccone Software Solutions is a personal software development website built to present services, projects, and case studies in a structured web portfolio.
 
-The site is built with React and Vite. The main portfolio keeps a shared header and footer while rendering one selected page at a time; project case studies remain separate static pages.
+The site is built with React and Vite. The main portfolio keeps a shared header and footer while rendering one selected page at a time. Each project case study also mounts a React page at its existing static URL.
 
 The project focuses on responsive design, structured content organization, project presentation, deployment workflow, and maintainable frontend architecture.
 
@@ -14,7 +14,7 @@ The project focuses on responsive design, structured content organization, proje
 
 * Type: Personal / Business Website
 * Platform: Web
-* Architecture: Static React single-page portfolio plus static case-study pages
+* Architecture: Static React pages with hash-selected portfolio views and standalone case-study URLs
 * Build Tool: Vite
 * Purpose: Portfolio, project showcase, and service presentation
 
@@ -60,8 +60,10 @@ Provides contact information and communication options.
 
 The website includes dedicated project pages for selected projects, including:
 
+* Booking & Operations Admin Dashboard
 * Booking and Registry System
 * Mobile Goal Tracker
+* TripSentinel
 
 These pages provide more detailed project information than a simple project list.
 
@@ -69,24 +71,34 @@ These pages provide more detailed project information than a simple project list
 
 ## Technical Architecture
 
-The main portfolio is rendered by React without a client-side routing library. Hashes (`/#about`, `/#services`, `/#projects`, and `/#contact`) select which page content React renders between the shared header and footer. Project case studies remain separate HTML entry points, so direct links and refreshes continue to work on static hosting.
+The main portfolio is rendered by React without a client-side routing library. Hashes (`/#about`, `/#services`, `/#projects`, and `/#contact`) select which page content React renders between the shared header and footer. Each case study is a Vite static entry point that mounts a shared React shell and its own JSX component at the existing URL.
 
 ```text
 src/
 │
 ├── App.jsx
+├── case-study.jsx
+├── components/
+│   └── SiteShell.jsx
 ├── main.jsx
 ├── index.html
 ├── data/
 │   └── projects.json
+├── pages/
+│   ├── AboutPage.jsx
+│   ├── ContactPage.jsx
+│   ├── HomePage.jsx
+│   ├── ProjectsPage.jsx
+│   └── ServicesPage.jsx
 ├── projects/
 │   └── <case-study>/
+│       ├── CaseStudy.jsx
 │       └── index.html
 └── resources/
     └── css/
 ```
 
-The React app owns the shared header, footer, portfolio sections, contact form, and project cards. Case studies retain their own static HTML entries and share the existing CSS and public assets.
+`App.jsx` selects the active portfolio page and owns no page markup. Each main-site view is a separate React component in `pages/`; the reusable header and footer live in `components/SiteShell.jsx`. Each case study has a static entry file and a separate JSX component under its project folder.
 
 ---
 
@@ -96,18 +108,31 @@ The React app owns the shared header, footer, portfolio sections, contact form, 
 src/
 │
 ├── App.jsx
+├── case-study.jsx
+├── components/
+│   └── SiteShell.jsx
 ├── main.jsx
 ├── index.html
 ├── data/
 │   └── projects.json
+├── pages/
+│   ├── AboutPage.jsx
+│   ├── ContactPage.jsx
+│   ├── HomePage.jsx
+│   ├── ProjectsPage.jsx
+│   └── ServicesPage.jsx
 ├── projects/
 │   ├── booking-admin-dashboard/
+│   │   ├── CaseStudy.jsx
 │   │   └── index.html
 │   ├── booking-and-registry-system/
+│   │   ├── CaseStudy.jsx
 │   │   └── index.html
 │   ├── mobile-goal-tracker/
+│   │   ├── CaseStudy.jsx
 │   │   └── index.html
 │   └── tripsentinel/
+│       ├── CaseStudy.jsx
 │       └── index.html
 └── resources/
     └── css/
@@ -131,12 +156,12 @@ This approach keeps project data separate from page structure and makes the proj
 
 ## Multi-Page Build Setup
 
-Vite builds the React portfolio and the separate static case-study pages.
+Vite builds the React portfolio and a React-rendered static entry for each case study.
 
 The application includes:
 
 * Main entry page
-* Dedicated project case-study pages
+* Dedicated React-mounted project case-study pages
 * Project case-study entry points discovered from project folders
 
 This allows the site to behave like a traditional multi-page website while still using modern frontend tooling.
@@ -173,8 +198,9 @@ This allows the site to behave like a traditional multi-page website while still
 
 The project separates concerns through:
 
-* Dedicated HTML files for pages
-* Shared JavaScript resources
+* One React component per main portfolio view in `src/pages/`
+* Shared site chrome in `src/components/`
+* Separate React JSX components for each case study
 * Page-specific CSS files
 * Global styling
 * CSS variables
@@ -215,6 +241,17 @@ npm run dev
 ```bash
 npm run build
 ```
+
+### Run Browser Smoke Tests
+
+The Playwright smoke tests check main-page navigation and browser history, direct loading of each case study, page metadata, shared layout, and case-study images. Build the site before running them:
+
+```bash
+npx playwright install chromium
+npm test
+```
+
+The GitHub Pages workflow runs these tests after the production build and before uploading the site for deployment.
 
 ### Preview Production Build
 

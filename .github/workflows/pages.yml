@@ -24,6 +24,8 @@ jobs:
           node-version: 20
       - run: npm ci
       - run: npm run build      # vite outputs to dist/
+      - run: npx playwright install --with-deps chromium
+      - run: npm test
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
