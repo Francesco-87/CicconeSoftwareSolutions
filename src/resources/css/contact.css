@@ -1,5 +1,6 @@
 .contact-section {
- padding: 4rem 2rem 1.5rem; 
+  box-sizing: border-box;
+  padding: 4rem 2rem 1.5rem;
 }
 
 /* Layout for the form inside your .card */
@@ -8,7 +9,10 @@
   gap: 1rem;
   border: none;
   padding: 1.5rem;
- 
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 720px;
+  margin-inline: auto;
 }
 
 /* Simple field grouping */
@@ -112,7 +116,5 @@
   .contact-form{
     padding: 1.5rem;
     gap: 1rem;
-    max-width: 720px;   /* keeps it readable on small desktops */
-    margin: 0 auto;
   }
 }
