@@ -1,5 +1,9 @@
+import TranslatedMarkup from '../../components/TranslatedMarkup.jsx'
+import { getProjectsHref } from '../localePaths.js'
+
 export default function TripSentinelCaseStudy() {
   return (
+    <TranslatedMarkup>
     <>
 <div className="case-study-wrapper">
 
@@ -8,7 +12,7 @@ export default function TripSentinelCaseStudy() {
         className="case-study section-base section-divider section-divider--bowtie"
       >
 
-        <a href="/en/projects" className="back-link">
+        <a href={getProjectsHref()} className="back-link">
           ← All projects
         </a>
 
@@ -543,5 +547,6 @@ export default function TripSentinelCaseStudy() {
 
     </div>
     </>
+    </TranslatedMarkup>
   )
 }

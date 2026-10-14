@@ -1,40 +1,61 @@
 import { useEffect } from 'react'
-import { BrowserRouter, Navigate, Outlet, Route, Routes, useLocation } from 'react-router-dom'
+import { BrowserRouter, Navigate, Outlet, Route, Routes, useLocation, useParams } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { Footer, Header } from './components/SiteShell.jsx'
 import AboutPage from './pages/AboutPage.jsx'
+import CaseStudyPage from './pages/CaseStudyPage.jsx'
 import ContactPage from './pages/ContactPage.jsx'
 import HomePage from './pages/HomePage.jsx'
 import ProjectsPage from './pages/ProjectsPage.jsx'
 import ServicesPage from './pages/ServicesPage.jsx'
+import i18n from './i18n.js'
 import { trackPageView } from './telemetry.js'
 
 const pageNames = {
-  about: 'About',
-  contact: 'Contact',
-  home: 'Home',
-  projects: 'Projects',
-  services: 'Services',
+  about: 'about',
+  contact: 'contact',
+  home: 'home',
+  projects: 'projects',
+  services: 'services',
+}
+
+const caseTitleKeys = {
+  'booking-admin-dashboard': 'case.bookingAdmin.title',
+  'booking-and-registry-system': 'case.bookingRegistry.title',
+  'mobile-goal-tracker': 'case.mobileTracker.title',
+  tripsentinel: 'case.tripSentinel.title',
 }
 
 function MainSiteLayout() {
+  const { locale } = useParams()
   const location = useLocation()
-  const page = location.pathname.split('/').filter(Boolean)[1] || 'home'
+  const { t } = useTranslation()
+  const segments = location.pathname.split('/').filter(Boolean)
+  const page = segments[1] || 'home'
+  const projectSlug = page === 'projects' ? segments[2] : undefined
+  const isSupportedLocale = i18n.options.supportedLngs.includes(locale)
 
   useEffect(() => {
+    if (!isSupportedLocale) return
+    if (i18n.language !== locale) i18n.changeLanguage(locale)
+    document.documentElement.lang = locale
+    const title = projectSlug && caseTitleKeys[projectSlug]
+      ? t(caseTitleKeys[projectSlug])
+      : t(`pageTitles.${pageNames[page] || 'home'}`)
+    document.title = `${title} | Ciccone Software Solutions`
     if (pageNames[page]) {
-      trackPageView(`main:${page}`, pageNames[page])
+      trackPageView(`main:${locale}:${page}`, t(`common.${pageNames[page]}`))
     }
-  }, [page])
+  }, [isSupportedLocale, locale, page, projectSlug, t])
 
-  if (!pageNames[page]) {
-    return <Navigate to="/en" replace />
-  }
+  if (!isSupportedLocale) return <Navigate to="/en" replace />
+  if (!pageNames[page]) return <Navigate to={`/${locale}`} replace />
 
   return (
     <>
-      <Header />
+      <Header locale={locale} currentPage={page} caseStudy={Boolean(projectSlug)} />
       <main id="main-content"><Outlet /></main>
-      <Footer />
+      <Footer locale={locale} />
     </>
   )
 }
@@ -42,9 +63,9 @@ function MainSiteLayout() {
 function LegacyHashRedirect() {
   const location = useLocation()
   const legacyPage = location.hash.slice(1)
-  const target = legacyPage === 'home' || !pageNames[legacyPage]
-    ? '/en'
-    : `/en/${legacyPage}`
+  const target = pageNames[legacyPage] && legacyPage !== 'home'
+    ? `/en/${legacyPage}`
+    : '/en'
 
   return <Navigate to={target} replace />
 }
@@ -54,13 +75,14 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LegacyHashRedirect />} />
-        <Route path="/en" element={<MainSiteLayout />}>
+        <Route path="/:locale" element={<MainSiteLayout />}>
           <Route index element={<HomePage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="services" element={<ServicesPage />} />
           <Route path="projects" element={<ProjectsPage />} />
+          <Route path="projects/:slug" element={<CaseStudyPage />} />
           <Route path="contact" element={<ContactPage />} />
-          <Route path="*" element={<Navigate to="/en" replace />} />
+          <Route path="*" element={<Navigate to=".." replace />} />
         </Route>
         <Route path="*" element={<Navigate to="/en" replace />} />
       </Routes>

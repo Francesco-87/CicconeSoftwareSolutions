@@ -1,10 +1,14 @@
+import TranslatedMarkup from '../../components/TranslatedMarkup.jsx'
+import { getProjectsHref } from '../localePaths.js'
+
 export default function MobileGoalTrackerCaseStudy() {
   return (
+    <TranslatedMarkup>
     <>
 
 <div className="case-study-wrapper">
   <section className="case-study section-base section-divider section-divider--bowtie">
-    <a href="/en/projects" className="back-link">← All projects</a>
+    <a href={getProjectsHref()} className="back-link">← All projects</a>
 
     <div className="container">
       <h1>Mobile Goal Tracker</h1>
@@ -217,5 +221,6 @@ export default function MobileGoalTrackerCaseStudy() {
   </section>
 </div>
     </>
+    </TranslatedMarkup>
   )
 }

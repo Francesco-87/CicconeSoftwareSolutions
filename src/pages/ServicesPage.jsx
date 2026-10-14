@@ -1,15 +1,17 @@
+import { useTranslation } from 'react-i18next'
+
 export default function ServicesPage() {
+  const { t } = useTranslation()
+  const services = t('services.items', { returnObjects: true })
+
   return (
     <div className="page-wrapper">
       <section className="service-section section-base section-divider">
         <div className="container">
-          <h2 className="section-title">Services</h2>
-          <p>I help individuals and small businesses turn ideas into reliable, modern web solutions.</p>
+          <h1 className="section-title">{t('services.title')}</h1>
+          <p>{t('services.intro')}</p>
           <ul>
-            <li>Custom websites (fast, responsive, accessible)</li>
-            <li>Web applications &amp; dashboards</li>
-            <li>Backend APIs &amp; integrations</li>
-            <li>Maintenance, improvements &amp; refactoring</li>
+            {services.map((service) => <li key={service}>{service}</li>)}
           </ul>
         </div>
       </section>

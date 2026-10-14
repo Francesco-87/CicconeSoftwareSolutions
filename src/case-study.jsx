@@ -1,42 +1,29 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { Footer, Header } from './components/SiteShell.jsx'
+import caseStudies from './projects/caseStudies.js'
+import i18n from './i18n.js'
 import { initializeTelemetry, trackPageView } from './telemetry.js'
 
-import BookingAdminDashboardCaseStudy from './projects/booking-admin-dashboard/CaseStudy.jsx'
-import BookingAndRegistryCaseStudy from './projects/booking-and-registry-system/CaseStudy.jsx'
-import MobileGoalTrackerCaseStudy from './projects/mobile-goal-tracker/CaseStudy.jsx'
-import TripSentinelCaseStudy from './projects/tripsentinel/CaseStudy.jsx'
-
-const caseStudies = {
-  'booking-admin-dashboard': BookingAdminDashboardCaseStudy,
-  'booking-and-registry-system': BookingAndRegistryCaseStudy,
-  'mobile-goal-tracker': MobileGoalTrackerCaseStudy,
-  tripsentinel: TripSentinelCaseStudy,
-}
-
-const caseStudyNames = {
-  'booking-admin-dashboard': 'Booking Admin Dashboard',
-  'booking-and-registry-system': 'Booking and Registry System',
-  'mobile-goal-tracker': 'Mobile Goal Tracker',
-  tripsentinel: 'TripSentinel',
-}
-
-function CaseStudyApp({ CaseStudy }) {
+function CaseStudyApp({ CaseStudy, locale, slug }) {
   return (
     <>
-      <Header caseStudy />
+      <Header caseStudy locale={locale} />
       <main id="main-content"><CaseStudy /></main>
-      <Footer caseStudy />
+      <Footer caseStudy locale={locale} />
     </>
   )
 }
 
-const slug = window.location.pathname.split('/').filter(Boolean).at(-1)
+const path = window.location.pathname.split('/').filter(Boolean)
+const locale = ['en', 'de'].includes(path[0]) ? path[0] : 'en'
+const slug = path.at(-1)
 const content = caseStudies[slug]
 const container = document.getElementById('root')
 
 initializeTelemetry(import.meta.env.VITE_APPINSIGHTS_CONNECTION_STRING)
+i18n.changeLanguage(locale)
+document.documentElement.lang = locale
 
 if (!content) {
   throw new Error(`No React case study is registered for URL slug "${slug}".`)
@@ -46,10 +33,10 @@ if (!container) {
   throw new Error('The React case-study entry point requires an element with id="root".')
 }
 
-trackPageView(`case-study:${slug}`, caseStudyNames[slug])
+trackPageView(`case-study:${locale}:${slug}`, slug)
 
 createRoot(container).render(
   <StrictMode>
-    <CaseStudyApp CaseStudy={content} />
+    <CaseStudyApp CaseStudy={content} locale={locale} slug={slug} />
   </StrictMode>,
 )

@@ -1,11 +1,5 @@
-import { Link } from 'react-router-dom'
-
-const services = [
-  'Domain & Email Setup',
-  'Secure Static Hosting & SSL',
-  'Brand & Logo Design',
-  'Responsive Multi-Language Builds',
-]
+import { useTranslation } from 'react-i18next'
+import { Link, useParams } from 'react-router-dom'
 
 const technologies = [
   ['JavaScript', 'js.svg'],
@@ -21,19 +15,24 @@ const technologies = [
 ]
 
 export default function HomePage() {
+  const { t } = useTranslation()
+  const { locale } = useParams()
+  const services = t('home.services', { returnObjects: true })
+  const statistics = t('home.statistics', { returnObjects: true })
+
   return (
     <div className="home-page" id="home">
       <section className="hero section-divider section-divider--bowtie" id="hero">
         <div className="container">
-          <h1>Build Your Digital Presence in Days, Not Weeks</h1>
-          <p>I handle domains, hosting, design and deployment—so you focus on running your business.</p>
-          <Link to="/en/projects">View Portfolio</Link>
+          <h1>{t('home.heroTitle')}</h1>
+          <p>{t('home.heroBody')}</p>
+          <Link to={`/${locale}/projects`}>{t('home.viewPortfolio')}</Link>
         </div>
       </section>
 
       <section className="services section-divider section-divider--lr" id="what-i-do">
         <div className="container">
-          <h2 className="services-title">What I Do</h2>
+          <h2 className="services-title">{t('home.whatIDo')}</h2>
           <ul className="services-list">
             {services.map((service) => <li className="services-card card" key={service}>{service}</li>)}
           </ul>
@@ -42,11 +41,11 @@ export default function HomePage() {
 
       <section className="tech-stack section-divider section-divider--rl">
         <div className="container">
-          <h2>My Tech Stack</h2>
+          <h2>{t('home.techStack')}</h2>
           <div className="tech-items">
             {technologies.map(([name, image, className]) => (
               <div className="tech-item" key={name}>
-                <img src={`/img/${image}`} alt={`${name} logo`} className={`tech-icon ${className || ''}`.trim()} />
+                <img src={`/img/${image}`} alt={`${name} ${t('common.logoSuffix')}`} className={`tech-icon ${className || ''}`.trim()} />
                 <span className="tech-label">{name}</span>
               </div>
             ))}
@@ -55,13 +54,9 @@ export default function HomePage() {
       </section>
 
       <section className="statistics" id="statistics">
-        <h2 className="statistics-title">By the Numbers</h2>
+        <h2 className="statistics-title">{t('home.statisticsTitle')}</h2>
         <ul className="statistics-grid">
-          {[
-            ['25+', 'Projects'],
-            ['2+', 'Years Experience'],
-            ['5+', 'Countries'],
-          ].map(([number, label]) => (
+          {statistics.map(([number, label]) => (
             <li className="stat-card" key={label}>
               <div className="stat-figure">
                 <div className="stat-circle"><span className="stat-number">{number}</span></div>
