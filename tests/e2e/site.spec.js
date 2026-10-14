@@ -78,6 +78,8 @@ test('privacy policy is available in English and German on desktop and mobile', 
     'href',
     '/en/privacy-policy',
   )
+  await expect(page.locator('footer .footer-links')).toHaveCSS('flex-direction', 'column')
+  await expect(page.locator('footer .footer-links')).toHaveCSS('align-items', 'center')
   await expect(page.locator('main').getByRole('link', { name: 'Contact form' })).toHaveAttribute(
     'href',
     '/en/contact',
@@ -105,9 +107,14 @@ test('contact form stays centered and readable on wide screens', async ({ page }
   await page.setViewportSize({ width: 1440, height: 900 })
   await page.goto('/en/contact')
 
+  const section = page.locator('main .contact-section')
+  const sectionBounds = await section.boundingBox()
   const form = page.locator('main form')
   const bounds = await form.boundingBox()
 
+  expect(sectionBounds).not.toBeNull()
+  expect(sectionBounds.width).toBeLessThanOrEqual(1200)
+  expect(Math.abs(sectionBounds.x + sectionBounds.width / 2 - 720)).toBeLessThanOrEqual(1)
   expect(bounds).not.toBeNull()
   expect(bounds.width).toBeLessThanOrEqual(720)
   expect(Math.abs(bounds.x + bounds.width / 2 - 720)).toBeLessThanOrEqual(1)
@@ -129,6 +136,61 @@ test('locale-prefixed pages load directly and after refresh', async ({ page }) =
   await expect(page.locator('main')).toContainText('Custom websites')
 })
 
+test('browser language selects German before rendering and creates no browser storage', async ({ browser }) => {
+  const preferences = [
+    { languages: ['de'], expected: 'de' },
+    { languages: ['de-DE'], expected: 'de' },
+    { languages: ['de-AT'], expected: 'de' },
+    { languages: ['de-CH'], expected: 'de' },
+    { languages: ['en-US'], expected: 'en' },
+    { languages: ['fr-FR'], expected: 'en' },
+    { languages: ['fr-FR', 'de-DE'], expected: 'en' },
+    { languages: [], language: 'de-DE', expected: 'de' },
+  ]
+
+  for (const { languages, language = languages[0], expected } of preferences) {
+    const context = await browser.newContext()
+    await context.addInitScript(({ preferredLanguages, preferredLanguage }) => {
+      Object.defineProperty(navigator, 'languages', {
+        configurable: true,
+        get: () => preferredLanguages,
+      })
+      Object.defineProperty(navigator, 'language', {
+        configurable: true,
+        get: () => preferredLanguage,
+      })
+    }, { preferredLanguages: languages, preferredLanguage: language })
+
+    const page = await context.newPage()
+    await page.goto('/')
+    await expect(page).toHaveURL(new RegExp(`/${expected}$`))
+    await expect(page.locator('html')).toHaveAttribute('lang', expected)
+    await expect(page.locator('main h1')).toBeVisible()
+    await expect.poll(() => page.evaluate(() => ({
+      cookies: document.cookie,
+      localStorage: localStorage.length,
+      sessionStorage: sessionStorage.length,
+    }))).toEqual({ cookies: '', localStorage: 0, sessionStorage: 0 })
+    await context.close()
+  }
+})
+
+test('German browser preference selects the localized case study', async ({ browser }) => {
+  const context = await browser.newContext()
+  await context.addInitScript(() => {
+    Object.defineProperty(navigator, 'languages', { configurable: true, get: () => ['de-CH'] })
+    Object.defineProperty(navigator, 'language', { configurable: true, get: () => 'de-CH' })
+  })
+
+  const page = await context.newPage()
+  await page.goto('/projects/tripsentinel/')
+  await expect(page).toHaveURL(/\/de\/projects\/tripsentinel$/)
+  await expect(page.locator('html')).toHaveAttribute('lang', 'de')
+  await expect(page.locator('main h1')).toHaveText('TripSentinel')
+  await expect(page.locator('main')).toContainText('Überblick')
+  await context.close()
+})
+
 test('German About page is translated and switches back to English', async ({ page }) => {
   await page.goto('/en/about')
   const languageSelector = page.getByRole('combobox', { name: 'Select language' })
@@ -144,8 +206,20 @@ test('German About page is translated and switches back to English', async ({ pa
   await expect(page.locator('main')).toContainText('Wofür ich stehe')
   await expect(page.locator('main')).toContainText('Laufende Wartung')
 
+  await page.locator('footer').getByRole('link', { name: 'Kontakt' }).click()
+  await expect(page).toHaveURL(/\/de\/contact$/)
+  await expect(page.locator('main')).toContainText('Ihre E-Mail-Adresse')
+  await page.locator('footer').getByRole('link', { name: 'Datenschutzerklärung' }).click()
+  await expect(page).toHaveURL(/\/de\/privacy-policy$/)
+  await expect(page.locator('main h1')).toHaveText('Datenschutzerklärung')
   await page.getByRole('combobox', { name: 'Sprache auswählen' }).selectOption('en')
+  await expect(page).toHaveURL(/\/en\/privacy-policy$/)
+  await page.locator('footer').getByRole('link', { name: 'Contact' }).click()
+  await expect(page).toHaveURL(/\/en\/contact$/)
+  await expect(page.locator('main')).toContainText('Your email')
+  await page.getByRole('navigation', { name: 'Main navigation' }).getByRole('link', { name: 'About' }).click()
   await expect(page).toHaveURL(/\/en\/about$/)
+
   await expect(page.locator('main h1')).toHaveText('Democratizing the Future of Technology for Every Business')
   await expect(page.locator('html')).toHaveAttribute('lang', 'en')
 })

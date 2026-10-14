@@ -1,5 +1,7 @@
 .contact-section {
   box-sizing: border-box;
+  width: 100%;
+  max-width: 1200px;
   padding: 4rem 2rem 1.5rem;
 }
 

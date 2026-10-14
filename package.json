@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "test": "node --test tests/unit/telemetry.test.js && playwright test",
+    "test": "node --test tests/unit/telemetry.test.js tests/unit/languageDetection.test.js && playwright test",
     "preview": "vite preview"
   },
   "dependencies": {

@@ -50,7 +50,7 @@ function MainSiteLayout() {
     }
   }, [isSupportedLocale, locale, page, projectSlug, t])
 
-  if (!isSupportedLocale) return <Navigate to="/en" replace />
+  if (!isSupportedLocale) return <Navigate to={`/${i18n.language}`} replace />
   if (!pageNames[page]) return <Navigate to={`/${locale}`} replace />
 
   return (
@@ -66,8 +66,8 @@ function LegacyHashRedirect() {
   const location = useLocation()
   const legacyPage = location.hash.slice(1)
   const target = pageNames[legacyPage] && legacyPage !== 'home'
-    ? `/en/${legacyPage}`
-    : '/en'
+    ? `/${i18n.language}/${legacyPage}`
+    : `/${i18n.language}`
 
   return <Navigate to={target} replace />
 }
@@ -87,7 +87,7 @@ export default function App() {
           <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="*" element={<Navigate to=".." replace />} />
         </Route>
-        <Route path="*" element={<Navigate to="/en" replace />} />
+        <Route path="*" element={<Navigate to={`/${i18n.language}`} replace />} />
       </Routes>
     </BrowserRouter>
   )
