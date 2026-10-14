@@ -16,7 +16,8 @@ function CaseStudyApp({ CaseStudy, locale, slug }) {
 }
 
 const path = window.location.pathname.split('/').filter(Boolean)
-const locale = ['en', 'de'].includes(path[0]) ? path[0] : 'en'
+const hasLocalizedPath = ['en', 'de'].includes(path[0])
+const locale = hasLocalizedPath ? path[0] : i18n.language
 const slug = path.at(-1)
 const content = caseStudies[slug]
 const container = document.getElementById('root')
@@ -25,18 +26,22 @@ initializeTelemetry(import.meta.env.VITE_APPINSIGHTS_CONNECTION_STRING)
 i18n.changeLanguage(locale)
 document.documentElement.lang = locale
 
-if (!content) {
-  throw new Error(`No React case study is registered for URL slug "${slug}".`)
+if (!hasLocalizedPath && locale === 'de') {
+  window.location.replace(`/de/projects/${encodeURIComponent(slug)}`)
+} else {
+  if (!content) {
+    throw new Error(`No React case study is registered for URL slug "${slug}".`)
+  }
+
+  if (!container) {
+    throw new Error('The React case-study entry point requires an element with id="root".')
+  }
+
+  trackPageView(`case-study:${locale}:${slug}`, slug)
+
+  createRoot(container).render(
+    <StrictMode>
+      <CaseStudyApp CaseStudy={content} locale={locale} slug={slug} />
+    </StrictMode>,
+  )
 }
-
-if (!container) {
-  throw new Error('The React case-study entry point requires an element with id="root".')
-}
-
-trackPageView(`case-study:${locale}:${slug}`, slug)
-
-createRoot(container).render(
-  <StrictMode>
-    <CaseStudyApp CaseStudy={content} locale={locale} slug={slug} />
-  </StrictMode>,
-)
