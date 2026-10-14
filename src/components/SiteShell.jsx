@@ -50,13 +50,22 @@ export function Header({ caseStudy = false, locale = 'en', currentPage }) {
 export function Footer({ caseStudy = false, locale = 'en' }) {
   const { t } = useTranslation()
   const contactHref = `/${locale}/contact`
+  const privacyHref = `/${locale}/privacy-policy`
 
   return (
     <footer>
       <div className="footer-links">
-        {caseStudy
-          ? <a href={contactHref}>{t('common.contact')}</a>
-          : <Link to={contactHref}>{t('common.contact')}</Link>}
+        {caseStudy ? (
+          <>
+            <a href={contactHref}>{t('common.contact')}</a>
+            <a href={privacyHref}>{t('common.privacyPolicy')}</a>
+          </>
+        ) : (
+          <>
+            <Link to={contactHref}>{t('common.contact')}</Link>
+            <Link to={privacyHref}>{t('common.privacyPolicy')}</Link>
+          </>
+        )}
       </div>
       <div className="social-icons">
         <a href="https://www.linkedin.com/in/francesco-ciccone-238300128" target="_blank" rel="noopener noreferrer">

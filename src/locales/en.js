@@ -4,6 +4,7 @@ export default {
   'pageTitles.services': 'Services',
   'pageTitles.projects': 'Projects',
   'pageTitles.contact': 'Contact',
+  'pageTitles.privacyPolicy': 'Privacy Policy',
   'common.logoAlt': 'Ciccone Software Solutions logo',
   'common.logoSuffix': 'logo',
   'common.navigation': 'Main navigation',
@@ -12,6 +13,7 @@ export default {
   'common.services': 'Services',
   'common.projects': 'Projects',
   'common.contact': 'Contact',
+  'common.privacyPolicy': 'Privacy Policy',
   'common.selectLanguage': 'Select language',
   'common.allProjects': '← All projects',
   'common.footerRights': 'All rights reserved.',
@@ -140,11 +142,88 @@ export default {
   'contact.messageLabel': 'Your message',
   'contact.messagePlaceholder': 'How can we help?',
   'contact.honeypot': 'Leave this field empty',
-  'contact.privacyBefore': 'When you submit this form, your email address and message are sent to Formspree, which processes the submission and forwards it to me by email. I use the information to respond to your inquiry and may keep the email in my inbox until I delete it. Formspree may process data in the United States and other countries where it operates. See the',
+  'contact.privacyBefore': 'Your email address and message are processed to respond to your inquiry. Read our',
+  'contact.privacyAnd': 'Formspree also processes and forwards submissions. See its',
   'contact.privacyLink': 'Formspree Privacy Policy',
   'contact.privacyAfter': 'for details about its processing.',
   'contact.consent': 'I agree to the processing of my data for the purpose of this inquiry.',
   'contact.send': 'Send',
+
+  'privacy.lead': 'This policy explains how Ciccone Software Solutions handles personal data when you visit this website or contact me.',
+  'privacy.contactPrompt': 'For privacy questions or rights requests, contact me through the',
+  'privacy.authorityPrompt': 'You may also complain to',
+  'privacy.sections': [
+    {
+      heading: 'Controller and contact',
+      paragraphs: [
+        'Ciccone Software Solutions is a Norwegian sole proprietorship (enkeltpersonforetak, ENK), organisation number 921 256 914. The business address is Friggs vei 14B, 1349 Rykkinn, Norway. The proprietor is the controller for the personal-data processing described in this policy.',
+        'For privacy questions or to exercise your rights, use the website contact form and identify your message as a privacy request.',
+      ],
+    },
+    {
+      heading: 'Personal data, purposes and legal bases',
+      paragraphs: [
+        'When your browser requests this website, the hosting infrastructure may process your IP address, the requested page, request time, and technical browser or device information. This is needed to deliver, secure and maintain the site. The legal basis is my legitimate interest in operating a secure, functioning website (GDPR Article 6(1)(f)).',
+        'The site sends page-view analytics to Microsoft Application Insights to understand which pages are visited and improve the site. The analytics configuration is limited and privacy-focused as described below. The legal basis is my legitimate interest in understanding site usage and improving the service (Article 6(1)(f)).',
+        'The contact form asks for your email address and message so I can handle and respond to your inquiry. Its existing mandatory checkbox asks you to agree to this processing. The legal basis is your consent (GDPR Article 6(1)(a)); where your inquiry concerns a possible contract, processing may also be necessary to take steps at your request before entering into a contract (Article 6(1)(b)).',
+      ],
+    },
+    {
+      heading: 'Hosting and page-view analytics',
+      paragraphs: [
+        'Azure Static Web Apps hosts this website. Microsoft may process technical request data, including IP addresses, to provide hosting, reliability and security. The Application Insights resource and its Log Analytics workspace are located in West Europe (EU).',
+        'Microsoft Application Insights receives page-view events only. The site disables cookies and persistent browser storage for telemetry, does not automatically track routes or network requests, and removes query strings and fragments from page URLs. It also removes referrers, identifying user, session, device, location and operation tags, event properties, measurements and page-view IDs before sending a page view.',
+        'These measures reduce the data sent, but do not make the analytics completely anonymous. Microsoft and the hosting infrastructure may still process an IP address or other technical data as part of providing their services.',
+      ],
+    },
+    {
+      heading: 'Google Fonts',
+      paragraphs: [
+        'The website loads fonts from Google Fonts. When your browser requests a font, Google may receive your IP address, the requested font resource and technical request information. Your browser connects to Google to retrieve these files; Google processes that request under its own privacy terms and may process data outside the European Economic Area (EEA).',
+      ],
+    },
+    {
+      heading: 'Contact form and Formspree CAPTCHA',
+      paragraphs: [
+        'The contact form is provided by Formspree. It asks only for your email address and message; Formspree processes these and forwards the submission to the business email inbox so I can respond.',
+        'For CAPTCHA verification, you may be redirected to formspree.io. Formspree may process technical information needed for verification and may set cookies, including analytics cookies, on its own domain. These cookies are controlled by Formspree and are not cookies set by this website. Formspree may process information internationally, including outside the EEA.',
+        'The Formspree privacy notice is available at formspree.io/legal/privacy-policy.',
+      ],
+    },
+    {
+      heading: 'Recipients and international transfers',
+      paragraphs: [
+        'Personal data may be processed by the providers needed to run the website and contact form: Microsoft for Azure Static Web Apps and Application Insights, Google for Google Fonts, and Formspree for form delivery and CAPTCHA. Formspree may process data outside the EEA. Google or Microsoft may also process technical request data outside the EEA depending on their service arrangements; their applicable processing locations and safeguards should be checked in the relevant service terms and account settings.',
+        'Formspree publicly states that it relies on Standard Contractual Clauses (SCCs) for international transfers. This refers to Formspree’s public statement and does not confirm that an account-specific Data Processing Agreement (DPA) has been verified. Any transfer outside the EEA must use a valid GDPR transfer mechanism and any required supplementary measures.',
+      ],
+      reference: 'formspree-security',
+      referenceText: 'Formspree’s public security information:',
+      referenceLink: 'Formspree security',
+    },
+    {
+      heading: 'Retention',
+      paragraphs: [
+        'The Formspree free plan provides access to archived submissions for 30 days. This is an archive-access period and does not mean that Formspree permanently deletes submissions after 30 days. Forwarded emails may remain in the business email inbox until they are deleted.',
+        'Application Insights data has a default retention period of 90 days, unless a different retention period is set at table level. Other technical data may be retained by Azure, Google or Formspree under their applicable service terms and settings; no additional provider retention period is stated here unless verified.',
+      ],
+    },
+    {
+      heading: 'Your rights',
+      paragraphs: [
+        'Subject to the conditions in the GDPR, you may request access to your personal data, rectification, erasure, restriction of processing, or data portability. You may object to processing based on legitimate interests. Where processing is based on consent, you may withdraw it at any time; withdrawal does not affect processing that took place before it.',
+        'To make a request, use the contact form and mark your message as a privacy request. You also have the right to lodge a complaint with the Norwegian Data Protection Authority (Datatilsynet), particularly if you believe your data-protection rights have been infringed.',
+      ],
+    },
+    {
+      heading: 'Cookies and browser storage',
+      paragraphs: [
+        'A Chrome test of this website found no cookies, local storage or session storage entries. Application Insights is configured to disable its cookie and browser-storage use. This test describes the observed site configuration and is not a guarantee about every browser or later service change.',
+        'If CAPTCHA verification redirects you to formspree.io, Formspree sets its own cookies on that separate domain, which may include analytics cookies. These are not cookies set by the CicconeSoftware website and are governed by Formspree’s notices and settings.',
+      ],
+    },
+  ],
+  'privacy.contactLink': 'Contact form',
+  'privacy.authorityLink': 'Norwegian Data Protection Authority (Datatilsynet)',
 
   'case.bookingAdmin.title': 'Booking & Operations Admin Dashboard',
   'case.bookingAdmin.lede': 'Full-Stack Booking Management Application',

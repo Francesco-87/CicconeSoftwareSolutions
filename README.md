@@ -189,7 +189,6 @@ This allows the site to behave like a traditional multi-page website while still
 
 ### Deployment
 
-* GitHub Pages
 * Azure Static Web Apps
 * Custom domain
 
@@ -282,8 +281,6 @@ npx playwright install chromium
 npm test
 ```
 
-The GitHub Pages workflow runs these tests after the production build and before uploading the site for deployment.
-
 ### Preview Production Build
 
 ```bash
@@ -305,7 +302,7 @@ This project demonstrates practical experience with:
 * CSS organization
 * CSS variables
 * Project case-study presentation
-* GitHub Pages deployment
+* Azure Static Web Apps deployment
 * Custom domain setup
 * Portfolio website development
 * Maintainable frontend architecture

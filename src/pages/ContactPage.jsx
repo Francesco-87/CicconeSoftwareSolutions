@@ -1,7 +1,9 @@
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
 
 export default function ContactPage() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+  const locale = i18n.resolvedLanguage || 'en'
 
   return (
     <section className="contact-section section-base">
@@ -36,6 +38,8 @@ export default function ContactPage() {
         </div>
         <p className="privacy-note">
           {t('contact.privacyBefore')}{' '}
+          <Link to={`/${locale}/privacy-policy`}>{t('common.privacyPolicy')}</Link>.{' '}
+          {t('contact.privacyAnd')}{' '}
           <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer">
             {t('contact.privacyLink')}
           </a>{' '}

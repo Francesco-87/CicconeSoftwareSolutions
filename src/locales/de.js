@@ -4,6 +4,7 @@ export default {
   'pageTitles.services': 'Leistungen',
   'pageTitles.projects': 'Projekte',
   'pageTitles.contact': 'Kontakt',
+  'pageTitles.privacyPolicy': 'Datenschutzerklärung',
   'common.logoAlt': 'Logo von Ciccone Software Solutions',
   'common.logoSuffix': 'Logo',
   'common.navigation': 'Hauptnavigation',
@@ -12,6 +13,7 @@ export default {
   'common.services': 'Leistungen',
   'common.projects': 'Projekte',
   'common.contact': 'Kontakt',
+  'common.privacyPolicy': 'Datenschutzerklärung',
   'common.selectLanguage': 'Sprache auswählen',
   'common.allProjects': '← Alle Projekte',
   'common.footerRights': 'Alle Rechte vorbehalten.',
@@ -140,11 +142,88 @@ export default {
   'contact.messageLabel': 'Ihre Nachricht',
   'contact.messagePlaceholder': 'Wie kann ich Ihnen helfen?',
   'contact.honeypot': 'Dieses Feld leer lassen',
-  'contact.privacyBefore': 'Wenn Sie dieses Formular absenden, werden Ihre E-Mail-Adresse und Nachricht an Formspree übermittelt. Formspree verarbeitet die Anfrage und leitet sie per E-Mail an mich weiter. Ich verwende die Angaben, um Ihre Anfrage zu beantworten, und bewahre die E-Mail gegebenenfalls in meinem Posteingang auf, bis ich sie lösche. Formspree kann Daten in den USA und anderen Ländern verarbeiten, in denen der Dienst tätig ist. Weitere Informationen zur Verarbeitung finden Sie in der',
+  'contact.privacyBefore': 'Ihre E-Mail-Adresse und Nachricht werden verarbeitet, um Ihre Anfrage zu beantworten. Lesen Sie unsere',
+  'contact.privacyAnd': 'Formspree verarbeitet und übermittelt die Nachricht ebenfalls. Weitere Informationen finden Sie in der',
   'contact.privacyLink': 'Datenschutzerklärung von Formspree',
   'contact.privacyAfter': '.',
   'contact.consent': 'Ich stimme der Verarbeitung meiner Daten zum Zweck dieser Anfrage zu.',
   'contact.send': 'Senden',
+
+  'privacy.lead': 'Diese Datenschutzerklärung erläutert, wie Ciccone Software Solutions personenbezogene Daten verarbeitet, wenn Sie diese Website besuchen oder Kontakt aufnehmen.',
+  'privacy.contactPrompt': 'Bei Fragen zum Datenschutz oder zur Ausübung Ihrer Rechte können Sie über das',
+  'privacy.authorityPrompt': 'Sie können sich außerdem bei der',
+  'privacy.sections': [
+    {
+      heading: 'Verantwortlicher und Kontakt',
+      paragraphs: [
+        'Ciccone Software Solutions ist ein norwegisches Einzelunternehmen (enkeltpersonforetak, ENK), Organisationsnummer 921 256 914. Die Geschäftsanschrift lautet Friggs vei 14B, 1349 Rykkinn, Norwegen. Der Inhaber ist für die in dieser Datenschutzerklärung beschriebene Verarbeitung personenbezogener Daten verantwortlich.',
+        'Bei Fragen zum Datenschutz oder zur Ausübung Ihrer Rechte verwenden Sie bitte das Kontaktformular dieser Website und kennzeichnen Sie Ihre Nachricht als Datenschutzanfrage.',
+      ],
+    },
+    {
+      heading: 'Personenbezogene Daten, Zwecke und Rechtsgrundlagen',
+      paragraphs: [
+        'Wenn Ihr Browser diese Website aufruft, kann die Hosting-Infrastruktur Ihre IP-Adresse, die angeforderte Seite, den Zeitpunkt der Anfrage sowie technische Browser- oder Geräteinformationen verarbeiten. Dies ist erforderlich, um die Website bereitzustellen, zu schützen und zu warten. Rechtsgrundlage ist mein berechtigtes Interesse an einem sicheren und funktionsfähigen Websitebetrieb (Artikel 6 Absatz 1 Buchstabe f DSGVO).',
+        'Die Website übermittelt Seitenaufrufe an Microsoft Application Insights, damit ich nachvollziehen kann, welche Seiten besucht werden, und die Website verbessern kann. Die Analyse ist wie unten beschrieben datenschutzorientiert eingeschränkt. Rechtsgrundlage ist mein berechtigtes Interesse, die Nutzung der Website zu verstehen und den Dienst zu verbessern (Artikel 6 Absatz 1 Buchstabe f DSGVO).',
+        'Das Kontaktformular fragt nach Ihrer E-Mail-Adresse und Nachricht, damit ich Ihre Anfrage bearbeiten und beantworten kann. Über die vorhandene Pflicht-Checkbox stimmen Sie dieser Verarbeitung zu. Rechtsgrundlage ist Ihre Einwilligung (Artikel 6 Absatz 1 Buchstabe a DSGVO); betrifft Ihre Anfrage einen möglichen Vertrag, kann die Verarbeitung außerdem erforderlich sein, um auf Ihre Anfrage hin vorvertragliche Maßnahmen zu ergreifen (Artikel 6 Absatz 1 Buchstabe b DSGVO).',
+      ],
+    },
+    {
+      heading: 'Hosting und Seitenaufrufanalyse',
+      paragraphs: [
+        'Diese Website wird mit Azure Static Web Apps gehostet. Microsoft kann technische Anfragedaten, einschließlich IP-Adressen, verarbeiten, um Hosting, Zuverlässigkeit und Sicherheit bereitzustellen. Die Application-Insights-Ressource und ihr Log-Analytics-Arbeitsbereich befinden sich in West Europe (EU).',
+        'Microsoft Application Insights erhält ausschließlich Seitenaufrufereignisse. Die Website deaktiviert Cookies und dauerhaften Browserspeicher für die Telemetrie, erfasst weder automatisch Routen noch Netzwerkanfragen und entfernt Abfrageparameter und Fragmente aus Seiten-URLs. Außerdem werden Referrer, identifizierende Benutzer-, Sitzungs-, Geräte-, Standort- und Operationstags, Ereigniseigenschaften, Messwerte und Seitenaufruf-IDs vor der Übermittlung entfernt.',
+        'Diese Maßnahmen reduzieren die übermittelten Daten, machen die Analyse jedoch nicht vollständig anonym. Microsoft und die Hosting-Infrastruktur können im Rahmen ihrer Dienste weiterhin eine IP-Adresse oder andere technische Daten verarbeiten.',
+      ],
+    },
+    {
+      heading: 'Google Fonts',
+      paragraphs: [
+        'Die Website lädt Schriftarten von Google Fonts. Wenn Ihr Browser eine Schriftart anfordert, kann Google Ihre IP-Adresse, die angeforderte Schriftdatei und technische Anfragedaten erhalten. Ihr Browser verbindet sich zum Abruf dieser Dateien mit Google; Google verarbeitet die Anfrage gemäß den eigenen Datenschutzbedingungen und kann Daten außerhalb des Europäischen Wirtschaftsraums (EWR) verarbeiten.',
+      ],
+    },
+    {
+      heading: 'Kontaktformular und Formspree-CAPTCHA',
+      paragraphs: [
+        'Das Kontaktformular wird von Formspree bereitgestellt. Es fragt ausschließlich Ihre E-Mail-Adresse und Nachricht ab. Formspree verarbeitet diese Angaben und leitet die Einsendung an das geschäftliche E-Mail-Postfach weiter, damit ich antworten kann.',
+        'Zur CAPTCHA-Prüfung werden Sie möglicherweise zu formspree.io weitergeleitet. Formspree kann die für die Prüfung erforderlichen technischen Informationen verarbeiten und auf der eigenen Domain Cookies setzen, einschließlich Analyse-Cookies. Diese Cookies werden von Formspree kontrolliert und nicht von dieser Website gesetzt. Formspree kann Daten international, auch außerhalb des EWR, verarbeiten.',
+        'Die Datenschutzhinweise von Formspree finden Sie unter formspree.io/legal/privacy-policy.',
+      ],
+    },
+    {
+      heading: 'Empfänger und internationale Übermittlungen',
+      paragraphs: [
+        'Personenbezogene Daten können durch die für Website und Kontaktformular erforderlichen Anbieter verarbeitet werden: Microsoft für Azure Static Web Apps und Application Insights, Google für Google Fonts sowie Formspree für Formularübermittlung und CAPTCHA. Formspree kann Daten außerhalb des EWR verarbeiten. Je nach Dienstvereinbarung können auch Google oder Microsoft technische Anfragedaten außerhalb des EWR verarbeiten; die geltenden Verarbeitungsorte und Schutzmaßnahmen sollten anhand der jeweiligen Dienstbedingungen und Kontoeinstellungen überprüft werden.',
+        'Formspree erklärt öffentlich, für internationale Übermittlungen Standardvertragsklauseln (SCCs) zu verwenden. Diese Aussage bezieht sich auf die öffentliche Erklärung von Formspree und bestätigt nicht, dass eine kontospezifische Auftragsverarbeitungsvereinbarung (DPA) geprüft wurde. Jede Übermittlung außerhalb des EWR muss auf einem gültigen Übermittlungsmechanismus nach der DSGVO sowie gegebenenfalls erforderlichen ergänzenden Maßnahmen beruhen.',
+      ],
+      reference: 'formspree-security',
+      referenceText: 'Die öffentlichen Sicherheitsinformationen von Formspree:',
+      referenceLink: 'Formspree-Sicherheitsinformationen',
+    },
+    {
+      heading: 'Speicherdauer',
+      paragraphs: [
+        'Der kostenlose Formspree-Tarif ermöglicht den Zugriff auf archivierte Einsendungen für 30 Tage. Diese Zugriffsfrist bedeutet nicht, dass Formspree die Einsendungen nach 30 Tagen endgültig löscht. Weitergeleitete E-Mails können im geschäftlichen E-Mail-Postfach verbleiben, bis sie gelöscht werden.',
+        'Daten in Application Insights werden standardmäßig 90 Tage aufbewahrt, sofern nicht auf Tabellenebene eine andere Aufbewahrungsfrist festgelegt ist. Andere technische Daten können von Azure, Google oder Formspree gemäß den geltenden Dienstbedingungen und Einstellungen gespeichert werden; weitere Anbieterfristen werden hier nur genannt, wenn sie verifiziert wurden.',
+      ],
+    },
+    {
+      heading: 'Ihre Rechte',
+      paragraphs: [
+        'Vorbehaltlich der Voraussetzungen der DSGVO können Sie Auskunft über Ihre personenbezogenen Daten sowie deren Berichtigung, Löschung oder Einschränkung und, soweit anwendbar, Datenübertragbarkeit verlangen. Sie können einer Verarbeitung aufgrund berechtigter Interessen widersprechen. Beruht eine Verarbeitung auf Ihrer Einwilligung, können Sie diese jederzeit widerrufen; der Widerruf berührt nicht die Rechtmäßigkeit der zuvor erfolgten Verarbeitung.',
+        'Für eine Anfrage verwenden Sie bitte das Kontaktformular und kennzeichnen Sie Ihre Nachricht als Datenschutzanfrage. Außerdem haben Sie das Recht, sich bei der norwegischen Datenschutzbehörde (Datatilsynet) zu beschweren, insbesondere wenn Sie der Ansicht sind, dass Ihre Datenschutzrechte verletzt wurden.',
+      ],
+    },
+    {
+      heading: 'Cookies und Browserspeicher',
+      paragraphs: [
+        'Ein Test dieser Website in Chrome ergab keine Cookies und keine Einträge im lokalen oder Sitzungs-Browserspeicher. Application Insights ist so konfiguriert, dass Cookies und Browserspeicher deaktiviert sind. Dieses Testergebnis beschreibt die beobachtete Website-Konfiguration und ist keine Garantie für jeden Browser oder spätere Änderungen der Dienste.',
+        'Wenn Sie zur CAPTCHA-Prüfung zu formspree.io weitergeleitet werden, setzt Formspree auf dieser separaten Domain eigene Cookies, möglicherweise auch Analyse-Cookies. Diese Cookies werden nicht von der CicconeSoftware-Website gesetzt und unterliegen den Hinweisen und Einstellungen von Formspree.',
+      ],
+    },
+  ],
+  'privacy.contactLink': 'Kontaktformular',
+  'privacy.authorityLink': 'norwegischen Datenschutzbehörde (Datatilsynet)',
 
   'case.bookingAdmin.title': 'Buchungs- und Betriebs-Dashboard',
   'case.bookingAdmin.lede': 'Full-Stack-Anwendung zur Buchungsverwaltung',

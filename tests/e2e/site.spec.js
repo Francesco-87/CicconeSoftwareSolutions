@@ -38,12 +38,67 @@ test('main navigation switches views and supports browser history', async ({ pag
   await expect(form).toBeVisible()
   await expect.poll(() => form.evaluate((element) => element.checkValidity())).toBe(false)
   await expect(page.locator('main')).toContainText('Formspree Privacy Policy')
+  await expect(form.getByRole('link', { name: 'Privacy Policy', exact: true })).toHaveAttribute(
+    'href',
+    '/en/privacy-policy',
+  )
+  await expect(form.locator('input[type="email"]')).toHaveCount(1)
+  await expect(form.locator('textarea')).toHaveCount(1)
+  await expect(form.locator('input[type="checkbox"]')).toHaveAttribute('required', '')
+  await expect(form.locator('input[type="checkbox"]')).toHaveAccessibleName(
+    'I agree to the processing of my data for the purpose of this inquiry.',
+  )
+  await expect(form).toHaveAttribute('action', 'https://formspree.io/f/meolyver')
+  await expect(form).toHaveAttribute('method', 'POST')
 
   await page.goBack()
   await expect(page).toHaveURL(/\/en\/projects$/)
   await expect(page.locator('main h1')).toHaveText('Projects')
   await page.goForward()
   await expect(page.locator('main form')).toBeVisible()
+})
+
+test('privacy policy is available in English and German on desktop and mobile', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 })
+  await page.goto('/en/privacy-policy')
+
+  await expect(page).toHaveTitle('Privacy Policy | Ciccone Software Solutions')
+  await expect(page.locator('main')).toContainText('Norwegian sole proprietorship')
+  await expect(page.locator('main')).toContainText('Azure Static Web Apps')
+  await expect(page.locator('main')).toContainText('Application Insights')
+  await expect(page.locator('main')).toContainText('Google Fonts')
+  await expect(page.locator('main')).toContainText('Formspree CAPTCHA')
+  await expect(page.locator('main')).toContainText('90 days')
+  await expect(page.locator('main')).toContainText('does not mean that Formspree permanently deletes')
+  await expect(page.locator('main').getByRole('link', { name: 'Formspree security', exact: true })).toHaveAttribute(
+    'href',
+    'https://formspree.io/security/',
+  )
+  await expect(page.locator('footer').getByRole('link', { name: 'Privacy Policy' })).toHaveAttribute(
+    'href',
+    '/en/privacy-policy',
+  )
+  await expect(page.locator('main').getByRole('link', { name: 'Contact form' })).toHaveAttribute(
+    'href',
+    '/en/contact',
+  )
+
+  await page.setViewportSize({ width: 375, height: 812 })
+  await expect.poll(() => page.locator('main').evaluate((element) => element.scrollWidth <= element.clientWidth)).toBe(true)
+
+  await page.goto('/de/privacy-policy')
+  await expect(page.locator('html')).toHaveAttribute('lang', 'de')
+  await expect(page).toHaveTitle('Datenschutzerklärung | Ciccone Software Solutions')
+  await expect(page.locator('main')).toContainText('norwegisches Einzelunternehmen')
+  await expect(page.locator('main')).toContainText('Google Fonts')
+  await expect(page.locator('main')).toContainText('Formspree-CAPTCHA')
+  await expect(page.locator('main')).toContainText('90 Tage')
+  await expect(page.locator('main')).toContainText('nicht, dass Formspree die Einsendungen nach 30 Tagen endgültig löscht')
+  await expect(page.locator('footer').getByRole('link', { name: 'Datenschutzerklärung' })).toHaveAttribute(
+    'href',
+    '/de/privacy-policy',
+  )
+  await expect.poll(() => page.locator('main').evaluate((element) => element.scrollWidth <= element.clientWidth)).toBe(true)
 })
 
 test('contact form stays centered and readable on wide screens', async ({ page }) => {

@@ -6,6 +6,7 @@ import AboutPage from './pages/AboutPage.jsx'
 import CaseStudyPage from './pages/CaseStudyPage.jsx'
 import ContactPage from './pages/ContactPage.jsx'
 import HomePage from './pages/HomePage.jsx'
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage.jsx'
 import ProjectsPage from './pages/ProjectsPage.jsx'
 import ServicesPage from './pages/ServicesPage.jsx'
 import i18n from './i18n.js'
@@ -16,6 +17,7 @@ const pageNames = {
   contact: 'contact',
   home: 'home',
   projects: 'projects',
+  'privacy-policy': 'privacyPolicy',
   services: 'services',
 }
 
@@ -82,6 +84,7 @@ export default function App() {
           <Route path="projects" element={<ProjectsPage />} />
           <Route path="projects/:slug" element={<CaseStudyPage />} />
           <Route path="contact" element={<ContactPage />} />
+          <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="*" element={<Navigate to=".." replace />} />
         </Route>
         <Route path="*" element={<Navigate to="/en" replace />} />
