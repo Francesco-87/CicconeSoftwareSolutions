@@ -4,7 +4,7 @@ export default function BookingAndRegistryCaseStudy() {
 
   <div className="case-study-wrapper">
       <section className="case-study section-base section-divider section-divider--bowtie">
-        <a href="/#projects" className="back-link">← All projects</a>
+        <a href="/en/projects" className="back-link">← All projects</a>
 
         <div className="container">
           

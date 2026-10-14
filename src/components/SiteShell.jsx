@@ -1,19 +1,24 @@
+import { Link } from 'react-router-dom'
+
 export function Header({ caseStudy = false }) {
-  const pageHref = (page) => caseStudy ? `/#${page}` : `#${page}`
+  const pageHref = (page) => `/en${page ? `/${page}` : ''}`
+  const siteLink = (href, children, props = {}) => caseStudy
+    ? <a href={href} {...props}>{children}</a>
+    : <Link to={href} {...props}>{children}</Link>
 
   return (
     <header>
       <div className="header-container">
         <div className="logo-container">
-          <a href={caseStudy ? '/' : '#home'} aria-label="Ciccone Software Solutions home">
+          {siteLink(pageHref(''), (
             <img src="/img/LogoFull.svg" alt="Ciccone Software Solutions Logo" className="ciccone-logo" />
-          </a>
+          ), { 'aria-label': 'Ciccone Software Solutions home' })}
         </div>
         <nav aria-label="Main navigation">
-          <a href={pageHref('about')}>About</a>
-          <a href={pageHref('services')}>Services</a>
-          <a href={pageHref('projects')}>Projects</a>
-          <a href={pageHref('contact')}>Contact</a>
+          {siteLink(pageHref('about'), 'About')}
+          {siteLink(pageHref('services'), 'Services')}
+          {siteLink(pageHref('projects'), 'Projects')}
+          {siteLink(pageHref('contact'), 'Contact')}
         </nav>
         <div className="language-selector">
           <svg className="icon-translate" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" />
@@ -30,10 +35,14 @@ export function Header({ caseStudy = false }) {
 }
 
 export function Footer({ caseStudy = false }) {
+  const contactHref = '/en/contact'
+
   return (
     <footer>
       <div className="footer-links">
-        <a href={caseStudy ? '/#contact' : '#contact'}>Contact</a>
+        {caseStudy
+          ? <a href={contactHref}>Contact</a>
+          : <Link to={contactHref}>Contact</Link>}
       </div>
       <div className="social-icons">
         <a href="https://www.linkedin.com/in/francesco-ciccone-238300128" target="_blank" rel="noopener noreferrer">

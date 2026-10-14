@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 const services = [
   'Domain & Email Setup',
   'Secure Static Hosting & SSL',
@@ -25,7 +27,7 @@ export default function HomePage() {
         <div className="container">
           <h1>Build Your Digital Presence in Days, Not Weeks</h1>
           <p>I handle domains, hosting, design and deployment—so you focus on running your business.</p>
-          <a href="#projects">View Portfolio</a>
+          <Link to="/en/projects">View Portfolio</Link>
         </div>
       </section>
 

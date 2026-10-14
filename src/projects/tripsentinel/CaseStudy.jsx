@@ -8,7 +8,7 @@ export default function TripSentinelCaseStudy() {
         className="case-study section-base section-divider section-divider--bowtie"
       >
 
-        <a href="/#projects" className="back-link">
+        <a href="/en/projects" className="back-link">
           ← All projects
         </a>
 

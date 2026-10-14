@@ -9,30 +9,31 @@ const caseStudies = [
 
 test('main navigation switches views and supports browser history', async ({ page }) => {
   await page.goto('/')
+  await expect(page).toHaveURL(/\/en$/)
   await expect(page.locator('main h1')).toHaveText('Build Your Digital Presence in Days, Not Weeks')
 
   const navigation = page.getByRole('navigation', { name: 'Main navigation' })
   await navigation.getByRole('link', { name: 'About' }).click()
-  await expect(page).toHaveURL(/#about$/)
+  await expect(page).toHaveURL(/\/en\/about$/)
   await expect(page.locator('main h1')).toHaveText('Democratizing the Future of Technology for Every Business')
 
   await navigation.getByRole('link', { name: 'Services' }).click()
-  await expect(page).toHaveURL(/#services$/)
+  await expect(page).toHaveURL(/\/en\/services$/)
   await expect(page.locator('main')).toContainText('Custom websites')
 
   await navigation.getByRole('link', { name: 'Projects' }).click()
-  await expect(page).toHaveURL(/#projects$/)
+  await expect(page).toHaveURL(/\/en\/projects$/)
   await expect(page.locator('main h1')).toHaveText('Projects')
 
   await navigation.getByRole('link', { name: 'Contact' }).click()
-  await expect(page).toHaveURL(/#contact$/)
+  await expect(page).toHaveURL(/\/en\/contact$/)
   const form = page.locator('main form')
   await expect(form).toBeVisible()
   await expect.poll(() => form.evaluate((element) => element.checkValidity())).toBe(false)
   await expect(page.locator('main')).toContainText('Formspree Privacy Policy')
 
   await page.goBack()
-  await expect(page).toHaveURL(/#projects$/)
+  await expect(page).toHaveURL(/\/en\/projects$/)
   await expect(page.locator('main h1')).toHaveText('Projects')
   await page.goForward()
   await expect(page.locator('main form')).toBeVisible()
@@ -40,7 +41,7 @@ test('main navigation switches views and supports browser history', async ({ pag
 
 test('contact form stays centered and readable on wide screens', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 })
-  await page.goto('/#contact')
+  await page.goto('/en/contact')
 
   const form = page.locator('main form')
   const bounds = await form.boundingBox()
@@ -48,6 +49,22 @@ test('contact form stays centered and readable on wide screens', async ({ page }
   expect(bounds).not.toBeNull()
   expect(bounds.width).toBeLessThanOrEqual(720)
   expect(Math.abs(bounds.x + bounds.width / 2 - 720)).toBeLessThanOrEqual(1)
+})
+
+test('legacy hash links redirect to the equivalent route', async ({ page }) => {
+  await page.goto('/#about')
+
+  await expect(page).toHaveURL(/\/en\/about$/)
+  await expect(page.locator('main h1')).toHaveText('Democratizing the Future of Technology for Every Business')
+})
+
+test('locale-prefixed pages load directly and after refresh', async ({ page }) => {
+  await page.goto('/en/services')
+  await expect(page.locator('main')).toContainText('Custom websites')
+
+  await page.reload()
+  await expect(page).toHaveURL(/\/en\/services$/)
+  await expect(page.locator('main')).toContainText('Custom websites')
 })
 
 for (const [slug, heading] of caseStudies) {
@@ -83,6 +100,6 @@ test('case-study back link returns to the projects view', async ({ page }) => {
   await page.goto('/projects/tripsentinel/')
   await page.getByRole('link', { name: 'All projects' }).click()
 
-  await expect(page).toHaveURL(/\/#projects$/)
+  await expect(page).toHaveURL(/\/en\/projects$/)
   await expect(page.locator('main h1')).toHaveText('Projects')
 })
