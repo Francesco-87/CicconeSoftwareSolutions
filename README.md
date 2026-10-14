@@ -14,7 +14,7 @@ The project focuses on responsive design, structured content organization, proje
 
 * Type: Personal / Business Website
 * Platform: Web
-* Architecture: Static React pages with hash-selected portfolio views and standalone case-study URLs
+* Architecture: Static React pages with locale-prefixed routes and standalone case-study URLs
 * Build Tool: Vite
 * Purpose: Portfolio, project showcase, and service presentation
 
@@ -71,7 +71,7 @@ These pages provide more detailed project information than a simple project list
 
 ## Technical Architecture
 
-The main portfolio is rendered by React without a client-side routing library. Hashes (`/#about`, `/#services`, `/#projects`, and `/#contact`) select which page content React renders between the shared header and footer. Each case study is a Vite static entry point that mounts a shared React shell and its own JSX component at the existing URL.
+The main portfolio uses React Router with locale-prefixed paths (`/en`, `/en/about`, `/en/services`, `/en/projects`, and `/en/contact`). The root URL redirects to `/en`, and existing hash links such as `/#about` redirect to their corresponding route. English is currently the only routed locale; add a locale when its translated content is ready. Azure Static Web Apps uses `public/staticwebapp.config.json` to serve the app shell for client-side routes while excluding assets and standalone case studies from the fallback. Each case study remains a Vite static entry point with its own URL and shared site shell.
 
 ```text
 src/
@@ -98,7 +98,7 @@ src/
     └── css/
 ```
 
-`App.jsx` selects the active portfolio page and owns no page markup. Each main-site view is a separate React component in `pages/`; the reusable header and footer live in `components/SiteShell.jsx`. Each case study has a static entry file and a separate JSX component under its project folder.
+`App.jsx` defines the locale-prefixed routes and shared page layout. Each main-site view is a separate React component in `pages/`; the reusable header and footer live in `components/SiteShell.jsx`. Each case study has a static entry file and a separate JSX component under its project folder.
 
 ---
 
@@ -189,7 +189,6 @@ This allows the site to behave like a traditional multi-page website while still
 
 ### Deployment
 
-* GitHub Pages
 * Azure Static Web Apps
 * Custom domain
 
@@ -199,7 +198,7 @@ The Azure Static Web Apps build can send basic page-view telemetry to Applicatio
 
 The connection string is included in the browser bundle because this is client-side telemetry; it is not an authorization credential. Keep the separate Static Web Apps deployment token in its existing GitHub secret and never put that token in a Vite variable.
 
-The integration tracks page views for the main hash-selected views and project case studies. It omits query strings and fragments, and disables cookies, local/session storage, dependency (XHR/fetch), exception, and automatic performance telemetry. Automatic route tracking is off; main-site hash navigation is tracked manually. The telemetry initializer allows only page-view events, removes referrers and identifying context fields, and strips custom properties and measurements.
+The integration tracks page views for the main routed views and project case studies. It omits query strings and fragments, and disables cookies, local/session storage, dependency (XHR/fetch), exception, and automatic performance telemetry. Automatic route tracking is off; main-site navigation is tracked manually. The telemetry initializer allows only page-view events, removes referrers and identifying context fields, and strips custom properties and measurements.
 
 To inspect counts and paths, open the Application Insights resource in Azure and use **Logs**:
 
@@ -282,8 +281,6 @@ npx playwright install chromium
 npm test
 ```
 
-The GitHub Pages workflow runs these tests after the production build and before uploading the site for deployment.
-
 ### Preview Production Build
 
 ```bash
@@ -305,7 +302,7 @@ This project demonstrates practical experience with:
 * CSS organization
 * CSS variables
 * Project case-study presentation
-* GitHub Pages deployment
+* Azure Static Web Apps deployment
 * Custom domain setup
 * Portfolio website development
 * Maintainable frontend architecture

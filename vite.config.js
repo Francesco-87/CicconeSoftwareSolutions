@@ -25,7 +25,7 @@ function projectCaseStudyInputs() {
 export default defineConfig({
   plugins: [react()],
   root: 'src',
-  base: './',                 // for shareable URLs on Azure root
+  base: '/',
   publicDir: '../public',
   build: {
     outDir: '../dist',

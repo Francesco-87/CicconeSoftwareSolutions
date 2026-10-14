@@ -1,10 +1,14 @@
+import TranslatedMarkup from '../../components/TranslatedMarkup.jsx'
+import { getProjectsHref } from '../localePaths.js'
+
 export default function BookingAndRegistryCaseStudy() {
   return (
+    <TranslatedMarkup>
     <>
 
   <div className="case-study-wrapper">
       <section className="case-study section-base section-divider section-divider--bowtie">
-        <a href="/#projects" className="back-link">← All projects</a>
+        <a href={getProjectsHref()} className="back-link">← All projects</a>
 
         <div className="container">
           
@@ -280,5 +284,6 @@ export default function BookingAndRegistryCaseStudy() {
   </section>
   </div>
     </>
+  </TranslatedMarkup>
   )
 }

@@ -10,6 +10,7 @@ import './resources/css/about.css'
 import './resources/css/services.css'
 import './resources/css/projects.css'
 import './resources/css/contact.css'
+import './resources/css/privacy.css'
 
 initializeTelemetry(import.meta.env.VITE_APPINSIGHTS_CONNECTION_STRING)
 
